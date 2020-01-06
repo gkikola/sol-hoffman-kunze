@@ -1,0 +1,10 @@
+build/
+auto
+*.pdf
+*.dvi
+*.toc
+*.log
+*.aux
+*.fdb_latexmk
+*.fls
+*.out

@@ -1,0 +1,24 @@
+\documentclass[a4paper,openright,twoside]{book}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage[pdfauthor={Greg Kikola},%
+            pdftitle={Hoffman and Kunze Solutions},%
+            pdftex]{hyperref}
+\hypersetup{colorlinks=false}
+\author{Greg~Kikola}
+\title{Selected Solutions to Hoffman and Kunze's Linear Algebra Second Edition}
+\setlist[enumerate,1]{label = (\alph*),
+  ref = (\alph*),
+  font = \normalfont}
+\include{src/defs}
+\begin{document}
+\frontmatter
+\maketitle
+\setcounter{tocdepth}{1} % Limit table of contents to chapters and sections
+\tableofcontents
+\mainmatter
+\include{src/ch01/section2}
+\end{document}

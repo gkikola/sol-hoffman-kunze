@@ -1,0 +1,59 @@
+\chapter{Linear Equations}
+
+\skipsection
+\section{Systems of Linear Equations}
+
+\Exercise1 Verify that the set of complex numbers described in
+Example~4 is a subfield of $C$.
+\begin{solution}
+  The set in Example~4 consisted of all complex numbers of the form
+  $x + y\sqrt2$, where $x$ and $y$ are rational. Call this set $F$.
+
+  Note that $0 = 0 + 0\sqrt2\in F$ and $1 = 1 + 0\sqrt2\in F$. If
+  $\alpha = a + b\sqrt2$ and $\beta = c + d\sqrt2$ are any elements of
+  $F$, then
+  \begin{equation*}
+    \alpha + \beta = (a + c) + (b + d)\sqrt2 \in F,
+  \end{equation*}
+  and
+  \begin{equation*}
+    -\alpha = -a - b\sqrt2 \in F.
+  \end{equation*}
+  We also have
+  \begin{align*}
+    \alpha\beta
+    &= ac + ad\sqrt2 + bc\sqrt2 + 2bd \\
+    &= (ac + 2bd) + (ad + bc)\sqrt2 \in F
+  \end{align*}
+  and, provided $\alpha$ is nonzero,
+  \begin{equation*}
+    \alpha^{-1}
+    = \frac1{a + b\sqrt2}
+    = \frac{a - b\sqrt2}{a^2 - 2b^2}
+    = \frac{a}{a^2 - 2b^2} - \frac{b}{a^2 - 2b^2}\sqrt2 \in F.
+  \end{equation*}
+  Since $F$ contains $0$ and $1$ and is closed under addition,
+  multiplication, additive inverses, and multiplicative inverses, $F$
+  is a subfield of $C$.
+\end{solution}
+
+\Exercise2 Let $F$ be the field of complex numbers. Are the following
+two systems of linear equations equivalent? If so, express each
+equation in each system as a linear combination of the equations in
+the other system.
+\begin{alignat*}{4}
+  x_1  &{}- x_2 &{}= 0 &\qquad\qquad& 3x_1 &{}+ x_2 &{}= 0 \\
+  2x_1 &{}+ x_2 &{}= 0 &&        x_1 &{}+ x_2 &{}= 0
+\end{alignat*}
+\begin{solution}
+  The systems are equivalent. For the first system, we can write
+  \begin{align*}
+    x_1 - x_2 &= (3x_1 + x_2) - 2(x_1 + x_2) = 0, \\
+    2x_1 + x_2 &= \frac12(3x_1 + x_2) + \frac12(x_1 + x_2) = 0.
+  \end{align*}
+  And for the second system,
+  \begin{align*}
+    3x_1 + x_2 &= \frac13(x_1 - x_2) + \frac43(2x_1 + x_2) = 0, \\
+    x_1 + x_2 &= -\frac13(x_1 - x_2) + \frac23(2x_1 + x_2) = 0. \qedhere
+  \end{align*}
+\end{solution}

@@ -1,0 +1,30 @@
+% Make section for exercise number
+\newcommand{\Exercise}[1]{\setcounter{subsection}{#1}%
+  \addtocounter{subsection}{-1}%
+  \subsection{Exercise #1}}
+
+% Skip a section in the section numbering
+% Needed for sections that don't have exercises
+\newcommand{\skipsection}{\addtocounter{section}{1}}
+
+% Theorem environments
+\newtheorem*{thm} {Theorem}
+\newtheorem*{lem} {Lemma}
+\newtheorem*{cor} {Corollary}
+
+% Proof environments
+\newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
+
+% Common sets
+\newcommand{\R}{R}
+\newcommand{\Q}{Q}
+\newcommand{\C}{C}
+\newcommand{\F}{F}
+
+% Common operations
+\newcommand{\abs}[1]{\lvert{#1}\rvert}
+\newcommand{\Abs}[1]{\left\lvert{#1}\right\rvert}
+\newcommand{\innerp}[2]{({#1}|{#2})}
+\newcommand{\Innerp}[2]{\left({#1}\middle|{#2}\right)}
+
+\DeclareMathOperator{\adj}{adj}
