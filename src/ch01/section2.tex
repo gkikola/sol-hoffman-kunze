@@ -121,3 +121,44 @@ Exercise~\ref{exercise:lin-eq:equiv-systems}.
   which is clearly a contradiction. Therefore the two systems are {\em
     not} equivalent.
 \end{solution}
+
+\Exercise5 Let $F$ be a set which contains exactly two elements, $0$
+and $1$. Define an addition and multiplication by the tables:
+\begin{center}
+  \begin{tabular}{c|rr}
+    $+$ & 0 & 1 \\
+    \hline
+    0 & 0 & 1 \\
+    1 & 1 & 0
+  \end{tabular}
+  \qquad\qquad
+  \begin{tabular}{c|rr}
+    $\cdot$ & 0 & 1 \\
+    \hline
+    0 & 0 & 0 \\
+    1 & 0 & 1
+  \end{tabular}
+\end{center}
+Verify that the set $F$, together with these two operations, is a
+field.
+\begin{solution}
+  From the symmetry in the tables, we see that both operations are
+  commutative.
+
+  By considering all eight possibilities, one can see that
+  $(a + b) + c = a + (b + c)$. And one may in a similar way verify
+  that $(ab)c = a(bc)$, so that associativity holds for the two
+  operations.
+
+  $0 + 0 = 0$ and $0 + 1 = 1$ so $F$ has an additive
+  identity. Similarly, $1\cdot0 = 0$ and $1\cdot1 = 1$ so $F$ has a
+  multiplicative identity.
+
+  The additive inverse of $0$ is $0$ and the additive inverse of $1$
+  is $1$. The multiplicative inverse of $1$ is $1$. So $F$ has
+  inverses.
+
+  Lastly, by considering the eight cases, one may verify that
+  $a(b + c) = ab + ac$. Therefore distributivity of multiplication
+  over addition holds and $F$ is a field.
+\end{solution}
