@@ -86,3 +86,38 @@ Exercise~\ref{exercise:lin-eq:equiv-systems}.
   \end{align*}
   So, the two systems are equivalent.
 \end{solution}
+
+\Exercise4 Test the following systems as in
+Exercise~\ref{exercise:lin-eq:equiv-systems}.
+\begin{alignat*}{10}
+  2x_1 &{}+{}& (-1 + i)x_2 &     &       &{}+{}&  x_4 &{}={}& 0
+  &\qquad& \left(1+\frac{i}2\right)x_1 &{}+{}&       8x_2
+  &{}-{}& ix_3 &{}-{}&  x_4 &{}={}& 0 \\
+       &     &        3x_2 &{}-{}& 2ix_3 &{}+{}& 5x_4 &{}={}& 0
+  &      &                  \tfrac23x_1 &{}-{}& \tfrac12x_2
+  &{}+{}&  x_3 &{}+{}& 7x_4 &{}={}& 0
+\end{alignat*}
+\begin{solution}
+  Call the equations in the system on the left $L_1$ and $L_2$, and
+  the equations on the right $R_1$ and $R_2$. If $R_1 = aL_1 + bL_2$
+  then, by equating the coefficients of $x_3$, we get
+  \begin{equation*}
+    -i = -2ib,
+  \end{equation*}
+  which implies that $b = 1/2$. By equating the coefficients of $x_1$,
+  we get
+  \begin{equation*}
+    1 + \frac{i}2 = 2a,
+  \end{equation*}
+  so that
+  \begin{equation*}
+    a = \frac12 + \frac14i.
+  \end{equation*}
+  Now, comparing the coefficients of $x_4$, we find that
+  \begin{equation*}
+    -1 = a + 5b = \frac12 + \frac14i + \frac52
+    = 3 + \frac14i,
+  \end{equation*}
+  which is clearly a contradiction. Therefore the two systems are {\em
+    not} equivalent.
+\end{solution}
