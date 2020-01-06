@@ -37,10 +37,11 @@ Example~4 is a subfield of $C$.
   is a subfield of $C$.
 \end{solution}
 
-\Exercise2 Let $F$ be the field of complex numbers. Are the following
-two systems of linear equations equivalent? If so, express each
-equation in each system as a linear combination of the equations in
-the other system.
+\Exercise2
+\label{exercise:lin-eq:equiv-systems}
+Let $F$ be the field of complex numbers. Are the following two systems
+of linear equations equivalent? If so, express each equation in each
+system as a linear combination of the equations in the other system.
 \begin{alignat*}{4}
   x_1  &{}- x_2 &{}= 0 &\qquad\qquad& 3x_1 &{}+ x_2 &{}= 0 \\
   2x_1 &{}+ x_2 &{}= 0 &&        x_1 &{}+ x_2 &{}= 0
@@ -49,11 +50,39 @@ the other system.
   The systems are equivalent. For the first system, we can write
   \begin{align*}
     x_1 - x_2 &= (3x_1 + x_2) - 2(x_1 + x_2) = 0, \\
-    2x_1 + x_2 &= \frac12(3x_1 + x_2) + \frac12(x_1 + x_2) = 0.
+    2x_1 + x_2 &= \tfrac12(3x_1 + x_2) + \tfrac12(x_1 + x_2) = 0.
   \end{align*}
   And for the second system,
   \begin{align*}
-    3x_1 + x_2 &= \frac13(x_1 - x_2) + \frac43(2x_1 + x_2) = 0, \\
-    x_1 + x_2 &= -\frac13(x_1 - x_2) + \frac23(2x_1 + x_2) = 0. \qedhere
+    3x_1 + x_2 &= \tfrac13(x_1 - x_2) + \tfrac43(2x_1 + x_2) = 0, \\
+    x_1 + x_2 &= -\tfrac13(x_1 - x_2) + \tfrac23(2x_1 + x_2) = 0. \qedhere
   \end{align*}
+\end{solution}
+
+\Exercise3 Test the following systems of equations as in
+Exercise~\ref{exercise:lin-eq:equiv-systems}.
+\begin{alignat*}{8}
+  -x_1 &{}+{}& x_2 &{}+{}& 4x_3 &{}={}& 0
+  &\qquad\qquad& x_1 &\phantom{{}+{}}& &{}-{}&& x_3 &{}={}& 0 \\
+  x_1 &{}+{}& 3x_2 &{}+{}& 8x_3 &{}={}& 0
+  && && x_2 &{}+{}&& 3x_3 &{}={}& 0 \\
+  \tfrac12x_1 &{}+{}& x_2 &{}+{}& \tfrac52x_3 &{}={}& 0
+\end{alignat*}
+\begin{solution}
+  For the first system, we have
+  \begin{align*}
+    -x_1 + x_2 + 4x_3 &= -(x_1 - x_3) + (x_2 + 3x_3) = 0, \\
+    x_1 + 3x_2 + 8x_3 &= (x_1 - x_3) + 3(x_2 + 3x_3) = 0, \\
+    \tfrac12x_1 + x_2 + \tfrac52x_3 &= \tfrac12(x_1 - x_3) + (x_2 + 3x_3) = 0.
+  \end{align*}
+  For the second system, we have
+  \begin{align*}
+    x_1 - x_3
+    &= -\tfrac34(-x_1 + x_2 + 4x_3) + \tfrac14(x_1 + 3x_2 + 8x_3)
+      + 0(\tfrac12x_1 + x_2 + \tfrac52x_3), \\
+    x_2 + 3x_3
+    &= \tfrac14(-x_1 + x_2 + 4x_3) + \tfrac14(x_1 + 3x_2 + 8x_3)
+      + 0(\tfrac12x_1 + x_2 + \tfrac52x_3).
+  \end{align*}
+  So, the two systems are equivalent.
 \end{solution}
