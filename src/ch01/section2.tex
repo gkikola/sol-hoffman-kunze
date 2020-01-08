@@ -182,3 +182,62 @@ contains every rational number.
   $m\cdot(1/n) = m/n = r\in F$. Since $r$ was arbitrary, we can
   conclude that all rational numbers are in $F$.
 \end{proof}
+
+\Exercise8 Prove that each field of characteristic zero contains a
+copy of the rational number field.
+\begin{proof}
+  Let $F$ be a field of characteristic zero. Define the map
+  $f\colon Q\to F$ (where $Q$ denotes the rational numbers) as
+  follows. Let $f(0) = 0_F$ and $f(1) = 1_F$, where $0_F$ and $1_F$
+  are the additive and multiplicative identities, respectively, of
+  $F$. Given a positive integer $n$, define $f(n) = f(n - 1) + 1_F$
+  and $f(-n) = -f(n)$. If a rational number $r = m/n$ is not an
+  integer, define $f(r) = f(m)\cdot\left(f(n)\right)^{-1}$.
+
+  First we show that the function $f$ preserves addition and
+  multiplication. A simple induction argument will show that, in the
+  case of integers $m$ and $n$, we have
+  \begin{equation*}
+    f(m + n) = f(m) + f(n)
+    \quad\text{and}\quad
+    f(mn) = f(m)f(n).
+  \end{equation*}
+  Now let $r_1 = m_1/n_1$ and $r_2 = m_2/n_2$ be rational numbers in
+  lowest terms. Then, by the definition of $f$,
+  \begin{align*}
+    f(r_1 + r_2)
+    &= f((m_1n_2 + m_2n_1)/(n_1n_2)) \\
+    &= f(m_1n_2 + m_2n_1)f(n_1n_2)^{-1} \\
+    &= (f(m_1)f(n_2) + f(m_2)f(n_1))f(n_1)^{-1}f(n_2)^{-1} \\
+    &= f(m_1)f(n_1)^{-1} + f(m_2)f(n_2)^{-1} \\
+    &= f(r_1) + f(r_2).
+  \end{align*}
+  Likewise,
+  \begin{equation*}
+    f(r_1r_2) = f(m_1)f(m_2)f(n_1)^{-1}f(n_2)^{-1}
+    = f(r_1)f(r_2).
+  \end{equation*}
+  (Formally, this shows that $f$ is a ring homomorphism.)
+
+  We will next show that the function $f$ is one-to-one. If
+  $r_1 = m_1/n_1$ and $r_2 = m_2/n_2$ are rational numbers in lowest
+  terms, then $f(r_1) = f(r_2)$ implies
+  \begin{equation*}
+    f(m_1)f(n_1)^{-1} = f(m_2)f(n_2)^{-1}
+  \end{equation*}
+  or
+  \begin{equation*}
+    f(m_1)f(n_2) = f(m_2)f(n_1).
+  \end{equation*}
+  This implies
+  \begin{equation*}
+    f(m_1n_2) = f(m_2n_1).
+  \end{equation*}
+  Now if $m_1n_2\neq m_2n_1$, then this would imply that $F$ does not
+  have characteristic zero. So $m_1n_2 = m_2n_1$ and so $r_1 = r_2$.
+
+  What we have shown is that every rational number corresponds to a
+  distinct element of $F$, and that the operations of addition and
+  multiplication of rational numbers is preserved by this
+  correspondence. So $F$ contains a copy of $Q$.
+\end{proof}
