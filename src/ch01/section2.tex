@@ -162,3 +162,23 @@ field.
   $a(b + c) = ab + ac$. Therefore distributivity of multiplication
   over addition holds and $F$ is a field.
 \end{solution}
+
+\Exercise7 Prove that each subfield of the field of complex numbers
+contains every rational number.
+\begin{proof}
+  Let $F$ be a subfield of $C$ and let $r = m/n$ be any rational
+  number, written in lowest terms. $F$ must contain $0$ and $1$, so if
+  $r = 0$ then we are done. Now assume $r$ is nonzero.
+
+  Since $1\in F$, and $F$ is closed under addition, we know that
+  $1 + 1 = 2\in F$. And, if the integer $k$ is in $F$, then $k+1$ is
+  also in $F$. By induction, we see that all positive integers belong
+  to $F$. We also know that all negative integers are in $F$ because
+  $F$ is closed under additive inverses. So, in particular, $m\in F$
+  and $n\in F$.
+
+  Now $F$ is closed under multiplicative inverses, so $n\in F$ implies
+  $1/n\in F$. Finally, closure under multiplication shows that
+  $m\cdot(1/n) = m/n = r\in F$. Since $r$ was arbitrary, we can
+  conclude that all rational numbers are in $F$.
+\end{proof}
