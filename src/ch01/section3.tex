@@ -91,3 +91,80 @@ find all solutions of $AX = 0$ by row-reducing $A$.
   \end{gather*}
   Thus $AX = 0$ has only the trivial solution.
 \end{solution}
+
+\Exercise3 If
+\begin{equation*}
+  A =
+  \begin{bmatrix}
+    6 & -4 & 0 \\
+    4 & -2 & 0 \\
+    -1 & 0 & 3
+  \end{bmatrix}
+\end{equation*}
+find all solutions of $AX = 2X$ and all solutions of $AX = 3X$. (The
+symbol $cX$ denotes the matrix each entry of which is $c$ times the
+corresponding entry of $X$.)
+\begin{solution}
+  The matrix equation $AX = 2X$ corresponds to the system of linear
+  equations
+  \begin{alignat*}{4}
+    6x_1 &{}-{}& 4x_2 && &{}={}& 2x_1 \\
+    4x_1 &{}-{}& 2x_2 && &{}={}& 2x_2 \\
+    -1x_1 && &{}+{}& 3x_3 &{}={}& 2x_3\rlap,
+  \end{alignat*}
+  or, equivalently,
+  \begin{alignat*}{4}
+    4x_1 &{}-{}& 4x_2 && &{}={}& 0 \\
+    4x_1 &{}-{}& 4x_2 && &{}={}& 0 \\
+    -1x_1 && &{}+{}& x_3 &{}={}& 0\rlap.
+  \end{alignat*}
+  This latter system is homogeneous, and can be represented by the
+  equation $BX = 0$, where $B$ is given by
+  \begin{equation*}
+    B =
+    \begin{bmatrix}
+      4 & -4 & 0 \\
+      4 & -4 & 0 \\
+      -1 & 0 & 1
+    \end{bmatrix}.
+  \end{equation*}
+  $B$ can be row-reduced:
+  \begin{equation*}
+    \begin{bmatrix}
+      4 & -4 & 0 \\
+      4 & -4 & 0 \\
+      -1 & 0 & 1
+    \end{bmatrix}
+    \rightarrow
+    \begin{bmatrix}
+      1 & 0 & -1 \\
+      0 & 1 & -1 \\
+      0 & 0 & 0
+    \end{bmatrix}.
+  \end{equation*}
+  Therefore any solution of $AX = 2X$ will have the form
+  \begin{equation*}
+    (x_1,x_2,x_3) = (a,a,a) = a(1,1,1),
+  \end{equation*}
+  where $a$ is a scalar.
+
+  Similarly, the equation $AX = 3X$ can be solved by row-reducing
+  \begin{equation*}
+    \begin{bmatrix}
+      3 & -4 & 0 \\
+      4 & -5 & 0 \\
+      -1 & 0 & 0
+    \end{bmatrix}
+    \rightarrow
+    \begin{bmatrix}
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+      0 & 0 & 0
+    \end{bmatrix}.
+  \end{equation*}
+  So, solutions of $AX = 3X$ have the form
+  \begin{equation*}
+    (x_1,x_2,x_3) = (0,0,b) = b(0,0,1),
+  \end{equation*}
+  where $b$ is a scalar.
+\end{solution}
