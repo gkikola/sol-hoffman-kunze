@@ -353,3 +353,55 @@ exactly three such matrices.
   nonzero in each case. Thus there are only the three possibilities
   given above.
 \end{proof}
+
+\Exercise7 Prove that the interchange of two rows of a matrix can be
+accomplished by a finite sequence of elementary row operations of the
+other two types.
+\begin{proof}
+  We can, without loss of generality, assume that the matrix has only
+  two rows, since any additional rows could just be ignored in the
+  procedure that follows. Let this matrix be given by
+  \begin{equation*}
+    A_0 =
+    \begin{bmatrix}
+      a_1 & a_2 & a_3 & \cdots & a_n \\
+      b_1 & b_2 & b_3 & \cdots & b_n
+    \end{bmatrix}.
+  \end{equation*}
+
+  First, add $-1$ times row $2$ to row $1$ to get the matrix
+  \begin{equation*}
+    A_1 =
+    \begin{bmatrix}
+      a_1 - b_1 & a_2 - b_2 & a_3 - b_3 & \cdots & a_n - b_n \\
+      b_1 & b_2 & b_3 & \cdots & b_n
+    \end{bmatrix}.
+  \end{equation*}
+  Next, add row $1$ to row $2$ to get
+  \begin{equation*}
+    A_2 =
+    \begin{bmatrix}
+      a_1 - b_1 & a_2 - b_2 & a_3 - b_3 & \cdots & a_n - b_n \\
+      a_1 & a_2 & a_3 & \cdots & a_n
+    \end{bmatrix},
+  \end{equation*}
+  and then add $-1$ times row $2$ to row $1$, which gives
+  \begin{equation*}
+    A_3 =
+    \begin{bmatrix}
+      -b_1 & -b_2 & -b_3 & \cdots & -b_n \\
+      a_1 & a_2 & a_3 & \cdots & a_n
+    \end{bmatrix}.
+  \end{equation*}
+  For the final step, multiply row $1$ by $-1$ to get
+  \begin{equation*}
+    A_4 =
+    \begin{bmatrix}
+      b_1 & b_2 & b_3 & \cdots & b_n \\
+      a_1 & a_2 & a_3 & \cdots & a_n
+    \end{bmatrix}.
+  \end{equation*}
+  We can see that $A_4$ has the same entries as $A_0$ but with the
+  rows interchanged. And only a finite number of elementary row
+  operations of the first two kinds were performed.
+\end{proof}
