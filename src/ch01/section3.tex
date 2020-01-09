@@ -405,3 +405,126 @@ other two types.
   rows interchanged. And only a finite number of elementary row
   operations of the first two kinds were performed.
 \end{proof}
+
+\Exercise8 Consider the system of equations $AX = 0$ where
+\begin{equation*}
+  A =
+  \begin{bmatrix}
+    a & b \\
+    c & d
+  \end{bmatrix}
+\end{equation*}
+is a $2\times2$ matrix over the field $F$. Prove the following.
+\begin{enumerate}
+\item If every entry of $A$ is $0$, then every pair $(x_1,x_2)$ is a
+  solution of $AX = 0$.
+  \begin{proof}
+    This is clear, since the equation $0x_1 + 0x_2 = 0$ is satisfied
+    for any $(x_1,x_2)\in F^2$ (note that in any field,
+    $0x = (1 - 1)x = x - x = 0$).
+  \end{proof}
+\item If $ad - bc \neq 0$, the system $AX = 0$ has only the trivial
+  solution $x_1 = x_2 = 0$.
+  \begin{proof}
+    First suppose $b\neq0$. Then $d$ is nonzero, and we can perform
+    the following row-reduction.
+    \begin{gather*}
+      \begin{bmatrix}
+        a & b \\
+        c & d
+      \end{bmatrix}
+      \xrightarrow{(1)}
+      \begin{bmatrix}
+        ad & bd \\
+        bc & bd
+      \end{bmatrix}
+      \xrightarrow{(2)}
+      \begin{bmatrix}
+        ad - bc & 0 \\
+        bc & bd
+      \end{bmatrix}
+      \xrightarrow{(1)} \\
+      \begin{bmatrix}
+        1 & 0 \\
+        bc & bd
+      \end{bmatrix}
+      \xrightarrow{(2)}
+      \begin{bmatrix}
+        1 & 0 \\
+        0 & bd
+      \end{bmatrix}
+      \xrightarrow{(1)}
+      \begin{bmatrix}
+        1 & 0 \\
+        0 & 1
+      \end{bmatrix}.
+    \end{gather*}
+    In this case, $A$ is row-equivalent to the $2\times2$ identity
+    matrix.
+
+    Next, suppose $b = 0$. Then $ad\neq0$ and we get
+    \begin{gather*}
+      \begin{bmatrix}
+        a & 0 \\
+        c & d
+      \end{bmatrix}
+      \xrightarrow{(1)}
+      \begin{bmatrix}
+        1 & 0 \\
+        c & d
+      \end{bmatrix}
+      \xrightarrow{(2)}
+      \begin{bmatrix}
+        1 & 0 \\
+        0 & d
+      \end{bmatrix}
+      \xrightarrow{(1)}
+      \begin{bmatrix}
+        1 & 0 \\
+        0 & 1
+      \end{bmatrix}.
+    \end{gather*}
+    So, in either case, $A$ is row-equivalent to the identity
+    matrix. Therefore $AX = 0$ has only the trivial solution.
+  \end{proof}
+\item If $ad - bc = 0$ and some entry of $A$ is different from $0$,
+  then there is a solution $(x_1^0, x_2^0)$ such that $(x_1,x_2)$ is a
+  solution if and only if there is a scalar $y$ such that
+  $x_1 = yx_1^0$, $x_2 = yx_2^0$.
+  \begin{proof}
+    Since one of the entries $a,b,c,d$ is nonzero, we can assume
+    without loss of generality that $a$ is nonzero (because, if
+    $ab = 0$, then we could simply interchange the rows and relabel
+    the entries; and if the only nonzero entry occurs in the second
+    column, then we could interchange the columns which would
+    correspond to relabeling $x_1$ and $x_2$).
+
+    Keeping in mind that $a$ is nonzero, we perform the following
+    row-reduction.
+    \begin{gather*}
+      \begin{bmatrix}
+        a & b \\
+        c & d
+      \end{bmatrix}
+      \xrightarrow{(1)}
+      \begin{bmatrix}
+        1 & \frac{b}a \\[3pt]
+        c & d
+      \end{bmatrix}
+      \xrightarrow{(2)}
+      \begin{bmatrix}
+        1 & \frac{b}a \\[3pt]
+        0 & \frac{ad - bc}a
+      \end{bmatrix}.
+    \end{gather*}
+    Since $ad - bc = 0$, the second row of this final matrix is zero,
+    and we see that there are nontrivial solutions. If we let
+    \begin{equation*}
+      x_1^0 = b
+      \quad\text{and}\quad
+      x_2^0 = -a,
+    \end{equation*}
+    then $(x_1,x_2)$ is a solution if and only if $x_1 = yx_1^0$ and
+    $x_2 = yx_2^0$ for some $y\in F$.
+  \end{proof}
+\end{enumerate}
