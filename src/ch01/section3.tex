@@ -307,3 +307,49 @@ row-equivalent:
   The system of equations corresponding to this matrix has nontrivial
   solutions. Therefore the two matrices are not row-equivalent.
 \end{proof}
+
+\Exercise6 Let
+\begin{equation*}
+  A =
+  \begin{bmatrix}
+    a & b \\
+    c & d
+  \end{bmatrix}
+\end{equation*}
+be a $2\times2$ matrix with complex entries. Suppose that $A$ is
+row-reduced and also that $a + b + c + d = 0$. Prove that there are
+exactly three such matrices.
+\begin{proof}
+  One possibility is the zero matrix,
+  \begin{equation*}
+    A =
+    \begin{bmatrix}
+      0 & 0 \\
+      0 & 0
+    \end{bmatrix}.
+  \end{equation*}
+  If $A$ is not the zero matrix, then it has at least one nonzero
+  row. If it has exactly one nonzero row, then in order to satisfy the
+  given constraints, the nonzero row will have a $1$ in the first
+  column and a $-1$ in the second. This gives two possibilities,
+  \begin{equation*}
+    A =
+    \begin{bmatrix}
+      1 & -1 \\
+      0 & 0
+    \end{bmatrix}
+    \quad\text{or}\quad
+    A =
+    \begin{bmatrix}
+      0 & 0 \\
+      1 & -1
+    \end{bmatrix}.
+  \end{equation*}
+
+  Finally, if $A$ has two nonzero rows, then it must be the identity
+  matrix or the matrix
+  $\left[\begin{smallmatrix} 0 & 1 \\ 1 & 0 \end{smallmatrix}\right]$,
+  but neither of these are valid since the sum of the entries is
+  nonzero in each case. Thus there are only the three possibilities
+  given above.
+\end{proof}
