@@ -189,3 +189,18 @@ solutions.
   \end{equation*}
   for some scalar $t$.
 \end{solution}
+
+\Exercise5 Give an example of a system of two linear equations in two
+unknowns which has no solution.
+\begin{solution}
+  We can find such a system by ensuring that the coefficients in one
+  equation are a multiple of the other, while the constant term is not
+  the same multiple. For example, one such system is
+  \begin{alignat*}{3}
+    x_1 &{}+{}& 2x_2 &{}={}& 3 \\
+    -3x_1 &{}-{}& 6x_2 &{}={}& 5\rlap.
+  \end{alignat*}
+  This system has no solutions since the augmented matrix is
+  row-equivalent to a matrix in which one row consists of zero entries
+  everywhere but the rightmost column.
+\end{solution}
