@@ -204,3 +204,113 @@ unknowns which has no solution.
   row-equivalent to a matrix in which one row consists of zero entries
   everywhere but the rightmost column.
 \end{solution}
+
+\Exercise6 Show that the system
+\begin{alignat*}{5}
+  x_1 &{}-{}& 2x_2 &{}+{}& x_3 &{}+{}& 2x_4 &{}={}& 1 \\
+  x_1 &{}+{}& x_2 &{}-{}& x_3 &{}+{}& x_4 &{}={}& 2 \\
+  x_1 &{}+{}& 7x_2 &{}-{}& 5x_3 &{}-{}& x_4 &{}={}& 3
+\end{alignat*}
+has no solution.
+\begin{solution}
+  Row-reduction on the augmented matrix gives
+  \begin{gather*}
+    \begin{bmatrix}
+      1 & -2 & 1 & 2 & 1 \\
+      1 & 1 & -1 & 1 & 2 \\
+      1 & 7 & -5 & -1 & 3
+    \end{bmatrix}
+    \xrightarrow{(2)}
+    \begin{bmatrix}
+      1 & -2 & 1 & 2 & 1 \\
+      0 & 3 & -2 & -1 & 1 \\
+      0 & 9 & -6 & -3 & 2
+    \end{bmatrix}
+    \xrightarrow{(1)} \\
+    \begin{bmatrix}
+      1 & -2 & 1 & 2 & 1 \\[3pt]
+      0 & 1 & -\frac23 & -\frac13 & \frac13 \\[3pt]
+      0 & 9 & -6 & -3 & 2
+    \end{bmatrix}
+    \xrightarrow{(2)}
+    \begin{bmatrix}
+      1 & 0 & -\frac13 & \frac43 & \frac53 \\[3pt]
+      0 & 1 & -\frac23 & -\frac13 & \frac13 \\[3pt]
+      0 & 0 & 0 & 0 & -1
+    \end{bmatrix}.
+  \end{gather*}
+  Since the first nonzero entry in the bottom row of the last matrix
+  is in the rightmost column, the corresponding system of equations
+  has no solution. Therefore the original system of equations also has
+  no solution.
+\end{solution}
+
+\Exercise7 Find all solutions of
+\begin{alignat*}{6}
+  2x_1 &{}-{}& 3x_2 &{}-{}& 7x_3 &{}+{}& 5x_4 &{}+{}& 2x_5 &{}={}& -2 \\
+  x_1 &{}-{}& 2x_2 &{}-{}& 4x_3 &{}+{}& 3x_4 &{}+{}& x_5 &{}={}& -2 \\
+  2x_1 && &{}-{}& 4x_3 &{}+{}& 2x_4 &{}+{}& x_5 &{}={}& 3 \\
+  x_1 &{}-{}& 5x_2 &{}-{}& 7x_3 &{}+{}& 6x_4 &{}+{}& 2x_5 &{}={}& -7\rlap.
+\end{alignat*}
+\begin{solution}
+  The augmented matrix can be row-reduced as follows:
+  \begin{gather*}
+    \begin{bmatrix}
+      2 & -3 & -7 & 5 & 2 & -2 \\
+      1 & -2 & -4 & 3 & 1 & -2 \\
+      2 & 0 & -4 & 2 & 1 & 3 \\
+      1 & -5 & -7 & 6 & 2 & -7
+    \end{bmatrix}
+    \xrightarrow{(3)}
+    \begin{bmatrix}
+      1 & -2 & -4 & 3 & 1 & -2 \\
+      2 & -3 & -7 & 5 & 2 & -2 \\
+      2 & 0 & -4 & 2 & 1 & 3 \\
+      1 & -5 & -7 & 6 & 2 & -7
+    \end{bmatrix}
+    \xrightarrow{(2)} \\
+    \begin{bmatrix}
+      1 & -2 & -4 & 3 & 1 & -2 \\
+      0 & 1 & 1 & -1 & 0 & 2 \\
+      0 & 4 & 4 & -4 & -1 & 7 \\
+      0 & -3 & -3 & 3 & 1 & -5
+    \end{bmatrix}
+    \xrightarrow{(2)}
+    \begin{bmatrix}
+      1 & 0 & -2 & 1 & 1 & 2 \\
+      0 & 1 & 1 & -1 & 0 & 2 \\
+      0 & 0 & 0 & 0 & -1 & -1 \\
+      0 & 0 & 0 & 0 & 1 & 1
+    \end{bmatrix}
+    \xrightarrow{(1)} \\
+    \begin{bmatrix}
+      1 & 0 & -2 & 1 & 1 & 2 \\
+      0 & 1 & 1 & -1 & 0 & 2 \\
+      0 & 0 & 0 & 0 & 1 & 1 \\
+      0 & 0 & 0 & 0 & 1 & 1
+    \end{bmatrix}
+    \xrightarrow{(2)}
+    \begin{bmatrix}
+      1 & 0 & -2 & 1 & 0 & 1 \\
+      0 & 1 & 1 & -1 & 0 & 2 \\
+      0 & 0 & 0 & 0 & 1 & 1 \\
+      0 & 0 & 0 & 0 & 0 & 0
+    \end{bmatrix}.
+  \end{gather*}
+  The columns with a leading $1$ correspond to the variables $x_1$,
+  $x_2$, and $x_5$, so these variables will depend on the remaining
+  two variables, which can take any value. Therefore all solutions
+  have the form
+  \begin{equation*}
+    x_1 = 2s - t + 1,
+    \quad
+    x_2 = t - s + 2,
+    \quad
+    x_3 = s,
+    \quad
+    x_4 = t,
+    \quad\text{and}\quad
+    x_5 = 1,
+  \end{equation*}
+  where $s$ and $t$ are arbitrary scalars.
+\end{solution}
