@@ -118,8 +118,8 @@ corresponding entry of $X$.)
     4x_1 &{}-{}& 4x_2 && &{}={}& 0 \\
     -1x_1 && &{}+{}& x_3 &{}={}& 0\rlap.
   \end{alignat*}
-  This latter system is homogeneous, and can be represented by the
-  equation $BX = 0$, where $B$ is given by
+  This system is homogeneous, and can be represented by the equation
+  $BX = 0$, where $B$ is given by
   \begin{equation*}
     B =
     \begin{bmatrix}
@@ -426,7 +426,7 @@ is a $2\times2$ matrix over the field $F$. Prove the following.
 \item If $ad - bc \neq 0$, the system $AX = 0$ has only the trivial
   solution $x_1 = x_2 = 0$.
   \begin{proof}
-    First suppose $b\neq0$. Then $d$ is nonzero, and we can perform
+    First suppose $bd\neq0$. Then we can perform
     the following row-reduction.
     \begin{gather*}
       \begin{bmatrix}
@@ -462,7 +462,8 @@ is a $2\times2$ matrix over the field $F$. Prove the following.
     In this case, $A$ is row-equivalent to the $2\times2$ identity
     matrix.
 
-    Next, suppose $b = 0$. Then $ad\neq0$ and we get
+    On the other hand, if $bd = 0$ then one of $b$ or $d$ is zero (but
+    not both). If $b = 0$, then $ad\neq0$ and we get
     \begin{gather*}
       \begin{bmatrix}
         a & 0 \\
@@ -484,7 +485,35 @@ is a $2\times2$ matrix over the field $F$. Prove the following.
         0 & 1
       \end{bmatrix}.
     \end{gather*}
-    So, in either case, $A$ is row-equivalent to the identity
+    If $d = 0$, then $bc\neq0$ and we have
+    \begin{gather*}
+      \begin{bmatrix}
+        a & b \\
+        c & 0
+      \end{bmatrix}
+      \xrightarrow{(3)}
+      \begin{bmatrix}
+        c & 0 \\
+        a & b
+      \end{bmatrix}
+      \xrightarrow{(1)}
+      \begin{bmatrix}
+        1 & 0 \\
+        a & b
+      \end{bmatrix}
+      \xrightarrow{(2)}
+      \begin{bmatrix}
+        1 & 0 \\
+        0 & b
+      \end{bmatrix}
+      \xrightarrow{(1)}
+      \begin{bmatrix}
+        1 & 0 \\
+        0 & 1
+      \end{bmatrix}.
+    \end{gather*}
+
+    We see that, in every case, $A$ is row-equivalent to the identity
     matrix. Therefore $AX = 0$ has only the trivial solution.
   \end{proof}
 \item If $ad - bc = 0$ and some entry of $A$ is different from $0$,
@@ -493,10 +522,10 @@ is a $2\times2$ matrix over the field $F$. Prove the following.
   $x_1 = yx_1^0$, $x_2 = yx_2^0$.
   \begin{proof}
     Since one of the entries $a,b,c,d$ is nonzero, we can assume
-    without loss of generality that $a$ is nonzero (because, if
-    $ab = 0$, then we could simply interchange the rows and relabel
-    the entries; and if the only nonzero entry occurs in the second
-    column, then we could interchange the columns which would
+    without loss of generality that $a$ is nonzero (because, if the
+    first row is zero then we could simply interchange the rows and
+    relabel the entries; and if the only nonzero entry occurs in the
+    second column, then we could interchange the columns which would
     correspond to relabeling $x_1$ and $x_2$).
 
     Keeping in mind that $a$ is nonzero, we perform the following
