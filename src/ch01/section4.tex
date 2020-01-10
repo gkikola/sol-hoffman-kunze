@@ -1,0 +1,58 @@
+\section{Row-Reduced Echelon Matrices}
+
+\Exercise1 Find all solutions to the following system of equations by
+row-reducing the coefficient matrix:
+\begin{alignat*}{4}
+  \tfrac13x_1 &{}+{}& 2x_2 &{}-{}& 6x_3 &{}={}& 0 \\
+  -4x_1 && &{}+{}& 5x_3 &{}={}& 0 \\
+  -3x_1 &{}+{}& 6x_2 &{}-{}& 13x_3 &{}={}& 0 \\
+  -\tfrac73x_1 &{}+{}& 2x_2 &{}-{}& \tfrac83x_3 &{}={}& 0
+\end{alignat*}
+\begin{solution}
+  The coefficient matrix reduces as follows:
+  \begin{gather*}
+    \begin{bmatrix}
+      \frac13 & 2 & -6 \\[3pt]
+      -4 & 0 & 5 \\[3pt]
+      -3 & 6 & -13 \\[3pt]
+      -\frac73 & 2 & -\frac83
+    \end{bmatrix}
+    \xrightarrow{(1)}
+    \begin{bmatrix}
+      1 & 6 & -18 \\[3pt]
+      -4 & 0 & 5 \\[3pt]
+      -3 & 6 & -13 \\[3pt]
+      -\frac73 & 2 & -\frac83
+    \end{bmatrix}
+    \xrightarrow{(2)}
+    \begin{bmatrix}
+      1 & 6 & -18 \\[3pt]
+      0 & 24 & -67 \\[3pt]
+      0 & 24 & -67 \\[3pt]
+      0 & 16 & -\frac{134}3
+    \end{bmatrix}
+    \xrightarrow{(1)} \\
+    \begin{bmatrix}
+      1 & 6 & -18 \\[3pt]
+      0 & 1 & -\frac{67}{24} \\[3pt]
+      0 & 1 & -\frac{67}{24} \\[3pt]
+      0 & 16 & -\frac{134}3
+    \end{bmatrix}
+    \xrightarrow{(2)}
+    \begin{bmatrix}
+      1 & 0 & -\frac54 \\[3pt]
+      0 & 1 & -\frac{67}{24} \\[3pt]
+      0 & 0 & 0 \\[3pt]
+      0 & 0 & 0
+    \end{bmatrix}.
+  \end{gather*}
+  Setting $x_3 = 24t$, we see that all solutions have the form
+  \begin{equation*}
+    x_1 = 30t,
+    \quad
+    x_2 = 67t,
+    \quad\text{and}\quad
+    x_3 = 24t,
+  \end{equation*}
+  where $t$ is an arbitrary scalar.
+\end{solution}
