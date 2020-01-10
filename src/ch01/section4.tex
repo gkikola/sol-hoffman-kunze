@@ -314,3 +314,65 @@ has no solution.
   \end{equation*}
   where $s$ and $t$ are arbitrary scalars.
 \end{solution}
+
+\Exercise8 Let
+\begin{equation*}
+  A =
+  \begin{bmatrix}
+    3 & -1 & 2 \\
+    2 & 1 & 1 \\
+    1 & -3 & 0
+  \end{bmatrix}.
+\end{equation*}
+For which triples $(y_1, y_2, y_3)$ does the system $AX = Y$ have a
+solution?
+\begin{solution}
+  We will perform row-reduction on the augmented matrix:
+  \begin{gather*}
+    \begin{bmatrix}
+      3 & -1 & 2 & y_1 \\
+      2 & 1 & 1 & y_2 \\
+      1 & -3 & 0 & y_3
+    \end{bmatrix}
+    \xrightarrow{(1)}
+    \begin{bmatrix}
+      1 & -\frac13 & \frac23 & \frac13y_1 \\[3pt]
+      2 & 1 & 1 & y_2 \\[3pt]
+      1 & -3 & 0 & y_3
+    \end{bmatrix}
+    \xrightarrow{(2)} \\
+    \begin{bmatrix}
+      1 & -\frac13 & \frac23 & \frac13y_1 \\[3pt]
+      0 & \frac53 & -\frac13 & -\frac23y_1 + y_2 \\[3pt]
+      0 & -\frac83 & -\frac23 & -\frac13y_1 + y_3
+    \end{bmatrix}
+    \xrightarrow{(1)}
+    \begin{bmatrix}
+      1 & -\frac13 & \frac23 & \frac13y_1 \\[3pt]
+      0 & 1 & -\frac15 & -\frac25y_1 + \frac35y_2 \\[3pt]
+      0 & -\frac83 & -\frac23 & -\frac13y_1 + y_3
+    \end{bmatrix}
+    \xrightarrow{(2)} \\
+    \begin{bmatrix}
+      1 & 0 & \frac35 & \frac15y_1 + \frac15y_2 \\[3pt]
+      0 & 1 & -\frac15 & -\frac25y_1 + \frac35y_2 \\[3pt]
+      0 & 0 & -\frac65 & -\frac75y_1 + \frac85y_2 + y_3
+    \end{bmatrix}
+    \xrightarrow{(1)}
+    \begin{bmatrix}
+      1 & 0 & \frac35 & \frac15y_1 + \frac15y_2 \\[3pt]
+      0 & 1 & -\frac15 & -\frac25y_1 + \frac35y_2 \\[3pt]
+      0 & 0 & 1 & \frac76y_1 - \frac43y_2 - \frac56y_3
+    \end{bmatrix}
+    \xrightarrow{(2)} \\
+    \begin{bmatrix}
+      1 & 0 & 0 & -\frac12y_1 + y_2 + \frac12y_3 \\[3pt]
+      0 & 1 & 0 & -\frac16y_1 + \frac13y_2 - \frac16y_3 \\[3pt]
+      0 & 0 & 1 & \frac76y_1 - \frac43y_2 - \frac56y_3
+    \end{bmatrix}.
+  \end{gather*}
+  Since every row contains a nonzero entry in the first three columns,
+  the system of equations $AX = Y$ is consistent regardless of the
+  values of $y_1$, $y_2$, and $y_3$. Therefore $AX = Y$ has a unique
+  solution for any triple $(y_1,y_2,y_3)$.
+\end{solution}
