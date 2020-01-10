@@ -376,3 +376,95 @@ solution?
   values of $y_1$, $y_2$, and $y_3$. Therefore $AX = Y$ has a unique
   solution for any triple $(y_1,y_2,y_3)$.
 \end{solution}
+
+\Exercise9 Let
+\begin{equation*}
+  A =
+  \begin{bmatrix}
+    3 & -6 & 2 & -1 \\
+    -2 & 4 & 1 & 3 \\
+    0 & 0 & 1 & 1 \\
+    1 & -2 & 1 & 0
+  \end{bmatrix}.
+\end{equation*}
+For which $(y_1,y_2,y_3,y_4)$ does the system of equations $AX=Y$ have
+a solution?
+\begin{solution}
+  Row-reduction on the augmented matrix gives
+  \begin{gather*}
+    \begin{bmatrix}
+      3 & -6 & 2 & -1 & y_1 \\
+      -2 & 4 & 1 & 3 & y_2 \\
+      0 & 0 & 1 & 1 & y_3 \\
+      1 & -2 & 1 & 0 & y_4
+    \end{bmatrix}
+    \xrightarrow{(1)}
+    \begin{bmatrix}
+      1 & -2 & \frac23 & -\frac13 & \frac13y_1 \\[3pt]
+      -2 & 4 & 1 & 3 & y_2 \\[3pt]
+      0 & 0 & 1 & 1 & y_3 \\[3pt]
+      1 & -2 & 1 & 0 & y_4
+    \end{bmatrix}
+    \xrightarrow{(2)} \\
+    \begin{bmatrix}
+      1 & -2 & \frac23 & -\frac13 & \frac13y_1 \\[3pt]
+      0 & 0 & \frac73 & \frac73 & \frac23y_1 + y_2 \\[3pt]
+      0 & 0 & 1 & 1 & y_3 \\[3pt]
+      0 & 0 & \frac13 & \frac13 & -\frac13y_1 + y_4
+    \end{bmatrix}
+    \xrightarrow{(1)}
+    \begin{bmatrix}
+      1 & -2 & \frac23 & -\frac13 & \frac13y_1 \\[3pt]
+      0 & 0 & 1 & 1 & \frac27y_1 + \frac37y_2 \\[3pt]
+      0 & 0 & 1 & 1 & y_3 \\[3pt]
+      0 & 0 & \frac13 & \frac13 & -\frac13y_1 + y_4
+    \end{bmatrix}
+    \xrightarrow{(2)} \\
+    \begin{bmatrix}
+      1 & -2 & 0 & -1 & \frac17y_1 - \frac27y_2 \\[3pt]
+      0 & 0 & 1 & 1 & \frac27y_1 + \frac37y_2 \\[3pt]
+      0 & 0 & 0 & 0 & -\frac27y_1 - \frac37y_2 + y_3 \\[3pt]
+      0 & 0 & 0 & 0 & -\frac37y_1 - \frac17y_2 + y_4
+    \end{bmatrix}.
+  \end{gather*}
+  So, in order for the system $AX = Y$ to have a solution, we need
+  $(y_1,y_2,y_3,y_4)$ to satisfy
+  \begin{alignat*}{5}
+    -\tfrac27y_1 &{}-{}& \tfrac37y_2 &{}+{}& y_3 && &{}={}& 0 \\
+    -\tfrac37y_1 &{}-{}& \tfrac17y_2 && &{}+{}& y_4 &{}={}& 0\rlap.
+  \end{alignat*}
+  To determine the conditions on $Y$, we row-reduce the coefficient
+  matrix for this system.
+  \begin{gather*}
+    \begin{bmatrix}
+      -\frac27 & -\frac37 & 1 & 0 \\[3pt]
+      -\frac37 & -\frac17 & 0 & 1
+    \end{bmatrix}
+    \xrightarrow{(1)}
+    \begin{bmatrix}
+      1 & \frac32 & -\frac72 & 0 \\[3pt]
+      -\frac37 & -\frac17 & 0 & 1
+    \end{bmatrix}
+    \xrightarrow{(2)}
+    \begin{bmatrix}
+      1 & \frac32 & -\frac72 & 0 \\[3pt]
+      0 & \frac12 & -\frac32 & 1
+    \end{bmatrix}
+    \xrightarrow{(1)} \\
+    \begin{bmatrix}
+      1 & \frac32 & -\frac72 & 0 \\[3pt]
+      0 & 1 & -3 & 2
+    \end{bmatrix}
+    \xrightarrow{(2)}
+    \begin{bmatrix}
+      1 & 0 & 1 & -3 \\
+      0 & 1 & -3 & 2
+    \end{bmatrix}.
+  \end{gather*}
+  From this we see that in order for $AX = Y$ to have a solution,
+  $(y_1,y_2,y_3,y_4)$ must take the form
+  \begin{equation*}
+    (y_1,y_2,y_3,y_4) = (3t - s, 3s - 2t, s, t),
+  \end{equation*}
+  where $s$ and $t$ are arbitrary.
+\end{solution}
