@@ -49,8 +49,8 @@ Compute $ABC$ and $CAB$.
       3 & -3 \\
       1 & -1 \\
       -1 & 1
-    \end{bmatrix} \\
-    &=
+    \end{bmatrix}
+    =
     \begin{bmatrix}
       4 & -4 \\
       4 & -4
@@ -81,10 +81,102 @@ Compute $ABC$ and $CAB$.
     \begin{bmatrix}
       4 \\
       4
-    \end{bmatrix} \\
-    &=
+    \end{bmatrix}
+    =
     \begin{bmatrix}
       0
     \end{bmatrix}. \qedhere
   \end{align*}
+\end{solution}
+
+\Exercise2 Let
+\begin{equation*}
+  A =
+  \begin{bmatrix}
+    1 & -1 & 1 \\
+    2 & 0 & 1 \\
+    3 & 0 & 1
+  \end{bmatrix},
+  \quad
+  B =
+  \begin{bmatrix}
+    2 & -2 \\
+    1 & 3 \\
+    4 & 4
+  \end{bmatrix}.
+\end{equation*}
+Verify directly that $A(AB) = A^2B$.
+\begin{solution}
+  We have
+  \begin{align*}
+    A(AB)
+    &=
+    \begin{bmatrix}
+      1 & -1 & 1 \\
+      2 & 0 & 1 \\
+      3 & 0 & 1
+    \end{bmatrix}
+    \left(
+      \begin{bmatrix}
+        1 & -1 & 1 \\
+        2 & 0 & 1 \\
+        3 & 0 & 1
+      \end{bmatrix}
+      \begin{bmatrix}
+        2 & -2 \\
+        1 & 3 \\
+        4 & 4
+      \end{bmatrix}
+    \right) \\
+    &=
+    \begin{bmatrix}
+      1 & -1 & 1 \\
+      2 & 0 & 1 \\
+      3 & 0 & 1
+    \end{bmatrix}
+    \begin{bmatrix}
+      5 & -1 \\
+      8 & 0 \\
+      10 & -2
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      7 & -3 \\
+      20 & -4 \\
+      25 & -5
+    \end{bmatrix},
+  \end{align*}
+  and
+  \begin{align*}
+    A^2B
+    &=
+    \begin{bmatrix}
+      1 & -1 & 1 \\
+      2 & 0 & 1 \\
+      3 & 0 & 1
+    \end{bmatrix}^2
+    \begin{bmatrix}
+      2 & -2 \\
+      1 & 3 \\
+      4 & 4
+    \end{bmatrix} \\
+    &=
+    \begin{bmatrix}
+      2 & -1 & 1 \\
+      5 & -2 & 3 \\
+      6 & -3 & 4
+    \end{bmatrix}
+    \begin{bmatrix}
+      2 & -2 \\
+      1 & 3 \\
+      4 & 4
+    \end{bmatrix} \\
+    &=
+    \begin{bmatrix}
+      7 & -3 \\
+      20 & -4 \\
+      25 & -5
+    \end{bmatrix}.
+  \end{align*}
+  So $A(AB) = A^2B$ as expected.
 \end{solution}
