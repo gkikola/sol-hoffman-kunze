@@ -99,3 +99,44 @@ What are the solutions of $AX = 0$?
   homogeneous system $AX = 0$ has only the trivial solution
   $x_1 = x_2 = 0$.
 \end{solution}
+
+\Exercise3 Describe explicitly all $2\times2$ row-reduced echelon
+matrices.
+\begin{solution}
+  If a $2\times2$ matrix has no nonzero rows, then it is the zero matrix,
+  \begin{equation*}
+    0 =
+    \begin{bmatrix}
+      0 & 0 \\
+      0 & 0
+    \end{bmatrix},
+  \end{equation*}
+  which is in row-reduced echelon form.
+
+  Next, if a $2\times2$ matrix has exactly one nonzero row, then in
+  order to be in row-reduced echelon form, the nonzero row must be in
+  row $1$ and it must start with an entry of $1$. There are two
+  possibilities,
+  \begin{equation*}
+    \begin{bmatrix}
+      1 & a \\
+      0 & 0
+    \end{bmatrix}
+    \quad\text{or}\quad
+    \begin{bmatrix}
+      0 & 1 \\
+      0 & 0
+    \end{bmatrix},
+  \end{equation*}
+  where $a$ is an arbitrary scalar.
+
+  Lastly, if a $2\times2$ matrix in row-reduced echelon form has two
+  nonzero rows, then the diagonal entries must be $1$,
+  \begin{equation*}
+    \begin{bmatrix}
+      1 & a \\
+      0 & 1
+    \end{bmatrix},
+  \end{equation*}
+  where $a$ is again some scalar. These are the only possibilities.
+\end{solution}
