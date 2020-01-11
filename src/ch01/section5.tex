@@ -332,3 +332,73 @@ $E_1, E_2, \dots, E_k$ such that
   Thus each of $E_1,E_2,\dots,E_8$ are elementary matrices, and they
   are such that $E_8\cdots E_2E_1A = I$.
 \end{solution}
+
+\Exercise5 Let
+\begin{equation*}
+  A =
+  \begin{bmatrix}
+    1 & -1 \\
+    2 & 2 \\
+    1 & 0
+  \end{bmatrix}
+  \quad\text{and}\quad
+  B =
+  \begin{bmatrix}
+    3 & 1 \\
+    -4 & 4
+  \end{bmatrix}.
+\end{equation*}
+Is there a matrix $C$ such that $CA = B$?
+\begin{solution}
+  Suppose there is, and let
+  \begin{equation*}
+    C =
+    \begin{bmatrix}
+      c_1 & c_2 & c_3 \\
+      c_4 & c_5 & c_6
+    \end{bmatrix}.
+  \end{equation*}
+  Then
+  \begin{equation*}
+    \begin{bmatrix}
+      c_1 & c_2 & c_3 \\
+      c_4 & c_5 & c_6
+    \end{bmatrix}
+    \begin{bmatrix}
+      1 & -1 \\
+      2 & 2 \\
+      1 & 0
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      3 & 1 \\
+      -4 & 4
+    \end{bmatrix}.
+  \end{equation*}
+  This leads to the following system of equations:
+  \begin{equation*}
+    \begin{split}
+      \phantom{-{}}c_1 + 2c_2 + c_3 &= 3, \\
+      -c_1 + 2c_2 \phantom{{}+c_3} &= 1,
+    \end{split}
+    \qquad\qquad
+    \begin{split}
+      \phantom{-{}}c_4 + 2c_5 + c_6 &= -4, \\
+      -c_4 + 2c_5 \phantom{{}+c_6} &= 4.
+    \end{split}
+  \end{equation*}
+  This system has solutions
+  \begin{equation*}
+    (c_1,c_2,c_3,c_4,c_5,c_6) =
+    (1 - 2s, 1 - s, 4s, 2t - 4, t, -4t).
+  \end{equation*}
+  For example, taking $s = t = -1$, we get the matrix
+  \begin{equation*}
+    C =
+    \begin{bmatrix}
+      3 & 2 & -4 \\
+      -6 & -1 & 4
+    \end{bmatrix},
+  \end{equation*}
+  and one can easily verify that $CA = B$.
+\end{solution}
