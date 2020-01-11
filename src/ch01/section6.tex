@@ -1,0 +1,98 @@
+\section{Invertible Matrices}
+
+\Exercise1 Let
+\begin{equation*}
+  A =
+  \begin{bmatrix}
+    1 & 2 & 1 & 0 \\
+    -1 & 0 & 3 & 5 \\
+    1 & -2 & 1 & 1
+  \end{bmatrix}.
+\end{equation*}
+Find a row-reduced echelon matrix $R$ which is row-equivalent to $A$
+and an invertible $3\times3$ matrix $P$ such that $R = PA$.
+\begin{solution}
+  We can perform elementary row operations on $A$, while performing
+  the same operations on $I$, in order to find $R$ and $P$:
+  \begin{align*}
+    \begin{bmatrix}
+      1 & 2 & 1 & 0 \\
+      -1 & 0 & 3 & 5 \\
+      1 & -2 & 1 & 1
+    \end{bmatrix},
+    &\quad
+    \begin{bmatrix}
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+      0 & 0 & 1
+    \end{bmatrix} \\
+    \begin{bmatrix}
+      1 & 2 & 1 & 0 \\
+      0 & 2 & 4 & 5 \\
+      0 & -4 & 0 & 1
+    \end{bmatrix},
+    &\quad
+    \begin{bmatrix}
+      1 & 0 & 0 \\
+      1 & 1 & 0 \\
+      -1 & 0 & 1
+    \end{bmatrix} \\
+    \begin{bmatrix}
+      1 & 0 & -3 & -5 \\
+      0 & 2 & 4 & 5 \\
+      0 & 0 & 8 & 11
+    \end{bmatrix},
+    &\quad
+    \begin{bmatrix}
+      0 & -1 & 0 \\
+      1 & 1 & 0 \\
+      1 & 2 & 1
+    \end{bmatrix} \\
+    \begin{bmatrix}
+      1 & 0 & -3 & -5 \\[3pt]
+      0 & 1 & 2 & \frac52 \\[3pt]
+      0 & 0 & 1 & \frac{11}8
+    \end{bmatrix},
+    &\quad
+    \begin{bmatrix}
+      0 & -1 & 0 \\[3pt]
+      \frac12 & \frac12 & 0 \\[3pt]
+      \frac18 & \frac14 & \frac18
+    \end{bmatrix} \\
+    \begin{bmatrix}
+      1 & 0 & 0 & -\frac78 \\[3pt]
+      0 & 1 & 0 & -\frac14 \\[3pt]
+      0 & 0 & 1 & \frac{11}8
+    \end{bmatrix},
+    &\quad
+    \begin{bmatrix}
+      \frac38 & -\frac14 & \frac38 \\[3pt]
+      \frac14 & 0 & -\frac14 \\[3pt]
+      \frac18 & \frac14 & \frac18
+    \end{bmatrix}.
+  \end{align*}
+  Therefore,
+  \begin{equation*}
+    R =
+    \begin{bmatrix}
+      1 & 0 & 0 & -\frac78 \\[3pt]
+      0 & 1 & 0 & -\frac14 \\[3pt]
+      0 & 0 & 1 & \frac{11}8
+    \end{bmatrix},
+    \quad
+    P =
+    \begin{bmatrix}
+      \frac38 & -\frac14 & \frac38 \\[3pt]
+      \frac14 & 0 & -\frac14 \\[3pt]
+      \frac18 & \frac14 & \frac18
+    \end{bmatrix}
+    =
+    \frac18
+    \begin{bmatrix}
+      3 & -2 & 3 \\
+      2 & 0 & -2 \\
+      1 & 2 & 1
+    \end{bmatrix},
+  \end{equation*}
+  and $R = PA$.
+\end{solution}
