@@ -335,3 +335,55 @@ and to find the inverse in case it is.
     \end{bmatrix}. \qedhere
   \end{equation*}
 \end{solution}
+
+\Exercise4 Let
+\begin{equation*}
+  A =
+  \begin{bmatrix}
+    5 & 0 & 0 \\
+    1 & 5 & 0 \\
+    0 & 1 & 5
+  \end{bmatrix}.
+\end{equation*}
+For which $X$ does there exist a scalar $c$ such that $AX = cX$?
+\begin{solution}
+  Let
+  \begin{equation*}
+    X =
+    \begin{bmatrix}
+      x_1 \\
+      x_2 \\
+      x_3
+    \end{bmatrix}.
+  \end{equation*}
+  Then $AX = cX$ implies
+  \begin{align*}
+    5x_1 &= cx_1 \\
+    x_1 + 5x_2 &= cx_2 \\
+    x_2 + 5x_3 &= cx_3,
+  \end{align*}
+  and this is a homogeneous system of equations with coefficient
+  matrix
+  \begin{equation*}
+    B =
+    \begin{bmatrix}
+      5 - c & 0 & 0 \\
+      1 & 5 - c & 0 \\
+      0 & 1 & 5 - c
+    \end{bmatrix}.
+  \end{equation*}
+  If $c = 5$ then $(x_1,x_2,x_3) = (0,0,t)$ for some scalar $t$, so
+  this gives one possibility for $X$. If we assume $c\neq5$, then the
+  matrix $B$ can be row-reduced to the identity matrix, so that
+  $X = 0$ is then the only possibility. Therefore, there is a scalar
+  $c$ with $AX = cX$ if and only if
+  \begin{equation*}
+    X =
+    \begin{bmatrix}
+      0 \\
+      0 \\
+      t
+    \end{bmatrix},
+  \end{equation*}
+  for some arbitrary scalar $t$.
+\end{solution}
