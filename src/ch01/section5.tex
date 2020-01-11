@@ -89,7 +89,9 @@ Compute $ABC$ and $CAB$.
   \end{align*}
 \end{solution}
 
-\Exercise2 Let
+\Exercise2
+\label{eq:lin-eq:mat-mul:A-sq-B}
+Let
 \begin{equation*}
   A =
   \begin{bmatrix}
@@ -197,4 +199,136 @@ $A^2 = 0$ but $A\neq0$.
     \end{bmatrix}.
   \end{equation*}
   Both of these are nonzero matrices that satisfy $A^2 = 0$.
+\end{solution}
+
+\Exercise4 For the matrix $A$ of
+Exercise~\ref{eq:lin-eq:mat-mul:A-sq-B}, find elementary matrices
+$E_1, E_2, \dots, E_k$ such that
+\begin{equation*}
+  E_k\cdots E_2E_1A = I.
+\end{equation*}
+\begin{solution}
+  We want to reduce
+  \begin{equation*}
+    A =
+    \begin{bmatrix}
+      1 & -1 & 1 \\
+      2 & 0 & 1 \\
+      3 & 0 & 1
+    \end{bmatrix}
+  \end{equation*}
+  to the identity matrix. To start, we can use two elementary row
+  operations of the second kind to get $0$ as the bottom two entries
+  of column $1$. Performing the same operations on the identity matrix
+  gives
+  \begin{equation*}
+    E_1 =
+    \begin{bmatrix}
+      1 & 0 & 0 \\
+      -2 & 1 & 0 \\
+      0 & 0 & 1
+    \end{bmatrix}
+    \quad\text{and}\quad
+    E_2 =
+    \begin{bmatrix}
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+      -3 & 0 & 1
+    \end{bmatrix}.
+  \end{equation*}
+  Then
+  \begin{equation*}
+    E_2E_1A =
+    \begin{bmatrix}
+      1 & -1 & 1 \\
+      0 & 2 & -1 \\
+      0 & 3 & -2
+    \end{bmatrix}.
+  \end{equation*}
+  Next, we can use a row operation of the first kind to make the
+  central entry into a $1$:
+  \begin{equation*}
+    E_3 =
+    \begin{bmatrix}
+      1 & 0 & 0 \\[3pt]
+      0 & \frac12 & 0 \\[3pt]
+      0 & 0 & 1
+    \end{bmatrix},
+    \quad\text{so that}\quad
+    E_3E_2E_1A =
+    \begin{bmatrix}
+      1 & -1 & 1 \\[3pt]
+      0 & 1 & -\frac12 \\[3pt]
+      0 & 3 & -2
+    \end{bmatrix}.
+  \end{equation*}
+  Continuing in this way, we get
+  \begin{equation*}
+    E_4 =
+    \begin{bmatrix}
+      1 & 1 & 0 \\
+      0 & 1 & 0 \\
+      0 & 0 & 1
+    \end{bmatrix}
+    \quad\text{and}\quad
+    E_5 =
+    \begin{bmatrix}
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+      0 & -3 & 1
+    \end{bmatrix},
+  \end{equation*}
+  so that
+  \begin{equation*}
+    E_5E_4E_3E_2E_1A =
+    \begin{bmatrix}
+      1 & 0 & \frac12 \\[3pt]
+      0 & 1 & -\frac12 \\[3pt]
+      0 & 0 & -\frac12
+    \end{bmatrix}.
+  \end{equation*}
+  Then
+  \begin{equation*}
+    E_6 =
+    \begin{bmatrix}
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+      0 & 0 & -2
+    \end{bmatrix}
+    \quad\text{so that}\quad
+    E_6E_5E_4E_3E_2E_1A =
+    \begin{bmatrix}
+      1 & 0 & \frac12 \\[3pt]
+      0 & 1 & -\frac12 \\[3pt]
+      0 & 0 & 1
+    \end{bmatrix}.
+  \end{equation*}
+  Finally,
+  \begin{equation*}
+    E_7 =
+    \begin{bmatrix}
+      1 & 0 & 0 \\[3pt]
+      0 & 1 & \frac12 \\[3pt]
+      0 & 0 & 1
+    \end{bmatrix}
+    \quad\text{and}\quad
+    E_8 =
+    \begin{bmatrix}
+      1 & 0 & -\frac12 \\[3pt]
+      0 & 1 & 0 \\[3pt]
+      0 & 0 & 1
+    \end{bmatrix},
+  \end{equation*}
+  which gives
+  \begin{equation*}
+    E_8E_7E_6E_5E_4E_3E_2E_1 =
+    \begin{bmatrix}
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+      0 & 0 & 1
+    \end{bmatrix}
+    = I.
+  \end{equation*}
+  Thus each of $E_1,E_2,\dots,E_8$ are elementary matrices, and they
+  are such that $E_8\cdots E_2E_1A = I$.
 \end{solution}
