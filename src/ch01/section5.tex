@@ -402,3 +402,49 @@ Is there a matrix $C$ such that $CA = B$?
   \end{equation*}
   and one can easily verify that $CA = B$.
 \end{solution}
+
+\Exercise6 Let $A$ be an $m\times n$ matrix and $B$ an $n\times k$
+matrix. Show that the columns of $C = AB$ are linear combinations of
+the columns of $A$. If $\alpha_1,\dots,\alpha_n$ are the columns of
+$A$ and $\gamma_1,\dots,\gamma_k$ are the columns of $C$, then
+\begin{equation*}
+  \gamma_j = \sum_{r=1}^nB_{rj}\alpha_r.
+\end{equation*}
+\begin{proof}
+  Let $A,B,C$ be as stated. By the definition of matrix
+  multiplication, we have
+  \begin{multline*}
+    \gamma_j =
+    \begin{bmatrix}
+      A_{11}B_{1j} + A_{12}B_{2j} + \cdots + A_{1n}B_{nj} \\
+      A_{21}B_{1j} + A_{22}B_{2j} + \cdots + A_{2n}B_{nj} \\
+      \vdots \\
+      A_{m1}B_{1j} + A_{m2}B_{2j} + \cdots + A_{mn}B_{nj}
+    \end{bmatrix} \\
+    = B_{1j}
+    \begin{bmatrix}
+      A_{11} \\
+      A_{21} \\
+      \vdots \\
+      A_{m1}
+    \end{bmatrix}
+    + B_{2j}
+    \begin{bmatrix}
+      A_{12} \\
+      A_{22} \\
+      \vdots \\
+      A_{m2}
+    \end{bmatrix}
+    + \cdots + B_{nj}
+    \begin{bmatrix}
+      A_{1n} \\
+      A_{2n} \\
+      \vdots \\
+      A_{mn}
+    \end{bmatrix} \\
+    = B_{1j}\alpha_1 + B_{2j}\alpha_2 + \cdots + B_{nj}\alpha_n =
+    \sum_{r=1}^nB_{rj}\alpha_r.
+  \end{multline*}
+  Therefore the columns of $C = AB$ are linear combinations of the
+  columns of $A$.
+\end{proof}
