@@ -208,3 +208,130 @@ and an invertible $3\times3$ matrix $P$ such that $R = PA$.
   \end{equation*}
   and $R = PA$.
 \end{solution}
+
+\Exercise3 For each of the two matrices
+\begin{equation*}
+  \begin{bmatrix}
+    2 & 5 & -1 \\
+    4 & -1 & 2 \\
+    6 & 4 & 1
+  \end{bmatrix},
+  \quad
+  \begin{bmatrix}
+    1 & -1 & 2 \\
+    3 & 2 & 4 \\
+    0 & 1 & -2
+  \end{bmatrix}
+\end{equation*}
+use elementary row operations to discover whether it is invertible,
+and to find the inverse in case it is.
+\begin{solution}
+  For the first matrix, row-reduction gives
+  \begin{gather*}
+    \begin{bmatrix}
+      2 & 5 & -1 \\
+      4 & -1 & 2 \\
+      6 & 4 & 1
+    \end{bmatrix}
+    \xrightarrow{(1)}
+    \begin{bmatrix}
+      1 & \frac52 & -\frac12 \\[3pt]
+      4 & -1 & 2 \\[3pt]
+      6 & 4 & 1
+    \end{bmatrix}
+    \xrightarrow{(2)}
+    \begin{bmatrix}
+      1 & \frac52 & -\frac12 \\[3pt]
+      0 & -11 & 4 \\[3pt]
+      0 & -11 & 4
+    \end{bmatrix}
+    \xrightarrow{(2)}
+    \begin{bmatrix}
+      1 & \frac52 & -\frac12 \\[3pt]
+      0 & -11 & 4 \\[3pt]
+      0 & 0 & 0
+    \end{bmatrix},
+  \end{gather*}
+  and we see that the original matrix is not invertible since it is
+  row-equivalent to a matrix having a row of zeros.
+
+  For the second matrix, we get
+  \begin{align*}
+    \begin{bmatrix}
+      1 & -1 & 2 \\
+      3 & 2 & 4 \\
+      0 & 1 & -2
+    \end{bmatrix},
+    &\quad
+    \begin{bmatrix}
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+      0 & 0 & 1
+    \end{bmatrix} \\
+    \begin{bmatrix}
+      1 & -1 & 2 \\
+      0 & 5 & -2 \\
+      0 & 1 & -2
+    \end{bmatrix},
+    &\quad
+    \begin{bmatrix}
+      1 & 0 & 0 \\
+      -3 & 1 & 0 \\
+      0 & 0 & 1
+    \end{bmatrix} \\
+    \begin{bmatrix}
+      1 & -1 & 2 \\
+      0 & 1 & -2 \\
+      0 & 5 & -2
+    \end{bmatrix},
+    &\quad
+    \begin{bmatrix}
+      1 & 0 & 0 \\
+      0 & 0 & 1 \\
+      -3 & 1 & 0
+    \end{bmatrix} \\
+    \begin{bmatrix}
+      1 & 0 & 0 \\
+      0 & 1 & -2 \\
+      0 & 0 & 8
+    \end{bmatrix},
+    &\quad
+    \begin{bmatrix}
+      1 & 0 & 1 \\
+      0 & 0 & 1 \\
+      -3 & 1 & -5
+    \end{bmatrix} \\
+    \begin{bmatrix}
+      1 & 0 & 0 \\[3pt]
+      0 & 1 & -2 \\[3pt]
+      0 & 0 & 1
+    \end{bmatrix},
+    &\quad
+    \begin{bmatrix}
+      1 & 0 & 1 \\[3pt]
+      0 & 0 & 1 \\[3pt]
+      -\frac38 & \frac18 & -\frac58
+    \end{bmatrix} \\
+    \begin{bmatrix}
+      1 & 0 & 0 \\[3pt]
+      0 & 1 & 0 \\[3pt]
+      0 & 0 & 1
+    \end{bmatrix},
+    &\quad
+    \begin{bmatrix}
+      1 & 0 & 1 \\[3pt]
+      -\frac34 & \frac14 & -\frac14 \\[3pt]
+      -\frac38 & \frac18 & -\frac58
+    \end{bmatrix}.
+  \end{align*}
+  From this we see that the original matrix is invertible and its
+  inverse is the matrix
+  \begin{equation*}
+    \frac18
+    \begin{bmatrix}
+      8 & 0 & 8 \\
+      -6 & 2 & -2 \\
+      -3 & 1 & -5
+    \end{bmatrix}. \qedhere
+  \end{equation*}
+\end{solution}
