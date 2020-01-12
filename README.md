@@ -15,10 +15,8 @@ feedback.
 Download
 --------
 
-This solution guide is not yet available for download in PDF
-form. Once more of the guide has been completed, the PDF will be made
-available at
-[gregkikola.com/guides/](https://www.gregkikola.com/guides/).
+This solution guide is available as a
+[PDF file](https://www.gregkikola.com/guides/hksol.pdf).
 
 
 Building from Source
