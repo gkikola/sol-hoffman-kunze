@@ -684,3 +684,37 @@ only if
   so that $A$ is again row-equivalent to the identity matrix. In
   either case, $A$ must be invertible by Theorem~12.
 \end{proof}
+
+\Exercise9 An $n\times n$ matrix $A$ is called {\bf upper-triangular}
+if $A_{ij} = 0$ for $i > j$, that is, if every entry below the main
+diagonal is $0$. Prove that an upper-triangular (square) matrix is
+invertible if and only if every entry on its main diagonal is
+different from $0$.
+\begin{proof}
+  Let $A$ be an $n\times n$ upper-triangular matrix.
+
+  First, suppose every entry on the main diagonal of $A$ is nonzero,
+  and consider the homogeneous linear system $AX = 0$:
+  \begin{alignat*}{5}
+    A_{11}x_1 &{}+{}& A_{12}x_2 &{}+{}& \cdots &{}+{}& A_{1n}x_n &{}={}& 0 \\
+    && A_{22}x_2 &{}+{}& \cdots &{}+{}& A_{2n}x_n &{}={}& 0 \\
+    && && && &\;\;\vdots \\
+    && && && A_{nn}x_n &{}={}& 0\rlap.
+  \end{alignat*}
+  Since $A_{nn}$ is nonzero, the last equation implies that $x_n =
+  0$. Then, since $A_{n-1,n-1}$ is nonzero, the second-to-last
+  equation implies that $x_{n-1} = 0$. Continuing in this way, we see
+  that $x_i = 0$ for each $i = 1, 2, \dots, n$. Therefore the system
+  $AX = 0$ has only the trivial solution, hence $A$ is invertible.
+
+  Conversely, suppose $A$ is invertible. Then $A$ cannot contain any
+  zero rows, nor can $A$ be row-equivalent to a matrix with a row of
+  zeros. This implies that $A_{nn}\neq0$. Consider $A_{n-1,n-1}$. If
+  $A_{n-1,n-1}$ is zero, then by dividing row $n$ by $A_{nn}$, and
+  then by adding $-A_{n-1,n}$ times row $n$ to row $n-1$, we see that
+  $A$ is row-equivalent to a matrix whose $(n-1)$st row is all
+  zeros. This is a contradiction, so $A_{n-1,n-1}\neq0$. In the same
+  manner, we can show that $A_{ii}\neq0$ for each $i =
+  1,2,\dots,n$. Thus all entries on the main diagonal of $A$ are
+  nonzero.
+\end{proof}
