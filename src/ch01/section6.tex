@@ -466,3 +466,55 @@ is invertible, and find $A^{-1}$ if it exists.
     \end{bmatrix}. \qedhere
   \end{equation*}
 \end{solution}
+
+\Exercise6 Suppose $A$ is a $2\times1$ matrix and that $B$ is a
+$1\times2$ matrix. Prove that $C = AB$ is not invertible.
+\begin{proof}
+  Let
+  \begin{equation*}
+    A =
+    \begin{bmatrix}
+      a \\
+      b
+    \end{bmatrix}
+    \quad\text{and}\quad
+    B =
+    \begin{bmatrix}
+      c & d
+    \end{bmatrix}
+  \end{equation*}
+  so that
+  \begin{equation*}
+    C = AB =
+    \begin{bmatrix}
+      ac & ad \\
+      bc & bd
+    \end{bmatrix}.
+  \end{equation*}
+  Suppose $C$ has an inverse. Then $C$ is row-equivalent to the
+  identity matrix, and so cannot be row-equivalent to a matrix having
+  a row of zeros. Consequently, each of $a$, $b$, $c$, and $d$ must be
+  nonzero, since otherwise $C$ would be row-equivalent to such a
+  matrix.
+
+  But, since $a$ and $b$ are nonzero, we can multiply the second row
+  of $C$ by $a/b$ to get the row-equivalent matrix
+  \begin{equation*}
+    \begin{bmatrix}
+      ac & ad \\
+      bc & bd
+    \end{bmatrix}
+    \xrightarrow{(1)}
+    \begin{bmatrix}
+      ac & ad \\
+      ac & ad
+    \end{bmatrix}
+    \xrightarrow{(2)}
+    \begin{bmatrix}
+      ac & bd \\
+      0 & 0
+    \end{bmatrix},
+  \end{equation*}
+  which is clearly not invertible. Therefore $C$ cannot have an
+  inverse.
+\end{proof}
