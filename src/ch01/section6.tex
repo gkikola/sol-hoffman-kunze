@@ -387,3 +387,82 @@ For which $X$ does there exist a scalar $c$ such that $AX = cX$?
   \end{equation*}
   for some arbitrary scalar $t$.
 \end{solution}
+
+\Exercise5 Discover whether
+\begin{equation*}
+  A =
+  \begin{bmatrix}
+    1 & 2 & 3 & 4 \\
+    0 & 2 & 3 & 4 \\
+    0 & 0 & 3 & 4 \\
+    0 & 0 & 0 & 4
+  \end{bmatrix}
+\end{equation*}
+is invertible, and find $A^{-1}$ if it exists.
+\begin{solution}
+  We proceed in the usual way:
+  \begin{align*}
+    \begin{bmatrix}
+      1 & 2 & 3 & 4 \\
+      0 & 2 & 3 & 4 \\
+      0 & 0 & 3 & 4 \\
+      0 & 0 & 0 & 4
+    \end{bmatrix},
+    &\quad
+    \begin{bmatrix}
+      1 & 0 & 0 & 0 \\
+      0 & 1 & 0 & 0 \\
+      0 & 0 & 1 & 0 \\
+      0 & 0 & 0 & 1
+    \end{bmatrix} \\
+    \begin{bmatrix}
+      1 & 2 & 3 & 0 \\[3pt]
+      0 & 2 & 3 & 0 \\[3pt]
+      0 & 0 & 3 & 0 \\[3pt]
+      0 & 0 & 0 & 1
+    \end{bmatrix},
+    &\quad
+    \begin{bmatrix}
+      1 & 0 & 0 & -1 \\[3pt]
+      0 & 1 & 0 & -1 \\[3pt]
+      0 & 0 & 1 & -1 \\[3pt]
+      0 & 0 & 0 & \frac14
+    \end{bmatrix} \\
+    \begin{bmatrix}
+      1 & 2 & 0 & 0 \\[3pt]
+      0 & 2 & 0 & 0 \\[3pt]
+      0 & 0 & 1 & 0 \\[3pt]
+      0 & 0 & 0 & 1
+    \end{bmatrix},
+    &\quad
+    \begin{bmatrix}
+      1 & 0 & -1 & 0 \\[3pt]
+      0 & 1 & -1 & 0 \\[3pt]
+      0 & 0 & \frac13 & -\frac13 \\[3pt]
+      0 & 0 & 0 & \frac14
+    \end{bmatrix} \\
+    \begin{bmatrix}
+      1 & 0 & 0 & 0 \\[3pt]
+      0 & 1 & 0 & 0 \\[3pt]
+      0 & 0 & 1 & 0 \\[3pt]
+      0 & 0 & 0 & 1
+    \end{bmatrix},
+    &\quad
+    \begin{bmatrix}
+      1 & -1 & 0 & 0 \\[3pt]
+      0 & \frac12 & -\frac12 & 0 \\[3pt]
+      0 & 0 & \frac13 & -\frac13 \\[3pt]
+      0 & 0 & 0 & \frac14
+    \end{bmatrix}.
+  \end{align*}
+  Thus $A$ is invertible and
+  \begin{equation*}
+    A^{-1} =
+    \begin{bmatrix}
+      1 & -1 & 0 & 0 \\[3pt]
+      0 & \frac12 & -\frac12 & 0 \\[3pt]
+      0 & 0 & \frac13 & -\frac13 \\[3pt]
+      0 & 0 & 0 & \frac14
+    \end{bmatrix}. \qedhere
+  \end{equation*}
+\end{solution}
