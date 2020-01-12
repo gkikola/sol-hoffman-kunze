@@ -518,3 +518,32 @@ $1\times2$ matrix. Prove that $C = AB$ is not invertible.
   which is clearly not invertible. Therefore $C$ cannot have an
   inverse.
 \end{proof}
+
+\Exercise7 Let $A$ be an $n\times n$ (square) matrix. Prove the
+following two statements:
+\begin{enumerate}
+\item If $A$ is invertible and $AB = 0$ for some $n\times n$ matrix
+  $B$, then $B = 0$.
+  \begin{proof}
+    Since $AB = 0$ and $A$ is invertible, we can multiply on the left
+    by $A^{-1}$ to get
+    \begin{equation*}
+      B = A^{-1}0.
+    \end{equation*}
+    But the product on the right is clearly the $n\times n$ zero
+    matrix, so $B = 0$.
+  \end{proof}
+\item If $A$ is not invertible, then there exists an $n\times n$
+  matrix $B$ such that $AB = 0$ but $B\neq0$.
+  \begin{proof}
+    If $A$ is not invertible, then the homogeneous system of equations
+    $AX = 0$ has a nontrivial solution $X_0$. Let $B$ be the matrix
+    whose first column is $X_0$ and whose other entries are all zero,
+    and consider the product $AB$.
+
+    The entries in the first column of $AB$ must be zero since the
+    first column is just $AX_0$, and the remaining entries must be
+    zero since all other columns are the product of $A$ with a zero
+    column. Thus the proof is complete.
+  \end{proof}
+\end{enumerate}
