@@ -547,3 +547,140 @@ following two statements:
     column. Thus the proof is complete.
   \end{proof}
 \end{enumerate}
+
+\Exercise8 Let
+\begin{equation*}
+  A =
+  \begin{bmatrix}
+    a & b \\
+    c & d
+  \end{bmatrix}.
+\end{equation*}
+Prove, using elementary row operations, that $A$ is invertible if and
+only if
+\begin{equation*}
+  ad - bc \neq 0.
+\end{equation*}
+\begin{proof}
+  First, if $A$ is invertible, then one of $a$, $b$, $c$, or $d$ must
+  be nonzero. If $a\neq0$, then we can reduce
+  \begin{gather*}
+    \begin{bmatrix}
+      a & b \\
+      c & d
+    \end{bmatrix}
+    \xrightarrow{(1)}
+    \begin{bmatrix}
+      1 & \frac{b}a \\[3pt]
+      c & d
+    \end{bmatrix}
+    \xrightarrow{(2)}
+    \begin{bmatrix}
+      1 & \frac{b}a \\[3pt]
+      0 & \frac{ad-bc}a
+    \end{bmatrix},
+  \end{gather*}
+  and we must have $ad - bc\neq0$ since otherwise $A$ could not be
+  row-equivalent to the identity matrix, contradicting Theorem~12.
+
+  If, instead, $a = 0$ then we must have $b\neq0$ since otherwise $A$
+  would have a row of zeros and could not be row-equivalent to the
+  identity matrix. So we can proceed:
+  \begin{gather*}
+    \begin{bmatrix}
+      0 & b \\
+      c & d
+    \end{bmatrix}
+    \xrightarrow{(1)}
+    \begin{bmatrix}
+      0 & 1 \\
+      c & d
+    \end{bmatrix}
+    \xrightarrow{(3)}
+    \begin{bmatrix}
+      c & d \\
+      0 & 1
+    \end{bmatrix}
+    \xrightarrow{(2)}
+    \begin{bmatrix}
+      c & 0 \\
+      0 & 1
+    \end{bmatrix},
+  \end{gather*}
+  and we see that we must have $c\neq0$. Thus $ad - bc =
+  -bc\neq0$. This completes the first half of the proof.
+
+  Conversely, assume that $ad - bc\neq0$. If $d\neq0$ then $A$ can be
+  reduced to get
+  \begin{gather*}
+    \begin{bmatrix}
+      a & b \\
+      c & d
+    \end{bmatrix}
+    \xrightarrow{(1)}
+    \begin{bmatrix}
+      ad & bd \\
+      c & d
+    \end{bmatrix}
+    \xrightarrow{(2)}
+    \begin{bmatrix}
+      ad - bc & 0 \\
+      c & d
+    \end{bmatrix}
+    \xrightarrow{(1)} \\
+    \begin{bmatrix}
+      1 & 0 \\
+      c & d
+    \end{bmatrix}
+    \xrightarrow{(2)}
+    \begin{bmatrix}
+      1 & 0 \\
+      0 & d
+    \end{bmatrix}
+    \xrightarrow{(1)}
+    \begin{bmatrix}
+      1 & 0 \\
+      0 & 1
+    \end{bmatrix}
+  \end{gather*}
+  and $A$ is row-equivalent to the identity matrix. On the other hand,
+  if $d = 0$ then $b$ must be nonzero and we get
+  \begin{gather*}
+    \begin{bmatrix}
+      a & b \\
+      c & d
+    \end{bmatrix}
+    \xrightarrow{(1)}
+    \begin{bmatrix}
+      a & b \\
+      -bc & -bd
+    \end{bmatrix}
+    \xrightarrow{(2)}
+    \begin{bmatrix}
+      a & b \\
+      ad-bc & 0
+    \end{bmatrix}
+    \xrightarrow{(1)} \\
+    \begin{bmatrix}
+      a & b \\
+      1 & 0
+    \end{bmatrix}
+    \xrightarrow{(3)}
+    \begin{bmatrix}
+      1 & 0 \\
+      a & b
+    \end{bmatrix}
+    \xrightarrow{(2)}
+    \begin{bmatrix}
+      1 & 0 \\
+      0 & b
+    \end{bmatrix}
+    \xrightarrow{(1)}
+    \begin{bmatrix}
+      1 & 0 \\
+      0 & 1
+    \end{bmatrix},
+  \end{gather*}
+  so that $A$ is again row-equivalent to the identity matrix. In
+  either case, $A$ must be invertible by Theorem~12.
+\end{proof}
