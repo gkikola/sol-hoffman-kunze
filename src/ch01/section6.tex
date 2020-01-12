@@ -467,8 +467,10 @@ is invertible, and find $A^{-1}$ if it exists.
   \end{equation*}
 \end{solution}
 
-\Exercise6 Suppose $A$ is a $2\times1$ matrix and that $B$ is a
-$1\times2$ matrix. Prove that $C = AB$ is not invertible.
+\Exercise6
+\label{eq:lin-eq:inv:2-by-1-times-1-by-2}
+Suppose $A$ is a $2\times1$ matrix and that $B$ is a $1\times2$
+matrix. Prove that $C = AB$ is not invertible.
 \begin{proof}
   Let
   \begin{equation*}
@@ -717,4 +719,30 @@ different from $0$.
   manner, we can show that $A_{ii}\neq0$ for each $i =
   1,2,\dots,n$. Thus all entries on the main diagonal of $A$ are
   nonzero.
+\end{proof}
+
+% \Exercise{10} Prove the following generalization of
+% Exercise~\ref{eq:lin-eq:inv:2-by-1-times-1-by-2}. If $A$ is an
+% $m\times n$ matrix, $B$ is an $n\times m$ matrix and $n < m$, then
+% $AB$ is not invertible.
+
+\Exercise{11} Let $A$ be an $m\times n$ matrix. Show that by means of
+a finite number of elementary row and/or column operations one can
+pass from $A$ to a matrix $R$ which is both `row-reduced echelon' and
+`column-reduced echelon,' i.e., $R_{ij} = 0$ if $i\neq j$,
+$R_{ii} = 1$, $1\leq i\leq r$, $R_{ii} = 0$ if $i > r$. Show that
+$R = PAQ$, where $P$ is an invertible $m\times m$ matrix and $Q$ is an
+invertible $n\times n$ matrix.
+\begin{proof}
+  By Theorem~5, $A$ is row-equivalent to a row-reduced echelon matrix
+  $R_0$. And, by the second corollary to Theorem~12, there is an
+  invertible $m\times m$ matrix $P$ such that $R_0 = PA$.
+
+  Results that are analogous to Theorems~5 and 12 (with similar
+  proofs) hold for column-reduced echelon matrices, so there is a
+  matrix $R$ which is column-equivalent to $R_0$ and an invertible
+  $n\times n$ matrix $Q$ such that $R = R_0Q$. Then $R = PAQ$ and we
+  see that, through a finite number of elementary row and/or column
+  operations, $A$ passes to a matrix $R$ that is both row- and
+  column-reduced echelon.
 \end{proof}
