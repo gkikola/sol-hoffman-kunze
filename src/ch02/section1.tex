@@ -89,3 +89,33 @@ $V$.
     &= [\alpha_2 + (\alpha_3 + \alpha_1)] + \alpha_4. \qedhere
   \end{align*}
 \end{proof}
+
+\Exercise3 If $C$ is the field of complex numbers, which vectors in
+$C^3$ are linear combinations of $(1,0,-1)$, $(0,1,1)$, and $(1,1,1)$?
+\begin{solution}
+  A vector $\alpha = (y_1,y_2,y_3)$ is a linear combination of
+  $(1,0,-1)$, $(0,1,1)$, and $(1,1,1)$ if there are scalars
+  $x_1,x_2,x_3$ such that
+  \begin{equation*}
+    x_1(1, 0, -1) + x_2(0, 1, 1) + x_3(1, 1, 1) = \alpha,
+  \end{equation*}
+  which leads to the following system of equations:
+  \begin{alignat*}{4}
+    \phantom{{}-}x_1 &&  &{}+{}& x_3 &{}={}& y_1 \\
+    && x_2 &{}+{}& x_3 &{}={}& y_2 \\
+    -x_1 &{}+{}& x_2 &{}+{}& x_3 &{}={}& y_3\rlap.
+  \end{alignat*}
+  Since the coefficient matrix
+  \begin{equation*}
+    A =
+    \begin{bmatrix}
+      1 & 0 & 1 \\
+      0 & 1 & 1 \\
+      -1 & 1 & 1
+    \end{bmatrix}
+  \end{equation*}
+  is row-equivalent to the identity matrix, this system of equations
+  has a solution for each $\alpha$. Therefore, all vectors in $C^3$
+  are linear combinations of the vectors $(1,0,-1)$, $(0,1,1)$, and
+  $(1,1,1)$.
+\end{solution}
