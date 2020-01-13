@@ -646,23 +646,13 @@ only if
     \end{bmatrix}
   \end{gather*}
   and $A$ is row-equivalent to the identity matrix. On the other hand,
-  if $d = 0$ then $b$ must be nonzero and we get
+  if $d = 0$ then $b$ and $c$ must be nonzero and we get
   \begin{gather*}
     \begin{bmatrix}
       a & b \\
-      c & d
+      c & 0
     \end{bmatrix}
     \xrightarrow{(1)}
-    \begin{bmatrix}
-      a & b \\
-      -bc & -bd
-    \end{bmatrix}
-    \xrightarrow{(2)}
-    \begin{bmatrix}
-      a & b \\
-      ad-bc & 0
-    \end{bmatrix}
-    \xrightarrow{(1)} \\
     \begin{bmatrix}
       a & b \\
       1 & 0
@@ -681,7 +671,7 @@ only if
     \begin{bmatrix}
       1 & 0 \\
       0 & 1
-    \end{bmatrix},
+    \end{bmatrix}
   \end{gather*}
   so that $A$ is again row-equivalent to the identity matrix. In
   either case, $A$ must be invertible by Theorem~12.
