@@ -119,3 +119,23 @@ $C^3$ are linear combinations of $(1,0,-1)$, $(0,1,1)$, and $(1,1,1)$?
   are linear combinations of the vectors $(1,0,-1)$, $(0,1,1)$, and
   $(1,1,1)$.
 \end{solution}
+
+\Exercise4 Let $V$ be the set of all pairs $(x,y)$ of real numbers,
+and let $F$ be the field of real numbers. Define
+\begin{align*}
+  (x,y) + (x_1,y_1) &= (x + x_1, y + y_1) \\
+  c(x,y) &= (cx,y).
+\end{align*}
+Is $V$, with these operations, a vector space over the field of real
+numbers?
+\begin{solution}
+  No, $V$ is not a vector space. Most of the conditions are satisfied,
+  but distributivity over scalar addition fails when $y$ is nonzero:
+  \begin{equation*}
+    (c + d)(x,y) = ((c + d)x, y) = (cx + dx, y)
+  \end{equation*}
+  but
+  \begin{equation*}
+    c(x,y) + d(x,y) = (cx, y) + (dx,y) = (cx + dx, 2y). \qedhere
+  \end{equation*}
+\end{solution}
