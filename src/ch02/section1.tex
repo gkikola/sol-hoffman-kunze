@@ -139,3 +139,70 @@ numbers?
     c(x,y) + d(x,y) = (cx, y) + (dx,y) = (cx + dx, 2y). \qedhere
   \end{equation*}
 \end{solution}
+
+\Exercise5 On $R^n$, define two operations
+\begin{align*}
+  \alpha \oplus \beta &= \alpha - \beta \\
+  c\cdot\alpha &= -c\alpha.
+\end{align*}
+The operations on the right are the usual ones. Which of the axioms
+for a vector space are satisfied by $(R^n,\oplus,\cdot)$?
+\begin{solution}
+  Commutativity of $\oplus$ fails, since $\alpha - \beta$ is not, in
+  general, equal to $\beta - \alpha$. Associativity of $\oplus$ also
+  fails since, for nonzero $\gamma$,
+  \begin{equation*}
+    (\alpha - \beta) - \gamma
+    \neq \alpha - \beta + \gamma
+    = \alpha - (\beta - \gamma).
+  \end{equation*}
+
+  The usual zero vector still works, since
+  $\alpha\oplus0 = \alpha - 0 = \alpha$. Additive inverses also exist,
+  but they are not the usual ones. Instead, each vector is its own
+  inverse, since $\alpha\oplus\alpha = \alpha - \alpha = 0$.
+
+  For multiplication $\cdot$, it is not the case that
+  $1\cdot\alpha = \alpha$ since, for nonzero $\alpha$,
+  $1\cdot\alpha = -1\alpha \neq \alpha$. Associativity with scalar
+  multiplication does not hold either, since
+  \begin{equation*}
+    (c_1c_2)\cdot\alpha
+    = -c_1c_2\alpha
+  \end{equation*}
+  while
+  \begin{equation*}
+    c_1\cdot(c_2\cdot\alpha)
+    = c_1\cdot(-c_2\alpha)
+    = c_1c_2\alpha.
+  \end{equation*}
+  For the distributive properties, we have
+  \begin{align*}
+    c\cdot(\alpha\oplus\beta)
+    &= c\cdot(\alpha - \beta) \\
+    &= -c(\alpha - \beta) \\
+    &= -c\alpha + c\beta
+  \end{align*}
+  and
+  \begin{align*}
+    c\cdot\alpha\oplus c\cdot\beta
+    &= -c\alpha - (-c\beta) \\
+    &= -c\alpha + c\beta,
+  \end{align*}
+  so the first distributive property holds. And
+  \begin{align*}
+    (c_1 + c_2)\cdot\alpha
+    &= -(c_1 + c_2)\alpha \\
+    &= -c_1\alpha - c_2\alpha,
+  \end{align*}
+  while
+  \begin{align*}
+    c_1\cdot\alpha \oplus c_2\cdot\alpha
+    &= -c_1\alpha - (-c_2\alpha) \\
+    &= -c_1\alpha + c_2\alpha,
+  \end{align*}
+  so the second distributive property fails.
+
+  To summarize, in the vector space definition, only properties (c)
+  and (d) of (3) and (c) of (4) hold.
+\end{solution}
