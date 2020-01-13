@@ -1,0 +1,91 @@
+\chapter{Vector Spaces}
+
+\section{Vector Spaces}
+
+\Exercise1 If $F$ is a field, verify that $F^n$ (as defined in
+Example~1) is a vector space over the field $F$.
+\begin{proof}
+  We need to check that addition and scalar multiplication, as defined
+  in Example~1, satisfy conditions (3) and (4) of the definition. Let
+  \begin{align*}
+    \alpha &= (\alpha_1,\alpha_2,\dots,\alpha_n), \\
+    \beta &= (\beta_1,\beta_2,\dots,\beta_n), \\
+    \intertext{and}
+    \gamma &= (\gamma_1,\gamma_2,\dots,\gamma_n)
+  \end{align*}
+  be arbitrary vectors in $F^n$. From the commutativity of addition in
+  $F$, we have
+  \begin{equation*}
+    \alpha + \beta
+    = (\alpha_1 + \beta_1, \dots, \alpha_n + \beta_n)
+    = (\beta_1 + \alpha_1, \dots, \beta_n + \alpha_n)
+    = \beta + \alpha,
+  \end{equation*}
+  so addition is commutative in $F^n$. Similarly, by associativity of
+  addition in $F$, we have
+  \begin{align*}
+    \alpha + (\beta + \gamma)
+    &= (\alpha_1 + (\beta_1 + \gamma_1),
+      \dots, \alpha_n + (\beta_n + \gamma_n)) \\
+    &= ((\alpha_1 + \beta_1) + \gamma_1,
+      \dots, (\alpha_n + \beta_n) + \gamma_n) \\
+    &= (\alpha + \beta) + \gamma,
+  \end{align*}
+  and associativity holds in $F^n$. The unique $0$ vector is
+  \begin{equation*}
+    0 = (0, 0, \dots, 0),
+  \end{equation*}
+  and it is clear that $\alpha + 0 = \alpha$. The unique additive
+  inverse of $\alpha$ is given by
+  \begin{equation*}
+    -\alpha = (-\alpha_1, -\alpha_2, \dots, -\alpha_n),
+  \end{equation*}
+  and certainly $\alpha + (-\alpha) = 0$. The conditions in (3) are
+  satisfied.
+
+  Now let $c$ and $d$ be scalars in $F$. Then
+  \begin{gather*}
+    1\alpha
+    = (1\alpha_1,\dots,1\alpha_n)
+    = (\alpha_1,\dots,\alpha_n) = \alpha, \\
+    (cd)\alpha
+    = ((cd)\alpha_1, \dots, (cd)\alpha_n)
+    = (c(d\alpha_1), \dots, c(d\alpha_n))
+    = c(d\alpha), \\
+    \begin{split}
+      c(\alpha + \beta)
+      &= (c(\alpha_1 + \beta_1),\dots,c(\alpha_n + \beta_n)) \\
+      &= (c\alpha_1 + c\beta_1,\dots,c\alpha_n + c\beta_n) \\
+      &= c\alpha + c\beta,
+    \end{split} \\
+    \intertext{and}
+    \begin{split}
+      (c + d)\alpha
+      &= ((c + d)\alpha_1,\dots,(c+d)\alpha_n) \\
+      &= (c\alpha_1 + d\alpha_1,\dots, c\alpha_n + d\alpha_n) \\
+      &= c\alpha + d\alpha,
+    \end{split}
+  \end{gather*}
+  so the conditions in (4) are satisfied. Therefore $F^n$ is a vector
+  space over $F$.
+\end{proof}
+
+\Exercise2 If $V$ is a vector space over the field $F$, verify that
+\begin{equation*}
+  (\alpha_1 + \alpha_2) + (\alpha_3 + \alpha_4)
+  = [\alpha_2 + (\alpha_3 + \alpha_1)] + \alpha_4
+\end{equation*}
+for all vectors $\alpha_1$, $\alpha_2$, $\alpha_3$, and $\alpha_4$ in
+$V$.
+\begin{proof}
+  We only need to make use of commutativity and associativity of
+  vector addition:
+  \begin{align*}
+    (\alpha_1 + \alpha_2) + (\alpha_3 + \alpha_4)
+    &= (\alpha_2 + \alpha_1) + (\alpha_3 + \alpha_4) \\
+    &= \alpha_2 + [\alpha_1 + (\alpha_3 + \alpha_4)] \\
+    &= \alpha_2 + [(\alpha_1 + \alpha_3) + \alpha_4] \\
+    &= [\alpha_2 + (\alpha_1 + \alpha_3)] + \alpha_4 \\
+    &= [\alpha_2 + (\alpha_3 + \alpha_1)] + \alpha_4. \qedhere
+  \end{align*}
+\end{proof}
