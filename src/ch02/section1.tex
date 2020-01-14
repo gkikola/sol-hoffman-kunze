@@ -206,3 +206,62 @@ for a vector space are satisfied by $(R^n,\oplus,\cdot)$?
   To summarize, in the vector space definition, only properties (c)
   and (d) of (3) and (c) of (4) hold.
 \end{solution}
+
+\Exercise6 Let $V$ be the set of all complex-valued functions $f$ on
+the real line such that (for all $t$ in $R$)
+\begin{equation*}
+  f(-t) = \overline{f(t)}.
+\end{equation*}
+The bar denotes complex conjugation. Show that $V$, with the
+operations
+\begin{align*}
+  (f + g)(t) &= f(t) + g(t) \\
+  (cf)(t) &= cf(t)
+\end{align*}
+is a vector space over the field of {\em real} numbers. Give an
+example of a function in $V$ which is not real-valued.
+\begin{solution}
+  Commutativity and associativity of addition follow from the
+  properties of addition in $C$. Note that the zero function is in
+  $V$. If $f\in V$, then the function $-f$ given by
+  \begin{equation*}
+    (-f)(t) = -f(t)
+  \end{equation*}
+  is in $V$ since
+  \begin{equation*}
+    -f(-t) = -\overline{f(t)}
+    = \overline{-f(t)} = \overline{(-f)(t)}.
+  \end{equation*}
+  And $f + (-f)$ is the zero function.
+
+  For scalar multiplication, we have
+  \begin{equation*}
+    (1f)(t) = f(t),
+  \end{equation*}
+  so the first property is satisfied. And
+  \begin{equation*}
+    ((cd)f)(t) = (cd)f(t) = c((df)(t)) = (c(df))(t),
+  \end{equation*}
+  so the second property is satisfied. And distributivity holds, since
+  \begin{align*}
+    (c(f + g))(t) &= c(f(t) + g(t)) \\
+                  &= cf(t) + cg(t) \\
+                  &= (cf)(t) + (cg)(t) \\
+                  &= (cf + cg)(t)
+  \end{align*}
+  and
+  \begin{align*}
+    ((c + d)f)(t) &= (c + d)f(t) \\
+                  &= cf(t) + df(t) \\
+                  &= (cf)(t) + (df)(t) \\
+                  &= (cf + df)(t).
+  \end{align*}
+  Therefore $V$ is a vector space over $R$.
+
+  For an example of a function in $V$, consider the function $f$ from
+  $R$ to $C$ given by
+  \begin{equation*}
+    f(t) = ti.
+  \end{equation*}
+  Then $f(-t) = -ti = \overline{ti} = \overline{f(t)}$ as required.
+\end{solution}
