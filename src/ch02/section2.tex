@@ -302,3 +302,53 @@ other.
   contradiction. Therefore one of the subspaces $W_i$ must be
   contained in the other.
 \end{proof}
+
+\Exercise8 Let $V$ be the vector space of all functions from $R$ into
+$R$; let $V_e$ be the subset of even functions,
+\begin{equation*}
+  f(-x) = f(x);
+\end{equation*}
+let $V_o$ be the subset of odd functions,
+\begin{equation*}
+  f(-x) = -f(x).
+\end{equation*}
+\begin{enumerate}
+\item Prove that $V_e$ and $V_o$ are subspaces of $V$.
+  \begin{proof}
+    Suppose $f$ and $g$ are even functions. Then for any scalar $c$,
+    \begin{align*}
+      (cf + g)(-x) &= cf(-x) + g(-x) \\
+                   &= cf(x) + g(x) \\
+                   &= (cf + g)(x),
+    \end{align*}
+    so $cf + g$ is also even and therefore $V_e$ is a subspace of
+    $V$. Similarly, if $f$ and $g$ are both odd functions, then
+    \begin{align*}
+      (cf + g)(-x) &= cf(-x) + g(-x) \\
+                   &= -cf(x) - g(x) \\
+                   &= -(cf + g)(x),
+    \end{align*}
+    so $V_o$ is also a subspace.
+  \end{proof}
+\item Prove that $V_e + V_o = V$.
+  \begin{proof}
+    Let $f\in V$ be arbitrary. Let $g$ be the function in $V$ defined by
+    \begin{equation*}
+      g(x) = \frac{f(x) + f(-x)}2
+    \end{equation*}
+    and let $h$ be the function given by
+    \begin{equation*}
+      h(x) = \frac{f(x) - f(-x)}2.
+    \end{equation*}
+    It is clear that $g\in V_e$ and $h\in V_o$. Since
+    $f(x) = g(x) + h(x)$ for all $x$, we see that $V = V_e + V_o$.
+  \end{proof}
+\item Prove that $V_e\cap V_o = \{0\}$.
+  \begin{proof}
+    Suppose $f\in V_e\cap V_o$ and fix a particular $x\in R$. Since
+    $f$ is even, $f(-x) = f(x)$. And since $f$ is odd,
+    $f(-x) = -f(x)$. Therefore we have $f(x) = -f(x)$, which is only
+    possible if $f(x) = 0$. Since $x$ was arbitrary, $f$ must be the
+    zero function. This shows that $V_e\cap V_o$ is the zero subspace.
+  \end{proof}
+\end{enumerate}
