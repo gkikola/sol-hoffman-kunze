@@ -352,3 +352,28 @@ let $V_o$ be the subset of odd functions,
     zero function. This shows that $V_e\cap V_o$ is the zero subspace.
   \end{proof}
 \end{enumerate}
+
+\Exercise9 Let $W_1$ and $W_2$ be subspaces of a vector space $V$ such
+that $W_1 + W_2 = V$ and $W_1\cap W_2 = \{0\}$. Prove that for each
+vector $\alpha$ in $V$ there are {\em unique} vectors $\alpha_1$ in
+$W_1$ and $\alpha_2$ is $W_2$ such that
+$\alpha = \alpha_1 + \alpha_2$.
+\begin{proof}
+  Since $W_1 + W_2 = V$, we may find $\alpha_1$ in $W_1$ and
+  $\alpha_2$ in $W_2$ such that $\alpha = \alpha_1 + \alpha_2$. Now
+  suppose there is also $\alpha_3$ in $W_1$ and $\alpha_4$ in $W_2$
+  with $\alpha = \alpha_3 + \alpha_4$. Then
+  \begin{equation*}
+    \alpha_1 + \alpha_2 = \alpha_3 + \alpha_4.
+  \end{equation*}
+  Rearranging, we get
+  \begin{equation*}
+    \alpha_1 - \alpha_3 = \alpha_4 - \alpha_2.
+  \end{equation*}
+  But the vector on the left-hand side must belong to $W_1$, and the
+  vector on the right-hand side must belong to $W_2$. Therefore
+  $\alpha_1 - \alpha_3$ belongs to the intersection of $W_1$ and
+  $W_2$, which implies that $\alpha_1 - \alpha_3 = 0$ or
+  $\alpha_1 = \alpha_3$. And $\alpha_4 = \alpha_2$ also. This shows
+  that the vectors $\alpha_1$ and $\alpha_2$ are unique.
+\end{proof}
