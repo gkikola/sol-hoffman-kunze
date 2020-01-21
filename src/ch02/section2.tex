@@ -40,3 +40,51 @@ $\alpha = (a_1,\dots,a_n)$ in $R^n$ are subspaces of $R^n$ ($n\geq3$)?
     in the set.
   \end{solution}
 \end{enumerate}
+
+\Exercise2 Let $V$ be the (real) vector space of all functions $f$
+from $R$ into $R$. Which of the following sets of functions are
+subspaces of $V$?
+\begin{enumerate}
+\item all $f$ such that $f(x^2) = f(x)^2$
+  \begin{solution}
+    The functions $f$ and $g$ given by
+    \begin{equation*}
+      f(x) = x \quad\text{and}\quad g(x) = 1
+    \end{equation*}
+    each belong to this set, but their sum $f + g$ does not. Therefore
+    this is not a subspace.
+  \end{solution}
+\item all $f$ such that $f(0) = f(1)$
+  \begin{solution}
+    Suppose $f$ and $g$ both belong to this set. Then
+    \begin{align*}
+      (cf + g)(0) &= cf(0) + g(0) \\
+                  &= cf(1) + g(1) \\
+                  &= (cf + g)(1),
+    \end{align*}
+    so the set satisfies the subspace criterion of Theorem~1 and is
+    thus a subspace of $V$.
+  \end{solution}
+\item all $f$ such that $f(3) = 1 + f(-5)$
+  \begin{solution}
+    Take any $f$ and $g$ in this set. Then
+    \begin{equation*}
+      (f + g)(3) = f(3) + g(3) = 2 + (f + g)(-5),
+    \end{equation*}
+    which does not belong to the set. Therefore this set is not a
+    subspace.
+  \end{solution}
+\item all $f$ such that $f(-1) = 0$
+  \begin{solution}
+    Let $f$ and $g$ be such functions. Then
+    \begin{equation*}
+      (cf + g)(-1) = cf(-1) + g(-1) = 0 + 0 = 0,
+    \end{equation*}
+    so this set is a subspace of $V$ by Theorem~1.
+  \end{solution}
+\item all $f$ which are continuous
+  \begin{solution}
+    If $f$ and $g$ are continuous, then $cf + g$ is also continuous,
+    so this is a subspace.
+  \end{solution}
+\end{enumerate}
