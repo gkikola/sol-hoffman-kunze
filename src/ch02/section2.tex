@@ -162,3 +162,53 @@ Find a finite set of vectors which spans $W$.
     (1,2,0,0,1). \qedhere
   \end{equation*}
 \end{solution}
+
+\Exercise5 Let $F$ be a field and let $n$ be a positive integer
+($n\geq2$). Let $V$ be the vector space of all $n\times n$ matrices
+over $F$. Which of the following sets of matrices $A$ in $V$ are
+subspaces of $V$?
+\begin{enumerate}
+\item all invertible $A$
+  \begin{solution}
+    This cannot be a subspace since the zero matrix is not invertible.
+  \end{solution}
+\item all non-invertible $A$
+  \begin{solution}
+    This is also not a subspace since it is possible for the sum of
+    two non-invertible matrices to be invertible. For example, in the
+    $2\times2$ case, the matrices
+    \begin{equation*}
+      \begin{bmatrix}
+        1 & 0 \\
+        0 & 0
+      \end{bmatrix}
+      \quad\text{and}\quad
+      \begin{bmatrix}
+        0 & 0 \\
+        0 & 1
+      \end{bmatrix}
+    \end{equation*}
+    are not invertible, but their sum is the identity matrix, which is
+    invertible.
+  \end{solution}
+\item all $A$ such that $AB = BA$, where $B$ is some fixed matrix in
+  $V$
+  \begin{solution}
+    Let $A_1$ and $A_2$ be matrices in $V$ such that $A_1B = BA_1$ and
+    $A_2B = BA_2$. Then, since matrix multiplication is distributive,
+    \begin{align*}
+      (cA_1 + A_2)B &= cA_1B + A_2B \\
+                    &= cBA_1 + BA_2 \\
+                    &= B(cA_1) + BA_2 \\
+                    &= B(cA_1 + A_2).
+    \end{align*}
+    Therefore, by Theorem~1, this set is a subspace of $V$.
+  \end{solution}
+\item all $A$ such that $A^2 = A$
+  \begin{solution}
+    We will assume that the field $F$ has more than two elements. In
+    that case, this set cannot be a subspace since the identity matrix
+    has the property that $I^2 = I$, but the sum of the identity with
+    itself does not have this property.
+  \end{solution}
+\end{enumerate}
