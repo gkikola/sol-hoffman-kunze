@@ -1,0 +1,42 @@
+\section{Subspaces}
+
+\Exercise1 Which of the following sets of vectors
+$\alpha = (a_1,\dots,a_n)$ in $R^n$ are subspaces of $R^n$ ($n\geq3$)?
+\begin{enumerate}
+\item all $\alpha$ such that $a_1\geq0$
+  \begin{solution}
+    This is not a subspace since it is not closed under scalar
+    multiplication (take any negative scalar).
+  \end{solution}
+\item all $\alpha$ such that $a_1 + 3a_2 = a_3$
+  \begin{solution}
+    This is a subspace: Let $\beta = (b_1,b_2,\dots,b_n)$. Then
+    consider the vector $c\alpha + \beta$. We have
+    \begin{align*}
+      (ca_1 + b_1) + 3(ca_2 + b_2)
+      &= c(a_1 + 3a_2) + (b_1 + 3b_2) \\
+      &= ca_3 + b_3.
+    \end{align*}
+    Therefore $c\alpha + \beta$ is in the subset, so it is a subspace
+    by Theorem~1.
+  \end{solution}
+\item all $\alpha$ such that $a_2 = a_1^2$
+  \begin{solution}
+    This is not a subspace since it is not closed under vector
+    addition. For example, $(1, 1, 1, \dots)$ is in the set, but the
+    sum of this vector with itself is not.
+  \end{solution}
+\item all $\alpha$ such that $a_1a_2 = 0$
+  \begin{solution}
+    This is not a subspace since it is not closed under vector
+    addition. For example $(1,0,\dots)$ and $(0,1,\dots)$ are each in
+    the set, but their sum is not.
+  \end{solution}
+\item all $\alpha$ such that $a_2$ is rational
+  \begin{solution}
+    This is not a subspace because it is not closed under scalar
+    multiplication: Multiplication of any vector in the set having
+    $a_2\neq0$ by an irrational scalar produces a vector that is not
+    in the set.
+  \end{solution}
+\end{enumerate}
