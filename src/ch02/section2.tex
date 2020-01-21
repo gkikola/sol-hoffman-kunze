@@ -218,3 +218,68 @@ subspaces of $V$?
     itself does not have this property.
   \end{solution}
 \end{enumerate}
+
+\Exercise6
+\begin{enumerate}
+\item Prove that the only subspaces of $R^1$ are $R^1$ and the zero
+  subspace.
+  \begin{proof}
+    Suppose $W$ is a subspace of $R^1$. If $W = \{0\}$ we are done, so
+    suppose $W$ contains a nonzero element $x$. Then $W$ must contain
+    $cx$ for any real number $c$. In particular, if $r$ is any real
+    number, then $W$ must contain $r$ since $r = (rx^{-1})x$. This
+    shows that $W = R^1$.
+  \end{proof}
+\item Prove that a subspace of $R^2$ is $R^2$, or the zero subspace,
+  or consists of all scalar multiples of some fixed vector in
+  $R^2$. (The last type of subspace is, intuitively, a straight line
+  through the origin.)
+  \begin{proof}
+    Let $W$ be a subspace of $R^2$. If $W = \{(0,0)\}$ we are done, so
+    assume $W$ contains a nonzero vector $\alpha$. Then $W$ must
+    contain all scalar multiples of $\alpha$. If these are the only
+    elements in $W$, then we are again finished. If, however, $W$
+    contains two nonzero elements $\alpha$ and $\beta$ such that
+    $\beta$ is {\em not} a scalar multiple of $\alpha$, then we must
+    show that $W = R^2$.
+
+    Let $\alpha = (a_1,a_2)$ and $\beta = (b_1,b_2)$. Also let
+    $\gamma = (c_1,c_2)$ be any element in $R^2$. Then $\gamma$ is a
+    linear combination of $\alpha$ and $\beta$ if and only if the
+    system of equations
+    \begin{alignat*}{3}
+      a_1x_1 &{}+{}& b_1x_2 &{}={}& c_1 \\
+      a_2x_1 &{}+{}& b_2x_2 &{}={}& c_2
+    \end{alignat*}
+    has a solution. Suppose the coefficient matrix
+    \begin{equation*}
+      \begin{bmatrix}
+        a_1 & b_1 \\
+        a_2 & b_2
+      \end{bmatrix}
+    \end{equation*}
+    is not invertible. By
+    Exercise~\ref{exercise:lin-eq:2-by-2-inv-crit}, we then know that
+    $a_1b_2 - a_2b_1 = 0$. Now, one of $a_1$ and $a_2$ is nonzero. If
+    $a_1\neq0$, then
+    \begin{equation*}
+      b_2 = \frac{b_1}{a_1}\cdot a_2.
+    \end{equation*}
+    Also
+    \begin{equation*}
+      b_1 = \frac{b_1}{a_1}\cdot a_1,
+    \end{equation*}
+    and we have a contradiction since $\beta$ was assumed to not be a
+    scalar multiple of $\alpha$. Similarly $a_2\neq0$ also leads to a
+    contradiction. This shows that the system of equations above has a
+    solution, so that $W = R^2$.
+  \end{proof}
+\item Can you describe the subspaces of $R^3$?
+  \begin{solution}
+    The subspaces of $R^3$ are the zero subspace, the set of all
+    scalar multiples of a fixed nonzero vector (i.e., a line through
+    the origin), the set of all linear combinations of two linearly
+    independent vectors (i.e., a plane through the origin), and $R^3$
+    itself.
+  \end{solution}
+\end{enumerate}
