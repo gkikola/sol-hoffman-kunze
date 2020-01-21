@@ -283,3 +283,22 @@ subspaces of $V$?
     itself.
   \end{solution}
 \end{enumerate}
+
+\Exercise7 Let $W_1$ and $W_2$ be subspaces of a vector space $V$ such
+that the set-theoretic union of $W_1$ and $W_2$ is also a
+subspace. Prove that one of the spaces $W_i$ is contained in the
+other.
+\begin{proof}
+  Let $W_1$ and $W_2$ be as stated, but assume that neither is
+  contained in the other. Then there is a vector $u\in W_1$ such that
+  $u\not\in W_2$, and there is a vector $v\in W_2$ such that
+  $v\not\in W_1$. Since $W_1\cup W_2$ is a subspace,
+  $u + v\in W_1\cup W_2$. Now either $u+v\in W_1$ or $u+v\in W_2$. In
+  the first case, since $-u\in W_1$ we must have
+  \begin{equation*}
+    (u+v)+(-u) = v \in W_1,
+  \end{equation*}
+  which is a contradiction. But then $u+v\in W_2$ leads to a similar
+  contradiction. Therefore one of the subspaces $W_i$ must be
+  contained in the other.
+\end{proof}
