@@ -16,7 +16,7 @@ Download
 --------
 
 This solution guide is available as a
-[PDF file](https://www.gregkikola.com/guides/hksol.pdf).
+[PDF file](https://www.gregkikola.com/dl/guides/hksol.pdf).
 
 
 Building from Source
