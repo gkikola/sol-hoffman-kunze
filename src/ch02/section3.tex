@@ -1,0 +1,95 @@
+\section{Bases and Dimension}
+
+\Exercise1
+\label{exercise:vec-spaces:two-lin-dep-vecs}
+Prove that if two vectors are linearly dependent, one of them is a
+scalar multiple of the other.
+\begin{proof}
+  Let $\alpha_1$ and $\alpha_2$ be linearly dependent vectors in the
+  space $V$. Then, by definition, there are scalars $c_1, c_2$ not
+  both zero such that
+  \begin{equation*}
+    c_1\alpha_1 + c_2\alpha_2 = 0.
+  \end{equation*}
+  If $c_1$ is nonzero, then we may write
+  \begin{equation*}
+    \alpha_1 = -\frac{c_2}{c_1}\alpha_2
+  \end{equation*}
+  so that $\alpha_1$ is a scalar multiple of $\alpha_2$. If $c_1 = 0$,
+  then $c_2$ is nonzero and a similar argument will do.
+\end{proof}
+
+\Exercise2
+\label{exercise:vec-spaces:vecs-in-R4}
+Are the  vectors
+\begin{align*}
+  \alpha_1 &= (1, 1, 2, 4), \quad \alpha_2 = (2, -1, -5, 2) \\
+  \alpha_3 &= (1, -1, -4, 0), \quad \alpha_4 = (2, 1, 1, 6)
+\end{align*}
+linearly independent in $R^4$?
+\begin{solution}
+  Suppose $c_1\alpha_1 + c_2\alpha_2 + c_3\alpha_3 + c_4\alpha_4 =
+  0$. This leads to the system of equations
+  \begin{alignat*}{5}
+    c_1 &{}+{}& 2c_2 &{}+{}& c_3 &{}+{}& 2c_4 &{}={}& 0 \\
+    c_1 &{}-{}& c_2 &{}-{}& c_3 &{}+{}& c_4 &{}={}& 0 \\
+    2c_1 &{}-{}& 5c_2 &{}-{}& 4c_3 &{}+{}& c_4 &{}={}& 0 \\
+    4c_1 &{}+{}& 2c_2 && &{}+{}& 6c_4 &{}={}& 0\rlap.
+  \end{alignat*}
+  Using the method of elimination developed in Chapter~1, we find that
+  this system has the general solution
+  \begin{equation*}
+    (c_1,c_2,c_3,c_4) = \left(\frac{s - 4t}3, \frac{-2s - t}3, s, t\right),
+  \end{equation*}
+  where $s,t\in R^4$ are arbitrary. For example, we may take $s = 3$
+  and $t = 0$ to get $c_1 = 1$, $c_2 = -2$, $c_3 = 3$, and $c_4 =
+  0$. This shows that the vectors
+  $\alpha_1,\alpha_2,\alpha_3,\alpha_4$ are linearly dependent.
+\end{solution}
+
+\Exercise3 Find a basis for the subspace of $R^4$ spanned by the four
+vectors of Exercise~\ref{exercise:vec-spaces:vecs-in-R4}.
+\begin{solution}
+  Since $\alpha_2$ is not a scalar multiple of $\alpha_1$, the set
+  $\{\alpha_1,\alpha_2\}$ is linearly independent (by
+  Exercise~\ref{exercise:vec-spaces:two-lin-dep-vecs}). We also see
+  that it spans the subspace since we can write
+  \begin{equation*}
+    \alpha_3 = \frac23\alpha_2 - \frac13\alpha_1
+  \end{equation*}
+  and
+  \begin{equation*}
+    \alpha_4 = \frac43\alpha_1 + \frac13\alpha_2.
+  \end{equation*}
+  So $\{\alpha_1,\alpha_2\}$ is a basis for the subspace.
+\end{solution}
+
+\Exercise4 Show that the vectors
+\begin{equation*}
+  \alpha_1 = (1, 0, -1), \quad \alpha_2 = (1, 2, 1),
+  \quad \alpha_3 = (0, -3, 2)
+\end{equation*}
+form a basis for $R^3$. Express each of the standard basis vectors as
+linear combinations of $\alpha_1$, $\alpha_2$, and $\alpha_3$.
+\begin{solution}
+  Since $\dim R^3 = 3$, we need only show that the three vectors are
+  independent. Let $c_1,c_2,c_3$ be scalars such that
+  \begin{equation*}
+    c_1\alpha_1 + c_2\alpha_2 + c_3\alpha_3 = 0.
+  \end{equation*}
+  Then we arrive at the homogeneous system of equations $Ax = 0$,
+  where $A$ is the $3\times3$ matrix whose $j$th column is
+  $\alpha_j$. By row-reducing this matrix, we see that it is
+  row-equivalent to the identity matrix. Hence the system $Ax = 0$ has
+  only the trivial solution, i.e. $c_1 = c_2 = c_3 = 0$. Therefore
+  $\{\alpha_1, \alpha_2, \alpha_3\}$ is a basis for $R^3$.
+
+  To write the standard basis vectors as linear combinations of
+  $\alpha_1,\alpha_2,\alpha_3$, we may solve the systems
+  $Ax = \epsilon_i$. This gives
+  \begin{align*}
+    (1, 0, 0) &= \frac{7}{10}\alpha_1 + \frac3{10}\alpha_2 + \frac15\alpha_3 \\[3pt]
+    (0, 1, 0) &= -\frac15\alpha_1 + \frac15\alpha_2 - \frac15\alpha_3 \\[3pt]
+    (0, 0, 1) &= -\frac3{10}\alpha_1 + \frac3{10}\alpha_2 + \frac15\alpha_3.\qedhere
+  \end{align*}
+\end{solution}
