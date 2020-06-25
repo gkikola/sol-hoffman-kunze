@@ -238,3 +238,50 @@ and let $W_2$ be the set of matrices of the form
     It follows that $W_1 + W_2 = V$.
   \end{solution}
 \end{enumerate}
+
+\Exercise8 Again let $V$ be the space of $2\times2$ matrices over
+$F$. Find a basis $\{A_1, A_2, A_3, A_4\}$ for $V$ such that
+$A_j^2 = A_j$ for each $j$.
+\begin{solution}
+  Let
+  \begin{equation*}
+    A_1 =
+    \begin{bmatrix}
+      1 & 0 \\ 0 & 0
+    \end{bmatrix},
+    \quad
+    A_2 =
+    \begin{bmatrix}
+      0 & 0 \\ 0 & 1
+    \end{bmatrix},
+    \quad
+    A_3 =
+    \begin{bmatrix}
+      1 & 1 \\ 0 & 0
+    \end{bmatrix},
+    \quad\text{and}\quad
+    \begin{bmatrix}
+      0 & 0 \\ 1 & 1
+    \end{bmatrix}.
+  \end{equation*}
+  A simple check will show that $A_j^2 = A_j$ for each $j$. To show
+  that $\{A_1, A_2, A_3, A_4\}$ is a basis for $V$, we need only show
+  that it spans $V$ (since any spanning set with four vectors must be
+  linearly independent).
+
+  Let
+  \begin{equation*}
+    B =
+    \begin{bmatrix}
+      x & y \\
+      z & w
+    \end{bmatrix}
+  \end{equation*}
+  be an arbitrary $2\times2$ matrix over $F$. Then we can write $B$ as
+  a linear combination of $A_1,A_2,A_3,A_4$ as follows:
+  \begin{equation*}
+    B = (x - y)A_1 + (w - z)A_2 + yA_3 + zA_4.
+  \end{equation*}
+  Therefore the set $\{A_1, A_2, A_3, A_4\}$ is indeed a basis for
+  $V$.
+\end{solution}
