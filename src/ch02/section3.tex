@@ -93,3 +93,148 @@ linear combinations of $\alpha_1$, $\alpha_2$, and $\alpha_3$.
     (0, 0, 1) &= -\frac3{10}\alpha_1 + \frac3{10}\alpha_2 + \frac15\alpha_3.\qedhere
   \end{align*}
 \end{solution}
+
+\Exercise5 Find three vectors in $R^3$ which are linearly dependent,
+and are such that any two of them are linearly independent.
+\begin{solution}
+  Consider the vectors
+  \begin{equation*}
+    \alpha_1 = (1, 0, 0), \quad
+    \alpha_2 = (0, 1, 0), \quad\text{and}\quad
+    \alpha_3 = (1, 1, 0).
+  \end{equation*}
+  These vectors are pairwise-independent since neither is a scalar
+  multiple of another. But they are clearly linearly dependent since
+  $\alpha_1 + \alpha_2 - \alpha_3 = 0$.
+\end{solution}
+
+\Exercise6
+\label{exercise:vec-spaces:F2x2-basis}
+Let $V$ be the vector space of all $2\times2$ matrices over the field
+$F$. Prove that $V$ has dimension $4$ by exhibiting a basis for $V$
+which has four elements.
+\begin{solution}
+  We may simply take the standard basis:
+  \begin{equation*}
+    \left\{
+      \begin{bmatrix}
+        1 & 0 \\ 0 & 0
+      \end{bmatrix},
+      \begin{bmatrix}
+        0 & 1 \\ 0 & 0
+      \end{bmatrix},
+      \begin{bmatrix}
+        0 & 0 \\ 1 & 0
+      \end{bmatrix},
+      \begin{bmatrix}
+        0 & 0 \\ 0 & 1
+      \end{bmatrix}
+    \right\}. \qedhere
+  \end{equation*}
+\end{solution}
+
+\Exercise7 Let $V$ be the vector space of Exercise~6. Let $W_1$ be the
+set of matrices of the form
+\begin{equation*}
+  \begin{bmatrix}
+    x & -x \\ y & z
+  \end{bmatrix}
+\end{equation*}
+and let $W_2$ be the set of matrices of the form
+\begin{equation*}
+  \begin{bmatrix}
+    a & b \\ -a & c
+  \end{bmatrix}.
+\end{equation*}
+\begin{enumerate}
+\item Prove that $W_1$ and $W_2$ are subspaces of $V$.
+  \begin{proof}
+    Both sets are nonempty. Consider the arbitrary matrices
+    \begin{equation*}
+      A_1 =
+      \begin{bmatrix}
+        x_1 & -x_1 \\ y_1 & z_1
+      \end{bmatrix}
+      \quad\text{and}\quad
+      A_2 =
+      \begin{bmatrix}
+        x_2 & -x_2 \\ y_2 & z_2
+      \end{bmatrix}
+    \end{equation*}
+    in $W_1$ and let $c$ be an arbitrary scalar. Then
+    \begin{equation*}
+      cA_1 + A_2 =
+      \begin{bmatrix}
+        cx_1 + x_2 & -cx_1 - x_2 \\ y_1 + y_2 & z_1 + z_2
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        cx_1 + x_2 & -(cx_1 + x_2) \\ y_1 + y_2 & z_1 + z_2
+      \end{bmatrix}
+    \end{equation*}
+    which is again in $W_1$. This shows that $W_1$ is a subspace of
+    $V$.
+
+    A similar argument will show that $W_2$ is a subspace of $V$.
+  \end{proof}
+
+\item Find the dimensions of $W_1$, $W_2$, $W_1 + W_2$, and
+  $W_1\cap W_2$.
+  \begin{solution}
+    First we find bases for $W_1$ and $W_2$. We may take
+    \begin{equation*}
+      \left\{
+        \begin{bmatrix}
+          1 & -1 \\ 0 & 0
+        \end{bmatrix},
+        \begin{bmatrix}
+          0 & 0 \\ 1 & 0
+        \end{bmatrix},
+        \begin{bmatrix}
+          0 & 0 \\ 0 & 1
+        \end{bmatrix}
+      \right\}
+    \end{equation*}
+    as a basis for $W_1$ and
+    \begin{equation*}
+      \left\{
+        \begin{bmatrix}
+          1 & 0 \\ -1 & 0
+        \end{bmatrix},
+        \begin{bmatrix}
+          0 & 1 \\ 0 & 0
+        \end{bmatrix},
+        \begin{bmatrix}
+          0 & 0 \\ 0 & 1
+        \end{bmatrix}
+      \right\}
+    \end{equation*}
+    as a basis for $W_2$. Consequently, we see that
+    $\dim W_1 = \dim W_2 = 3$.
+
+    Next, observe that matrices in $W_1\cap W_2$ must have the form
+    \begin{equation*}
+      \begin{bmatrix}
+        x & -x \\ -x & y
+      \end{bmatrix}.
+    \end{equation*}
+    A basis for this space is then
+    \begin{equation*}
+      \left\{
+        \begin{bmatrix}
+          1 & -1 \\ -1 & 0
+        \end{bmatrix},
+        \begin{bmatrix}
+          0 & 0 \\ 0 & 1
+        \end{bmatrix}
+      \right\}
+    \end{equation*}
+    so that $\dim(W_1 \cap W_2) = 2$. Finally, we may apply Theorem~6
+    to determine that
+    \begin{equation*}
+      \dim(W_1 + W_2) = \dim W_1 + \dim W_2 - \dim(W_1\cap W_2)
+      = 3 + 3 - 2 = 4.
+    \end{equation*}
+    It follows that $W_1 + W_2 = V$.
+  \end{solution}
+\end{enumerate}
