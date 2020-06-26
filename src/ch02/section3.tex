@@ -285,3 +285,28 @@ $A_j^2 = A_j$ for each $j$.
   Therefore the set $\{A_1, A_2, A_3, A_4\}$ is indeed a basis for
   $V$.
 \end{solution}
+
+\Exercise9 Let $V$ be a vector space over a subfield $F$ of the
+complex numbers. Suppose $\alpha$, $\beta$, and $\gamma$ are linearly
+independent vectors in $V$. Prove that $(\alpha + \beta)$,
+$(\beta + \gamma)$, and $(\gamma + \alpha)$ are linearly independent.
+\begin{proof}
+  Let $c_1$, $c_2$, and $c_3$ be scalars in $F$ such that
+  \begin{equation*}
+    c_1(\alpha + \beta) + c_2(\beta + \gamma) + c_3(\gamma + \alpha) = 0.
+  \end{equation*}
+  By rearranging, this becomes
+  \begin{equation*}
+    (c_1 + c_3)\alpha + (c_1 + c_2)\beta + (c_2 + c_3)\gamma = 0.
+  \end{equation*}
+  Since $\alpha$, $\beta$, and $\gamma$ are linearly independent, we
+  must have
+  \begin{equation*}
+    c_1 + c_3 = 0, \quad c_1 + c_2 = 0,
+    \quad\text{and}\quad c_2 + c_3 = 0.
+  \end{equation*}
+  But this system of equations has the unique solution
+  $(c_1,c_2,c_3) = (0, 0, 0)$. Therefore $(\alpha + \beta)$,
+  $(\beta + \gamma)$, and $(\gamma + \alpha)$ are linearly
+  independent.
+\end{proof}
