@@ -482,3 +482,22 @@ Exercise~\ref{exercise:lin-eq:F2}.
   Exercise~\ref{exercise:vec-spaces:independence-of-sums} does not
   hold in this more general setting.
 \end{solution}
+
+\Exercise{14} Let $V$ be the set of real numbers. Regard $V$ as a
+vector space over the field of {\em rational} numbers, with the usual
+operations. Prove that this vector space is {\em not}
+finite-dimensional.
+\begin{proof}
+  Assume the contrary, and let $\{x_1,x_2,\dots,x_n\}$ be a finite
+  basis for $V$. Then every real number can be expressed as a linear
+  combination
+  \begin{equation*}
+    c_1x_1 + c_2x_2 + \cdots + c_nx_n,
+  \end{equation*}
+  where $c_1,\dots,c_n$ are rational numbers. Thus we can establish a
+  one-to-one correspondence between the $n$-tuples of rational numbers
+  and the set of real numbers. Since the rational numbers are
+  countable, this implies that the reals are also countable. But this
+  is clearly a contradiction. Therefore $V$ is {\em not}
+  finite-dimensional.
+\end{proof}
