@@ -286,8 +286,10 @@ $A_j^2 = A_j$ for each $j$.
   $V$.
 \end{solution}
 
-\Exercise9 Let $V$ be a vector space over a subfield $F$ of the
-complex numbers. Suppose $\alpha$, $\beta$, and $\gamma$ are linearly
+\Exercise9
+\label{exercise:vec-spaces:independence-of-sums}
+Let $V$ be a vector space over a subfield $F$ of the complex
+numbers. Suppose $\alpha$, $\beta$, and $\gamma$ are linearly
 independent vectors in $V$. Prove that $(\alpha + \beta)$,
 $(\beta + \gamma)$, and $(\gamma + \alpha)$ are linearly independent.
 \begin{proof}
@@ -448,3 +450,35 @@ space.
   is linearly independent. This shows that $\mathcal{B}$ is a basis
   for $F^{m\times n}$.
 \end{proof}
+
+\Exercise{13} Discuss
+Exercise~\ref{exercise:vec-spaces:independence-of-sums}, when $V$ is a
+vector space over the field with two elements described in
+Exercise~\ref{exercise:lin-eq:F2}.
+\begin{solution}
+  In Exercise~\ref{exercise:vec-spaces:independence-of-sums}, it was
+  stated that the field $F$ should be a subfield of the complex
+  numbers (in particular, a field with characteristic $0$). When this
+  restriction is taken away, the result does not necessarily hold, as
+  we will now demonstrate.
+
+  Let $V$ be the vector space $F^3$, where $F$ is the field with $2$
+  elements. Let $\alpha = (1, 0, 0)$, $\beta = (0, 1, 0)$, and
+  $\gamma = (0, 0, 1)$. We see that $\alpha$, $\beta$, and $\gamma$
+  are linearly independent (in fact they form the standard basis of
+  $F^3$).
+
+  Now consider the vectors
+  \begin{equation*}
+    \alpha + \beta = (1, 1, 0), \quad
+    \beta + \gamma = (0, 1, 1), \quad\text{and}\quad
+    \gamma + \alpha = (1, 0, 1).
+  \end{equation*}
+  These are {\em not} linearly independent, since
+  \begin{equation*}
+    (1, 1, 0) + (0, 1, 1) + (1, 0, 1) = (0, 0, 0).
+  \end{equation*}
+  So the result from
+  Exercise~\ref{exercise:vec-spaces:independence-of-sums} does not
+  hold in this more general setting.
+\end{solution}
