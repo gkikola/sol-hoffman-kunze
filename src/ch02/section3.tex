@@ -329,3 +329,100 @@ $V$ which span $V$. Prove that $V$ is finite-dimensional.
   eventually terminate since we started with a finite number of
   vectors in the set. Consequently, a finite basis exists.
 \end{proof}
+
+\Exercise{11} Let $V$ be the set of all $2\times2$ matrices $A$ with
+{\em complex} entries which satisfy $A_{11} + A_{22} = 0$.
+\begin{enumerate}
+\item Show that $V$ is a vector space over the field of {\em real}
+  numbers, with the usual operations of matrix addition and
+  multiplication of a matrix by a scalar.
+  \begin{proof}
+    Let $A$ and $B$ be members of $V$. Then
+    \begin{equation*}
+      (A+B)_{11} + (A+B)_{22}
+      = (A_{11} + A_{22}) + (B_{11} + B_{22})
+      = 0 + 0 = 0.
+    \end{equation*}
+    And for any scalar $c$ in $R$,
+    \begin{equation*}
+      (cA)_{11} + (cA)_{22} = c(A_{11} + A_{22}) = c0 = 0.
+    \end{equation*}
+    This shows that $V$ is closed under matrix addition and scalar
+    multiplication.
+
+    Next, we already know that matrix addition is commutative and
+    associative. The zero matrix belongs to $V$, and for any $A$ in
+    $V$, the matrix $-A$ is also in $V$.
+
+    Finally, for any $A,B$ in $V$ and $c,d$ in $R$,
+    \begin{equation*}
+      1A = A, \quad c(dA) = (cd)A,
+    \end{equation*}
+    \begin{equation*}
+      (c + d)A = cA + dA,
+      \quad\text{and}\quad c(A + B) = cA + cB.
+    \end{equation*}
+    Therefore $V$ is a vector space.
+  \end{proof}
+\item Find a basis for this vector space.
+  \begin{solution}
+    One basis is given by
+    \begin{equation*}
+      \mathcal{B} =
+      \left\{
+        \begin{bmatrix}
+          1 & 0 \\ 0 & -1
+        \end{bmatrix},
+        \begin{bmatrix}
+          i & 0 \\ 0 & -i
+        \end{bmatrix},
+        \begin{bmatrix}
+          0 & 1 \\ 0 & 0
+        \end{bmatrix},
+        \begin{bmatrix}
+          0 & i \\ 0 & 0
+        \end{bmatrix},
+        \begin{bmatrix}
+          0 & 0 \\ 1 & 0
+        \end{bmatrix},
+        \begin{bmatrix}
+          0 & 0 \\ i & 0
+        \end{bmatrix}
+      \right\}.
+    \end{equation*}
+    It is fairly straightforward to check that $\mathcal{B}$ both
+    spans $V$ and is linearly independent.
+  \end{solution}
+\item Let $W$ be the set of all matrices $A$ in $V$ such that
+  $A_{21} = -\overline{A}_{12}$ (the bar denotes complex
+  conjugation). Prove that $W$ is a subspace of $V$ and find a basis
+  for $W$.
+  \begin{solution}
+    First, the zero matrix belongs to $W$ so $W$ is nonempty. Now for
+    any $A$ and $B$ in $V$ and $c$ in $R$, consider the matrix
+    $cA + B$. We must have
+    \begin{equation*}
+      (cA + B)_{21} = cA_{21} + B_{21}
+      = -c\overline{A}_{12} - \overline{B}_{12}
+      = -\overline{(cA + B)}_{12}.
+    \end{equation*}
+    This shows that $W$ is a subspace of $V$. A basis for $W$ is given
+    by
+    \begin{equation*}
+      \left\{
+        \begin{bmatrix}
+          1 & 0 \\ 0 & -1
+        \end{bmatrix},
+        \begin{bmatrix}
+          i & 0 \\ 0 & -i
+        \end{bmatrix},
+        \begin{bmatrix}
+          0 & 1 \\ -1 & 0
+        \end{bmatrix},
+        \begin{bmatrix}
+          0 & i \\ i & 0
+        \end{bmatrix}
+      \right\}. \qedhere
+    \end{equation*}
+  \end{solution}
+\end{enumerate}
