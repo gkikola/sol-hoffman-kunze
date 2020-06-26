@@ -310,3 +310,22 @@ $(\beta + \gamma)$, and $(\gamma + \alpha)$ are linearly independent.
   $(\beta + \gamma)$, and $(\gamma + \alpha)$ are linearly
   independent.
 \end{proof}
+
+\Exercise{10} Let $V$ be a vector space over the field $F$. Suppose
+there are a finite number of vectors $\alpha_1, \dots, \alpha_r$ in
+$V$ which span $V$. Prove that $V$ is finite-dimensional.
+\begin{proof}
+  We know by Theorem~4 that any independent set of vectors in $V$ can
+  have at most a finite number $r$ of elements. Thus, if a basis
+  exists, it must be finite.
+
+  We can explicitly construct such a basis: if
+  $\alpha_1,\dots,\alpha_r$ are linearly independent, then we are
+  done. If not, one of the vectors $\alpha_i$ can be written in terms
+  of the other $\alpha_j$. So remove $\alpha_i$ from the set. This
+  will not affect the span. If the set is now linearly independent,
+  then we have a basis. If not, continue removing elements that are
+  linear combinations of the remaining vectors. This process must
+  eventually terminate since we started with a finite number of
+  vectors in the set. Consequently, a finite basis exists.
+\end{proof}
