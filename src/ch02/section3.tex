@@ -420,3 +420,31 @@ $V$ which span $V$. Prove that $V$ is finite-dimensional.
     \end{equation*}
   \end{solution}
 \end{enumerate}
+
+\Exercise{12} Prove that the space of all $m\times n$ matrices over
+the field $F$ has dimension $mn$, by exhibiting a basis for this
+space.
+\begin{proof}
+  Let $F^{m\times n}$ denote the space of $m\times n$ matrices over $F$.
+
+  For each $i$ and $j$ with $1\leq i\leq m$ and $1\leq j\leq n$, let
+  $\epsilon_{ij}$ denote the $m\times n$ matrix over $F$ whose $ij$th
+  entry is $1$, with all other entries $0$. Let $\mathcal{B}$ denote
+  the set of all $\epsilon_{ij}$. We will show that $\mathcal{B}$ is a
+  basis for $F^{m\times n}$, so that the dimension of this space is
+  $mn$.
+
+  First, let
+  \begin{equation*}
+    A = \sum_{i=1}^m\sum_{j=1}^n c_{ij}\epsilon_{ij},
+  \end{equation*}
+  where each $c_{ij}$ is an arbitrary scalar in $F$. Then $A$ is the
+  matrix whose $ij$th entry is $c_{ij}$. By choosing these scalars
+  appropriately, we see that any $m\times n$ matrix over $F$ can be
+  written as a linear combination of the matrices in
+  $\mathcal{B}$. Therefore $\mathcal{B}$ spans $F^{m\times n}$.
+
+  Moreover, $A = 0$ if and only if each $c_{ij} = 0$, so $\mathcal{B}$
+  is linearly independent. This shows that $\mathcal{B}$ is a basis
+  for $F^{m\times n}$.
+\end{proof}
