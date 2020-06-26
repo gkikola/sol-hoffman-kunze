@@ -113,7 +113,7 @@ and are such that any two of them are linearly independent.
 Let $V$ be the vector space of all $2\times2$ matrices over the field
 $F$. Prove that $V$ has dimension $4$ by exhibiting a basis for $V$
 which has four elements.
-\begin{solution}
+\begin{proof}
   We may simply take the standard basis:
   \begin{equation*}
     \left\{
@@ -129,9 +129,14 @@ which has four elements.
       \begin{bmatrix}
         0 & 0 \\ 0 & 1
       \end{bmatrix}
-    \right\}. \qedhere
+    \right\}.
   \end{equation*}
-\end{solution}
+  Later, in Exercise~\ref{exercise:vec-spaces:Fmn-dimension}, we will
+  prove that this set is a basis for $V$ in the more general case
+  where $V$ is the space of $m\times n$ matrices.
+
+  Since $V$ has a basis with four elements, it has dimension $4$.
+\end{proof}
 
 \Exercise7 Let $V$ be the vector space of Exercise~6. Let $W_1$ be the
 set of matrices of the form
@@ -423,9 +428,10 @@ $V$ which span $V$. Prove that $V$ is finite-dimensional.
   \end{solution}
 \end{enumerate}
 
-\Exercise{12} Prove that the space of all $m\times n$ matrices over
-the field $F$ has dimension $mn$, by exhibiting a basis for this
-space.
+\Exercise{12}
+\label{exercise:vec-spaces:Fmn-dimension}
+Prove that the space of all $m\times n$ matrices over the field $F$
+has dimension $mn$, by exhibiting a basis for this space.
 \begin{proof}
   Let $F^{m\times n}$ denote the space of $m\times n$ matrices over $F$.
 
