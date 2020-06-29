@@ -133,3 +133,61 @@ basis $\mathcal{B}$?
   So $(a,b,c)$ has coordinates $(b - c, b, a - 2b + c)$ in the ordered
   basis $\mathcal{B}$.
 \end{solution}
+
+\Exercise4 Let $W$ be the subspace of $C^3$ spanned by
+$\alpha_1 = (1,0,i)$ and $\alpha_2 = (1 + i, 1, -1)$.
+\begin{enumerate}
+\item Show that $\alpha_1$ and $\alpha_2$ form a basis for $W$.
+  \begin{solution}
+    Since neither $\alpha_1$ nor $\alpha_2$ is a scalar multiple of
+    the other, the set $\{\alpha_1, \alpha_2\}$ is linearly
+    independent. Hence this set is a basis for $W$.
+  \end{solution}
+
+\item Show that the vectors $\beta_1 = (1,1,0)$ and
+  $\beta_2 = (1,i,1+i)$ are in $W$ and form another basis for $W$.
+  \begin{solution}
+    If $c_1(1,0,i) + c_2(1 + i, 1, -1) = (1, 1, 0)$, then equating
+    coordinates and solving the resulting system gives $c_1 = -i$ and
+    $c_2 = 1$. Therefore $\beta_1$ is in $W$ and its coordinates in
+    $\{\alpha_1,\alpha_2\}$ are $(-i,1)$.
+
+    In a similar way, we can determine that $\beta_2$ is in $W$ and
+    has coordinates $(2-i,i)$ in the given basis.
+
+    Neither $\beta_1$ nor $\beta_2$ is a scalar multiple of the other,
+    so the set $\{\beta_1,\beta_2\}$ is linearly independent. Since
+    $W$ has dimension $2$, the set $\{\beta_1,\beta_2\}$ is also a
+    basis for $W$.
+  \end{solution}
+
+\item What are the coordinates of $\alpha_1$ and $\alpha_2$ in the
+  ordered basis $\{\beta_1, \beta_2\}$ for $W$?
+  \begin{solution}
+    From the coordinates for $\beta_1$ and $\beta_2$ that we found
+    previously, we get the transition matrix
+    \begin{equation*}
+      P =
+      \begin{bmatrix}
+        -i & 2 - i \\
+        1 & i
+      \end{bmatrix}.
+    \end{equation*}
+    This matrix has inverse
+    \begin{equation*}
+      P^{-1} =
+      \begin{bmatrix}
+        \frac12 - \frac12i & \frac32 + \frac12i \\[3pt]
+        \frac12 + \frac12i & -\frac12 + \frac12i
+      \end{bmatrix},
+    \end{equation*}
+    so
+    \begin{align*}
+      \alpha_1 &= \left(\frac12 - \frac12i\right)\beta_1
+      + \left(\frac12 + \frac12i\right)\beta_2 \\
+      \intertext{and}
+      \alpha_2 &= \left(\frac32 + \frac12i\right)\beta_1
+      + \left(-\frac12 + \frac12i\right)\beta_2. \qedhere
+    \end{align*}
+  \end{solution}
+\end{enumerate}
