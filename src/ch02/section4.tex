@@ -34,3 +34,50 @@ $\{\alpha_1, \alpha_2, \alpha_3, \alpha_4\}$.
   coordinates of the standard basis vector $\epsilon_j$ in the ordered
   basis $\{\alpha_1, \alpha_2, \alpha_3, \alpha_4\}$.
 \end{solution}
+
+\Exercise2 Find the coordinate matrix of the vector $(1, 0, 1)$ in the
+basis of $C^3$ consisting of the vectors $(2i, 1, 0)$, $(2, -1, 1)$,
+$(0, 1 + i, 1 - i)$, in that order.
+\begin{solution}
+  Let
+  \begin{equation*}
+    P =
+    \begin{bmatrix}
+      2i & 2 & 0 \\
+      1 & -1 & 1 + i \\
+      0 & 1 & 1 - i
+    \end{bmatrix}.
+  \end{equation*}
+  Then
+  \begin{equation*}
+    P^{-1} =
+    \begin{bmatrix}
+      \frac12 - \frac12i & -i & -1 \\[3pt]
+      -\frac12i & -1 & i \\[3pt]
+      -\frac14 + \frac14i & \frac12 + \frac12i & 1
+    \end{bmatrix}.
+  \end{equation*}
+  Since
+  \begin{equation*}
+    P^{-1}
+    \begin{bmatrix}
+      1 \\ 0 \\ 1
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      \frac12 - \frac12i & -i & -1 \\[3pt]
+      -\frac12i & -1 & i \\[3pt]
+      -\frac14 + \frac14i & \frac12 + \frac12i & 1
+    \end{bmatrix}
+    \begin{bmatrix}
+      1 \\ 0 \\ 1
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      -\frac12 - \frac12i \\[3pt] \frac12i \\[3pt] \frac34 + \frac14i
+    \end{bmatrix},
+  \end{equation*}
+  the vector $(1,0,1)$ has coordinates
+  $\left(-\frac12 - \frac12i, \frac12i, \frac34 + \frac14i\right)$ in
+  the given basis.
+\end{solution}
