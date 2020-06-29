@@ -81,3 +81,55 @@ $(0, 1 + i, 1 - i)$, in that order.
   $\left(-\frac12 - \frac12i, \frac12i, \frac34 + \frac14i\right)$ in
   the given basis.
 \end{solution}
+
+\Exercise3 Let $\mathcal{B} = \{\alpha_1, \alpha_2, \alpha_3\}$ be the
+ordered basis for $R^3$ consisting of
+\begin{equation*}
+  \alpha_1 = (1, 0, -1), \quad
+  \alpha_2 = (1, 1, 1) \quad
+  \alpha_3 = (1, 0, 0).
+\end{equation*}
+What are the coordinates of the vector $(a, b, c)$ in the ordered
+basis $\mathcal{B}$?
+\begin{solution}
+  Let
+  \begin{equation*}
+    P =
+    \begin{bmatrix}
+      1 & 1 & 1 \\
+      0 & 1 & 0 \\
+      -1 & 1 & 0
+    \end{bmatrix}.
+  \end{equation*}
+  Then
+  \begin{equation*}
+    P^{-1} =
+    \begin{bmatrix}
+      0 & 1 & -1 \\
+      0 & 1 & 0 \\
+      1 & -2 & 1
+    \end{bmatrix}
+  \end{equation*}
+  and
+  \begin{equation*}
+    P^{-1}
+    \begin{bmatrix}
+      a \\ b \\ c
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      0 & 1 & -1 \\
+      0 & 1 & 0 \\
+      1 & -2 & 1
+    \end{bmatrix}
+    \begin{bmatrix}
+      a \\ b \\ c
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      b - c \\ b \\ a - 2b + c
+    \end{bmatrix}.
+  \end{equation*}
+  So $(a,b,c)$ has coordinates $(b - c, b, a - 2b + c)$ in the ordered
+  basis $\mathcal{B}$.
+\end{solution}
