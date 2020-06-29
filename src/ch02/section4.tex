@@ -1,0 +1,36 @@
+\section{Coordinates}
+
+\Exercise1 Show that the vectors
+\begin{align*}
+  \alpha_1 &= (1, 1, 0, 0), \quad \alpha_2 = (0, 0, 1, 1) \\
+  \alpha_3 &= (1, 0, 0, 4), \quad \alpha_4 = (0, 0, 0, 2)
+\end{align*}
+form a basis for $R^4$. Find the coordinates of each of the standard
+basis vectors in the ordered basis
+$\{\alpha_1, \alpha_2, \alpha_3, \alpha_4\}$.
+\begin{solution}
+  Let
+  \begin{equation*}
+    P =
+    \begin{bmatrix}
+      1 & 0 & 1 & 0 \\
+      1 & 0 & 0 & 0 \\
+      0 & 1 & 0 & 0 \\
+      0 & 1 & 4 & 2
+    \end{bmatrix}.
+  \end{equation*}
+  $P$ is invertible and has inverse
+  \begin{equation*}
+    P^{-1} =
+    \begin{bmatrix}
+      0 & 1 & 0 & 0 \\
+      0 & 0 & 1 & 0 \\
+      1 & -1 & 0 & 0 \\
+      -2 & 2 & -\frac12 & \frac12
+    \end{bmatrix}.
+  \end{equation*}
+  By Theorem~8, $\{\alpha_1, \alpha_2, \alpha_3, \alpha_4\}$ is a
+  basis for $R^4$. Moreover, the $j$th column of $P^{-1}$ gives the
+  coordinates of the standard basis vector $\epsilon_j$ in the ordered
+  basis $\{\alpha_1, \alpha_2, \alpha_3, \alpha_4\}$.
+\end{solution}
