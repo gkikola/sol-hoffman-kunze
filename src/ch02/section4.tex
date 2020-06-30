@@ -318,3 +318,61 @@ $f_3(x) = e^{-ix}$.
     and this matrix is invertible.
   \end{solution}
 \end{enumerate}
+
+\Exercise7 Let $V$ be the (real) vector space of all polynomial
+functions from $R$ into $R$ of degree $2$ or less, i.e., the space of
+all functions $f$ of the form
+\begin{equation*}
+  f(x) = c_0 + c_1x + c_2x^2.
+\end{equation*}
+Let $t$ be a fixed real number and define
+\begin{equation*}
+  g_1(x) = 1, \quad
+  g_2(x) = x + t, \quad
+  g_3(x) = (x + t)^2.
+\end{equation*}
+Prove that $\mathcal{B} = \{g_1,g_2,g_3\}$ is a basis for $V$. If
+\begin{equation*}
+  f(x) = c_0 + c_1x + c_2x^2
+\end{equation*}
+what are the coordinates of $f$ in this ordered basis $\mathcal{B}$?
+\begin{solution}
+  Let
+  \begin{equation*}
+    A = a + b(x + t) + c(x + t)^2
+    = (a + bt + ct^2) + (b + 2ct)x + cx^2,
+  \end{equation*}
+  where $a,b,c$ are real numbers. First, if $A = 0$ then, by equating
+  coefficients, we have
+  \begin{align*}
+    a + bt + ct^2 &= 0, \\
+    b + 2ct &= 0, \\
+    c &= 0.
+  \end{align*}
+  Working backward through the equations, we see that $a$, $b$, and
+  $c$ must all be $0$. This shows that $\mathcal{B}$ is linearly
+  independent.
+
+  If we now set $A = c_0 + c_1x + c_2x^2$, where $c_1,c_2,c_3$ are
+  arbitrary, and equate coefficients, we get
+  \begin{align*}
+    a + bt + ct^2 &= c_0, \\
+    b + 2ct &= c_1, \\
+    c &= c_2.
+  \end{align*}
+  Through back-substitution, we find that
+  \begin{equation*}
+    b = c_1 - 2tc_2 \quad\text{and}\quad
+    a = c_0 - tc_1 + t^2c_2.
+  \end{equation*}
+  This shows that any polynomial of degree $2$ or less can be written
+  as a linear combination of $g_1$, $g_2$, and $g_3$. $\mathcal{B}$ is
+  therefore a basis for $V$.
+
+  Moreover, we have also shown that the polynomial
+  $f(x) = c_0 + c_1x + c_2x^2$ has coordinates
+  \begin{equation*}
+    (c_0 - tc_1 + t^2c_2, c_1 - 2tc_2, c_2)
+  \end{equation*}
+  in the ordered basis $\{g_1,g_2,g_3\}$.
+\end{solution}
