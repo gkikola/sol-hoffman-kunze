@@ -191,3 +191,130 @@ $\alpha_1 = (1,0,i)$ and $\alpha_2 = (1 + i, 1, -1)$.
     \end{align*}
   \end{solution}
 \end{enumerate}
+
+% \Exercise5 Let $\alpha = (x_1, x_2)$ and $\beta = (y_1, y_2)$ be
+% vectors in $R^2$ such that
+% \begin{equation*}
+%   x_1y_1 + x_2y_2 = 0, \quad
+%   x_1^2 + x_2^2 = y_1^2 + y_2^2 = 1.
+% \end{equation*}
+% Prove that $\mathcal{B} = \{\alpha,\beta\}$ is a basis for $R^2$. Find
+% the coordinates of the vector $(a, b)$ in the ordered basis
+% $\mathcal{B} = \{\alpha, \beta\}$.
+% \begin{solution}
+%   Let $c_1$ and $c_2$ be scalars in $R$ such that
+%   \begin{equation*}
+%     c_1\alpha + c_2\beta = 0.
+%   \end{equation*}
+%   This leads to the system of equations
+%   \begin{align*}
+%     c_1x_1 + c_2y_1 &= 0 \\
+%     c_1x_2 + c_2y_2 &= 0.
+%   \end{align*}
+%   Multiplying the first equation by $x_1$ and the second equation by
+%   $x_2$ gives
+%   \begin{align*}
+%     c_1x_1^2 + c_2x_1y_1 &= 0 \\
+%     c_1x_2^2 + c_2x_2y_2 &= 0.
+%   \end{align*}
+%   Adding these two equations then gives
+%   \begin{equation*}
+%     c_1(x_1^2 + x_2^2) + c_2(x_1y_1 + x_2y_2) = 0.
+%   \end{equation*}
+%   Since $x_1y_1 + x_2y_2 = 0$ and $x_1^2 + x_2^2 = 1$, the above
+%   equation simplifies to $c_1 = 0$.
+
+%   By a symmetric argument, we can determine that $c_2 = 0$
+%   also. Therefore $\mathcal{B}$ is linearly independent and, since
+%   $\dim R^2 = 2$, $\mathcal{B}$ must span $R^2$. So $\mathcal{B}$ is a
+%   basis for $R^2$.
+
+%   To find the coordinates for $(a,b)$, we will perform row-reduction
+%   on the augmented matrix
+%   \begin{equation*}
+%     \begin{bmatrix}
+%       x_1 & y_1 & a \\
+%       x_2 & y_2 & b
+%     \end{bmatrix}.
+%   \end{equation*}
+% \end{solution}
+
+\Exercise6 Let $V$ be the vector space over the complex numbers of all
+functions from $R$ into $C$, i.e., the space of all complex-valued
+functions on the real line. Let $f_1(x) = 1$, $f_2(x) = e^{ix}$,
+$f_3(x) = e^{-ix}$.
+\begin{enumerate}
+\item Prove that $f_1$, $f_2$, and $f_3$ are linearly independent.
+  \begin{proof}
+    Let $c_1$, $c_2$, and $c_3$ be complex numbers such that
+    \begin{equation*}
+      c_1f_1(x) + c_2f_2(x) + c_3f_3(x) = 0
+    \end{equation*}
+    for all $x$ in $R$. Then
+    \begin{equation*}
+      c_1 + c_2e^{ix} + c_3e^{-ix} = 0.
+    \end{equation*}
+    Using Euler's formula, we can write
+    \begin{equation*}
+      c_1 + c_2(\cos x + i\sin x) + c_3(\cos x - i\sin x) = 0
+    \end{equation*}
+    or, rearranging,
+    \begin{equation}
+      \label{eq:vec-spaces:cplx-funcs-lin-comb}
+      c_1 + (c_2 + c_3)\cos x + (c_2 - c_3)i\sin x = 0.
+    \end{equation}
+    If $x = 0$, then
+    \begin{equation}
+      \label{eq:vec-spaces:cplx-funcs-x-equals-0}
+      c_1 + c_2 + c_3 = 0,
+    \end{equation}
+    while if $x = \pi$ we get
+    \begin{equation}
+      \label{eq:vec-spaces:cplx-funcs-x-equals-pi}
+      c_1 - c_2 - c_3 = 0.
+    \end{equation}
+    Equations \eqref{eq:vec-spaces:cplx-funcs-x-equals-0} and
+    \eqref{eq:vec-spaces:cplx-funcs-x-equals-pi} together imply that
+    $c_1 = 0$.
+
+    Next, letting $x = \pi/2$ in
+    \eqref{eq:vec-spaces:cplx-funcs-lin-comb}, we get
+    \begin{equation}
+      \label{eq:vec-spaces:cplx-funcs-x-equals-pi-2}
+      (c_2 - c_3)i = 0,
+    \end{equation}
+    which implies that $c_2 = c_3$. Equation
+    \eqref{eq:vec-spaces:cplx-funcs-x-equals-0} then implies that
+    $c_2 = c_3 = 0$.
+
+    Since it is necessary that $c_1 = c_2 = c_3 = 0$, it follows that
+    $\{f_1,f_2,f_3\}$ is a linearly independent set.
+  \end{proof}
+\item Let $g_1(x) = 1$, $g_2(x) = \cos x$, $g_3(x) = \sin x$. Find an
+  invertible $3\times3$ matrix $P$ such that
+  \begin{equation*}
+    g_j = \sum_{i=1}^3 P_{ij}f_i.
+  \end{equation*}
+  \begin{solution}
+    First, we have $g_1 = f_1$. Next, since
+    \begin{equation*}
+      f_2(x) + f_3(x) = (\cos x + i\sin x) + (\cos x - i\sin x)
+      = 2\cos x,
+    \end{equation*}
+    we have $g_2 = \frac12f_2 + \frac12f_3$. And since
+    \begin{equation*}
+      f_2(x) - f_3(x) = 2i\sin x,
+    \end{equation*}
+    we see that $g_3 = -\frac{i}2f_2 + \frac{i}2f_3$. Therefore the
+    desired matrix is
+    \begin{equation*}
+      P =
+      \begin{bmatrix}
+        1 & 0 & 0 \\[3pt]
+        0 & \frac12 & -\frac12i \\[3pt]
+        0 & \frac12 & \frac12i
+      \end{bmatrix},
+    \end{equation*}
+    and this matrix is invertible.
+  \end{solution}
+\end{enumerate}
