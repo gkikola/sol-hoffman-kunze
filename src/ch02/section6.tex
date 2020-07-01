@@ -83,3 +83,44 @@ Let
     of $E^n$ spanned by the same vectors $\beta_i$.
   \end{solution}
 \end{enumerate}
+
+\Exercise3 Consider the vectors in $R^4$ defined by
+\begin{equation*}
+  \alpha_1 = (-1, 0, 1, 2), \quad
+  \alpha_2 = (3, 4, -2, 5), \quad
+  \alpha_3 = (1, 4, 0, 9).
+\end{equation*}
+Find a system of homogeneous linear equations for which the space of
+solutions is exactly the subspace of $R^4$ spanned by the three given
+vectors.
+\begin{solution}
+  Let $A$ be the $3\times4$ matrix whose $i$th row is $\alpha_i$. We
+  can perform row-reduction on $A$ to get
+  \begin{equation*}
+    R =
+    \begin{bmatrix}
+      1 & 0 & -1 & -2 \\[3pt]
+      0 & 1 & \frac14 & \frac{11}4 \\[3pt]
+      0 & 0 & 0 & 0
+    \end{bmatrix}.
+  \end{equation*}
+  Then a vector $\rho$ in $R^4$ is in the row space of $A$ if and only
+  if it has the form
+  \begin{equation*}
+    \rho = \left(r_1, r_2, \frac14r_2 - r_1, \frac{11}4r_2 - 2r_1\right),
+  \end{equation*}
+  where $r_1$ and $r_2$ are real numbers. If we label the components
+  of $\rho$ as $(x_1,x_2,x_3,x_4)$, we get the following system of
+  equations:
+  \begin{align*}
+    x_3 &= \frac14x_2 - x_1 \\
+    x_4 &= \frac{11}4x_2 - 2x_1.
+  \end{align*}
+  Or, we can rearrange these equations to write
+  \begin{alignat*}{5}
+    x_1 &{}-{}& \frac14x_2 &{}+{}& x_3 && &{}={}& 0 \\
+    2x_1 &{}-{}& \frac{11}4x_2 && &{}+{}& x_4 &{}={}& 0.
+  \end{alignat*}
+  This system is homogeneous and its solution set is precisely the
+  subspace spanned by $\alpha_1$, $\alpha_2$, and $\alpha_3$.
+\end{solution}
