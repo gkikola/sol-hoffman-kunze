@@ -124,3 +124,48 @@ vectors.
   This system is homogeneous and its solution set is precisely the
   subspace spanned by $\alpha_1$, $\alpha_2$, and $\alpha_3$.
 \end{solution}
+
+\Exercise4 In $C^3$, let
+\begin{equation*}
+  \alpha_1 = (1, 0, -i), \quad
+  \alpha_2 = (1 + i, 1 - i, 1), \quad
+  \alpha_3 = (i, i, i).
+\end{equation*}
+Prove that these vectors form a basis for $C^3$. What are the
+coordinates of the vector $(a,b,c)$ in this basis?
+\begin{solution}
+  Let
+  \begin{equation*}
+    A =
+    \begin{bmatrix}
+      1 & 0 & -i \\
+      1 + i & 1 - i & 1 \\
+      i & i & i
+    \end{bmatrix}.
+  \end{equation*}
+  By performing row-reduction, one can verify that $A$ is
+  row-equivalent to the identity matrix. So $A$ has rank $3$ and
+  $\alpha_1$, $\alpha_2$, and $\alpha_3$ are linearly independent and
+  span $C^3$, as required to be a basis.
+
+  Let the coordinates of $(a,b,c)$ in this basis be $(x,y,z)$. This
+  leads to the following system of equations.
+  \begin{alignat*}{4}
+    x &{}+{}& (1 + i)y &{}+{}& iz &{}={}& a \\
+    && (1 - i)y &{}+{}& iz &{}={}& b \\
+    -ix &{}+{}& y &{}+{}& iz &{}={}& c.
+  \end{alignat*}
+  With a bit of effort, one may determine this system to have the
+  solution
+  \begin{equation*}
+    \begin{bmatrix}
+      x \\ y \\ z
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      \frac{a + b - 2c}5 + \frac{4c - 2a - 2b}5i \\[3pt]
+      \frac{a + b - 2c}5 + \frac{3b - 2a - c}5i \\[3pt]
+      \frac{3a - 2b - c}5 - \frac{a + b + 3c}5i
+    \end{bmatrix}. \qedhere
+  \end{equation*}
+\end{solution}
