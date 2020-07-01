@@ -1,0 +1,85 @@
+\skipsection
+\section{Computations Concerning Subspaces}
+
+\Exercise1 Let $s < n$ and $A$ an $s\times n$ matrix with entries in
+the field $F$. Use Theorem~4 (not its proof) to show that there is a
+non-zero $X$ in $F^{n\times1}$ such that $AX = 0$.
+\begin{proof}
+  Let $\alpha_1,\dots,\alpha_n$ denote the columns of $A$. Then each
+  $\alpha_i$ is a member of the vector space $F^s$, which has
+  dimension strictly less than $n$. Therefore, by Theorem~4, the
+  $\alpha_i$ are necessarily linearly dependent. Thus we can write
+  \begin{equation*}
+    c_1\alpha_1 + c_2\alpha_2 + \cdots + c_n\alpha_n = 0
+  \end{equation*}
+  for $c_1,\dots, c_n$ in $F$ not all $0$. If we let
+  \begin{equation*}
+    X =
+    \begin{bmatrix}
+      c_1 \\ c_2 \\ \vdots \\ c_n
+    \end{bmatrix},
+  \end{equation*}
+  then $AX = 0$ as required.
+\end{proof}
+
+\Exercise2 Let
+\begin{equation*}
+  \alpha_1 = (1, 1, -2, 1), \quad
+  \alpha_2 = (3, 0, 4, -1), \quad
+  \alpha_3 = (-1, 2, 5, 2).
+\end{equation*}
+Let
+\begin{equation*}
+  \alpha = (4, -5, 9, -7), \quad
+  \beta = (3, 1, -4, 4), \quad
+  \gamma = (-1, 1, 0, 1).
+\end{equation*}
+\begin{enumerate}
+\item Which of the vectors $\alpha$, $\beta$, $\gamma$ are in the
+  subspace of $R^4$ spanned by the $\alpha_i$?
+  \begin{solution}
+    Let $A$ be the $3\times4$ matrix whose $i$th row is $\alpha_i$. By
+    performing row reduction on $A$, we get
+    \begin{equation*}
+      \begin{bmatrix}
+        1 & 1 & -2 & 1 \\
+        3 & 0 & 4 & -1 \\
+        -1 & 2 & 5 & 2
+      \end{bmatrix}
+      \rightarrow
+      \begin{bmatrix}
+        1 & 0 & 0 & -3/13 \\
+        0 & 1 & 0 & 14/13 \\
+        0 & 0 & 1 & -1/13
+      \end{bmatrix}.
+    \end{equation*}
+    A vector $\rho$ is in the row space of $A$ if and only if
+    \begin{equation*}
+      \rho = c_1\alpha_1 + c_2\alpha_2 + c_3\alpha_3
+      = \left(c_1, c_2, c_3, -\frac{3}{13}c_1
+        + \frac{14}{13}c_2 - \frac1{13}c_3\right).
+    \end{equation*}
+    Checking each of $\alpha$, $\beta$, and $\gamma$, we see that only
+    $\alpha$ is in the row space. So $\alpha$ is in the subspace
+    spanned by the $\alpha_i$, while $\beta$ and $\gamma$ are not in
+    the subspace.
+  \end{solution}
+\item Which of the vectors $\alpha$, $\beta$, $\gamma$ are in the
+  subspace of $C^4$ spanned by the $\alpha_i$?
+  \begin{solution}
+    Our work above is still valid in $C^4$. $\alpha_1$, $\alpha_2$,
+    and $\alpha_3$ will span a larger subspace due to the scalars
+    being taken from $C$ instead of $R$, but the members of this
+    subspace will still have the same form as before. Thus, of the
+    three vectors $\alpha$, $\beta$, and $\gamma$, only $\alpha$ is in
+    the subspace.
+  \end{solution}
+\item Does this suggest a theorem?
+  \begin{solution}
+    This suggests the following theorem: let $F$ be a subfield of the
+    field $E$. Let $\alpha$ be a vector in $F^n$, and let
+    $\beta_1,\dots,\beta_n$ in $F^n$ span some subspace. Then $\alpha$
+    is in this subspace of $F^n$ if and only if it is in the subspace
+    of $E^n$ spanned by the same vectors $\beta_i$.
+  \end{solution}
+\end{enumerate}
