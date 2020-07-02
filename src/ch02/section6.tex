@@ -217,3 +217,62 @@ in $R^5$ which are linear combinations of the vectors
     + \left(\frac43b_1 + \frac32b_2 - \frac56b_4 + \frac12b_5\right)\alpha_4.
   \end{multline*}
 \end{solution}
+
+\Exercise6 Let $V$ be the real vector space spanned by the rows of the
+matrix
+\begin{equation*}
+  A =
+  \begin{bmatrix}
+    3 & 21 & 0 & 9 & 0 \\
+    1 & 7 & -1 & -2 & -1 \\
+    2 & 14 & 0 & 6 & 1 \\
+    6 & 42 & -1 & 13 & 0
+  \end{bmatrix}.
+\end{equation*}
+\begin{enumerate}
+\item Find a basis for $V$.
+  \begin{solution}
+    If we perform row-reduction on the matrix $A$, we get the
+    row-reduced echelon matrix
+    \begin{equation*}
+      R =
+      \begin{bmatrix}
+        1 & 7 & 0 & 3 & 0 \\
+        0 & 0 & 1 & 5 & 0 \\
+        0 & 0 & 0 & 0 & 1 \\
+        0 & 0 & 0 & 0 & 0
+      \end{bmatrix}.
+    \end{equation*}
+    The three nonzero rows $\rho_1$, $\rho_2$, and $\rho_3$ of $R$
+    form a basis for $V$.
+  \end{solution}
+\item Tell which vectors $(x_1, x_2, x_3, x_4, x_5)$ are elements of
+  $V$.
+  \begin{solution}
+    If we take linear combinations of $\rho_1$, $\rho_2$, and
+    $\rho_3$, we can see that the vector $(x_1,x_2,x_3,x_4,x_5)$ is in
+    $V$ if and only if
+    \begin{equation*}
+      x_2 = 7x_1 \quad\text{and}\quad
+      x_4 = 3x_1 + 5x_3. \qedhere
+    \end{equation*}
+  \end{solution}
+\item If $(x_1,x_2,x_3,x_4,x_5)$ is in $V$ what are its coordinates in
+  the basis chosen in part (a)?
+  \begin{solution}
+    Let $x = (x_1,x_2,x_3,x_4,x_5)$ be in $V$. If
+    \begin{equation*}
+      x = c_1\rho_1 + c_2\rho_2 + c_3\rho_3,
+    \end{equation*}
+    then we get the following system of equations:
+    \begin{align*}
+      c_1 &= x_1 \\
+      7c_1 &= x_2 \\
+      c_2 &= x_3 \\
+      3c_1 + 5c_2 &= x_4 \\
+      c_3 &= x_5.
+    \end{align*}
+    We see that $x$ has coordinates $(x_1, x_3, x_5)$ in the basis
+    $\{\rho_1,\rho_2,\rho_3\}$.
+  \end{solution}
+\end{enumerate}
