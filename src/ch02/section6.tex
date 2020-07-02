@@ -276,3 +276,34 @@ matrix
     $\{\rho_1,\rho_2,\rho_3\}$.
   \end{solution}
 \end{enumerate}
+
+\Exercise7 Let $A$ be an $m\times n$ matrix over the field $F$, and
+consider the system of equations $AX = Y$. Prove that this system of
+equations has a solution if and only if the row rank of $A$ is equal
+to the row rank of the augmented matrix of the system.
+\begin{proof}
+  Let $R$ be the row-reduced echelon matrix that is row-equivalent to
+  $A$. Form the augmented matrix $A'$ and let $R'$ be the row-reduced
+  echelon matrix row-equivalent to $A'$. Then the rows of $R$ form a
+  basis for the row space of $A$, and the rows of $R'$ form a basis
+  for the row space of $A'$. We want to show that these bases have the
+  same number of elements.
+
+  By the nature of the process of row reduction, it must be that the
+  first $n$ columns of $R'$ will be identical to the $n$ columns of
+  $R$. Consequently, $R'$ cannot have fewer nonzero rows than $R$, as
+  any nonzero row of $R$ must correspond to a nonzero row in
+  $R'$. However, it might be possible for $R'$ to have more nonzero
+  rows than $R$. Such nonzero rows would need to have zeros in every
+  column except the last. But then such a row would indicate that the
+  system $AX = Y$ has no solutions, which we know to be
+  false. Therefore $A$ and $A'$ have the same row rank.
+
+  Now let us consider the converse. Let $R$ and $R'$ be as before, and
+  suppose that the row ranks of $A$ and $A'$ are equal. If $AX = Y$
+  has no solutions, then $R'$ would necessarily have a row consisting
+  of zeros in every column but the last. But then the corresponding
+  row in $R$ would have only zero entries, resulting in $R'$ having a
+  larger row rank than $R$. This is impossible, so $AX = Y$ must have
+  a solution.
+\end{proof}
