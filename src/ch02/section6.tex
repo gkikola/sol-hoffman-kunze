@@ -110,8 +110,11 @@ vectors.
     \rho = \left(r_1, r_2, \frac14r_2 - r_1, \frac{11}4r_2 - 2r_1\right),
   \end{equation*}
   where $r_1$ and $r_2$ are real numbers. If we label the components
-  of $\rho$ as $(x_1,x_2,x_3,x_4)$, we get the following system of
-  equations:
+  of $\rho$ as
+  \begin{equation*}
+    \rho = (x_1,x_2,x_3,x_4),
+  \end{equation*}
+  then we get the following system of equations:
   \begin{align*}
     x_3 &= \frac14x_2 - x_1 \\
     x_4 &= \frac{11}4x_2 - 2x_1.
@@ -121,8 +124,9 @@ vectors.
     x_1 &{}-{}& \frac14x_2 &{}+{}& x_3 && &{}={}& 0 \\
     2x_1 &{}-{}& \frac{11}4x_2 && &{}+{}& x_4 &{}={}& 0.
   \end{alignat*}
-  This system is homogeneous and its solution set is precisely the
-  subspace spanned by $\alpha_1$, $\alpha_2$, and $\alpha_3$.
+  This system of equations is homogeneous and its solution set is
+  precisely the subspace spanned by $\alpha_1$, $\alpha_2$, and
+  $\alpha_3$.
 \end{solution}
 
 \Exercise4 In $C^3$, let
@@ -168,4 +172,48 @@ coordinates of the vector $(a,b,c)$ in this basis?
       \frac{3a - 2b - c}5 - \frac{a + b + 3c}5i
     \end{bmatrix}. \qedhere
   \end{equation*}
+\end{solution}
+
+\Exercise5 Give an explicit description for the vectors
+\begin{equation*}
+  \beta = (b_1, b_2, b_3, b_4, b_5)
+\end{equation*}
+in $R^5$ which are linear combinations of the vectors
+\begin{align*}
+  \alpha_1 &= (1, 0, 2, 1, -1), \quad \alpha_2 = (-1, 2, -4, 2, 0) \\
+  \alpha_3 &= (2, -1, 5, 2, 1), \quad \alpha_4 = (2, 1, 3, 5, 2).
+\end{align*}
+\begin{solution}
+  Performing row-reduction on the augmented matrix
+  \begin{equation*}
+    A =
+    \begin{bmatrix}
+      1 & -1 & 2 & 2 & b_1 \\
+      0 & 2 & -1 & 1 & b_2 \\
+      2 & -4 & 5 & 3 & b_3 \\
+      1 & 2 & 2 & 5 & b_4 \\
+      -1 & 0 & 1 & 2 & b_5
+    \end{bmatrix}
+  \end{equation*}
+  produces
+  \begin{equation*}
+    R =
+    \begin{bmatrix}
+      1 & 0 & 0 & 0 & \frac23b_1 + \frac12b_2 - \frac16b_4 - \frac12b_5 \\[3pt]
+      0 & 1 & 0 & 0 & \frac76b_4 - \frac53b_1 - \frac32b_2 - \frac12b_5 \\[3pt]
+      0 & 0 & 1 & 0 & \frac32b_4 - 2b_1 - \frac52b_2 - \frac12b_5 \\[3pt]
+      0 & 0 & 0 & 1 & \frac43b_1 + \frac32b_2 - \frac56b_4 + \frac12b_5 \\[3pt]
+      0 & 0 & 0 & 0 & b_3 + b_2 - 2b_1
+    \end{bmatrix}.
+  \end{equation*}
+  Thus we see that $\beta = (b_1,b_2,b_3,b_4,b_5)$ is in the subspace
+  spanned by $\alpha_1$, $\alpha_2$, $\alpha_3$, $\alpha_4$ if and
+  only if $b_3 + b_2 - 2b_1 = 0$. For any such $\beta$, we have
+  \begin{multline*}
+    \beta
+    = \left(\frac23b_1 + \frac12b_2 - \frac16b_4 - \frac12b_5\right)\alpha_1
+    + \left(\frac76b_4 - \frac53b_1 - \frac32b_2 - \frac12b_5\right)\alpha_2 \\
+    + \left(\frac32b_4 - 2b_1 - \frac52b_2 - \frac12b_5\right)\alpha_3
+    + \left(\frac43b_1 + \frac32b_2 - \frac56b_4 + \frac12b_5\right)\alpha_4.
+  \end{multline*}
 \end{solution}
