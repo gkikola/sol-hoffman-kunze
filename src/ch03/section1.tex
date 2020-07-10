@@ -122,3 +122,70 @@ integration transformation of Example~5.
   must be the zero polynomial. The null space of $T$ is therefore the
   trivial subspace $\{0\}$.
 \end{solution}
+
+\Exercise4 Is there a linear transformation $T$ from $R^3$ into $R^2$
+such that $T(1, -1, 1) = (1, 0)$ and $T(1, 1, 1) = (0, 1)$?
+\begin{solution}
+  Yes. In fact, there are infinitely many such transformations, as we
+  will now show.
+
+  Let $\alpha = (1, -1, 1)$ and let $\beta = (1, 1, 1)$. Since neither
+  $\alpha$ nor $\beta$ is a multiple of the other, the set
+  $\{\alpha, \beta\}$ is linearly independent. Therefore it can be
+  extended to a basis for $R^3$. The existence of a linear
+  transformation $T$ such that $T(\alpha) = (1, 0)$ and
+  $T(\beta) = (0, 1)$ now follows from Theorem~1.
+
+  To find such a transformation explicitly, we will form a basis for
+  $R^3$. If we let $\gamma = (1, 0, 0)$, for example, it is not
+  difficult to show that $\{\alpha, \beta, \gamma\}$ is a linearly
+  independent set of vectors which spans $R^3$.
+
+  We want to be able to write a vector $\rho = (b_1, b_2, b_3)$ as a
+  linear combination of $\alpha$, $\beta$, and $\gamma$. To do this,
+  we will set up an augmented matrix and perform row-reduction, as we
+  have done before in Chapter~2:
+  \begin{equation*}
+    \begin{bmatrix}
+      1 & 1 & 1 & y_1 \\
+      -1 & 1 & 0 & y_2 \\
+      1 & 1 & 0 & y_3
+    \end{bmatrix}
+    \rightarrow
+    \begin{bmatrix}
+      1 & 0 & 0 & \frac12y_3 - \frac12y_2 \\[3pt]
+      0 & 1 & 0 & \frac12y_2 + \frac12y_3 \\[3pt]
+      0 & 0 & 1 & y_1 - y_3
+    \end{bmatrix}.
+  \end{equation*}
+  So we may write
+  \begin{equation*}
+    \rho = (b_1, b_2, b_3) =
+    \frac12(b_3 - b_2)\alpha + \frac12(b_2 + b_3)\beta
+    + (b_1 - b_3)\gamma.
+  \end{equation*}
+
+  Now suppose the transformation $T$ is such that
+  $T(\gamma) = (x_1, x_2)$, for some $x_1$ and $x_2$ in $R$. Then we
+  have
+  \begin{align*}
+    T(b_1, b_2, b_3)
+    &= T\left(\frac12(b_3 - b_2)\alpha + \frac12(b_2 + b_3)\beta
+      + (b_1 - b_3)\gamma\right) \\[3pt]
+    &= \frac12(b_3 - b_2)T(\alpha) + \frac12(b_2 + b_3)T(\beta)
+      + (b_1 - b_3)T(\gamma) \\[3pt]
+    &= \frac12(b_3 - b_2, 0) + \frac12(0, b_2 + b_3)
+      + (x_1b_1 - x_1b_3, x_2b_1 - x_2b_3) \\[3pt]
+    &= \frac12(2x_1b_1 - b_2 + (1 - 2x_1)b_3,
+      2x_2b_1 + b_2 + (1 - 2x_2)b_3).
+  \end{align*}
+
+  So, for example, taking
+  $(x_1, x_2) = \left(\frac12, \frac12\right)$, we get
+  \begin{equation*}
+    T(b_1, b_2, b_3) = \left(\frac12b_1 - \frac12b_2,
+      \frac12b_1 + \frac12b_2\right).
+  \end{equation*}
+  By picking different values for $x_1$ and $x_2$, we see that there
+  are infinitely many possibilities for $T$.
+\end{solution}
