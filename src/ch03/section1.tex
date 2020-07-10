@@ -83,3 +83,42 @@ space $V$.
   Note that in each case, the rank plus the nullity is $n$, in
   agreement with Theorem~2.
 \end{solution}
+
+\Exercise3 Describe the range and the null space for the
+differentiation transformation of Example~2. Do the same for the
+integration transformation of Example~5.
+\begin{solution}
+  Let $V$ be the space of polynomial functions from $F$ into $F$ and
+  let $D$ be the differentiation transformation. Given a polynomial
+  \begin{equation*}
+    f(x) = c_0 + c_1x + \cdots + c_kx^k,
+  \end{equation*}
+  we can always find another polynomial $g(x)$ such that
+  $(Dg)(x) = f(x)$, namely the polynomial
+  \begin{equation*}
+    g(x) = c_0x + \frac12c_1x^2 + \cdots + \frac1{k+1}c_kx^{k+1}.
+  \end{equation*}
+  Therefore the range of $D$ is $V$.
+
+  A function $f$ has zero derivative if and only if $f$ is constant,
+  \begin{equation*}
+    f(x) = c_0, \quad \text{for some $c_0$ in $F$.}
+  \end{equation*}
+  So the null space of $D$ is the space of constant functions.
+
+  Now, let $T$ be the integration transformation defined in
+  Example~5. We can integrate any polynomial to get another
+  polynomial, but because of the manner in which $T$ was defined, the
+  resulting polynomial will always have a constant term of $0$. Let
+  $f$ be a polynomial with constant term zero,
+  \begin{equation*}
+    f(x) = c_1x + c_2x^2 + \cdots + c_kx^k.
+  \end{equation*}
+  Then the function $g(x) = (Df)(x)$ is such that $(Tg)(x) = f(x)$. So
+  we see that the range of $T$ is the space of polynomials with zero
+  constant term.
+
+  Lastly, if $f$ is a polynomial such that $(Tf)(x) = 0$, then $f$
+  must be the zero polynomial. The null space of $T$ is therefore the
+  trivial subspace $\{0\}$.
+\end{solution}
