@@ -189,3 +189,43 @@ such that $T(1, -1, 1) = (1, 0)$ and $T(1, 1, 1) = (0, 1)$?
   By picking different values for $x_1$ and $x_2$, we see that there
   are infinitely many possibilities for $T$.
 \end{solution}
+
+\Exercise5 If
+\begin{align*}
+  \alpha_1 &= (1, -1), \quad \beta_1 = (1, 0) \\
+  \alpha_2 &= (2, -1), \quad \beta_2 = (0, 1) \\
+  \alpha_3 &= (-3, 2), \quad \beta_3 = (1, 1)
+\end{align*}
+is there a linear transformation $T$ from $R^2$ into $R^2$ such that
+$T\alpha_i = \beta_i$ for $i = 1$, $2$, and $3$?
+\begin{solution}
+  No. To see why, observe that
+  \begin{equation*}
+    (-3, 2) = -(1, -1) - (2, -1).
+  \end{equation*}
+  We have
+  \begin{equation*}
+    T(-\alpha_1 - \alpha_2) = (1, 1)
+  \end{equation*}
+  but
+  \begin{equation*}
+    -T(\alpha_1) - T(\alpha_2) = -(1, 0) - (0, 1) = (-1, -1).
+  \end{equation*}
+  So $T$ cannot be a linear transformation.
+\end{solution}
+
+\Exercise6 Describe explicitly the linear transformation $T$ from
+$F^2$ into $F^2$ such that
+\begin{equation*}
+  T\epsilon_1 = (a, b), \quad T\epsilon_2 = (c, d).
+\end{equation*}
+\begin{solution}
+  For any $(x_1, x_2)$ in $F^2$, we have
+  \begin{align*}
+    T(x_1, x_2)
+    &= T(x_1\epsilon_1 + x_2\epsilon_2) \\
+    &= x_1T(\epsilon_1) + x_2T(\epsilon_2) \\
+    &= x_1(a, b) + x_2(c, d) \\
+    &= (x_1a + x_2c, x_1b + x_2d). \qedhere
+  \end{align*}
+\end{solution}
