@@ -1,0 +1,64 @@
+\chapter{Linear Transformations}
+
+\section{Linear Transformations}
+
+\Exercise1 Which of the following functions $T$ from $R^2$ into $R^2$
+are linear transformations?
+\begin{enumerate}
+\item $T(x_1, x_2) = (1 + x_1, x_2)$;
+  \begin{solution}
+    $T$ cannot be a linear transformation since
+    \begin{equation*}
+      T(0, 0) = (1, 0) \neq (0, 0). \qedhere
+    \end{equation*}
+  \end{solution}
+\item $T(x_1, x_2) = (x_2, x_1)$;
+  \begin{solution}
+    $T$ is a linear transformation: let $c$ be a scalar and let
+    $\alpha = (x_1, x_2)$ and $\beta = (y_1, y_2)$. Then
+    \begin{align*}
+      T(c\alpha + \beta)
+      &= T(cx_1 + y_1, cx_2 + y_2) \\
+      &= (cx_2 + y_2, cx_1 + y_1) \\
+      &= c(x_2, x_1) + (y_2, y_1) \\
+      &= cT(\alpha) + T(\beta). \qedhere
+    \end{align*}
+  \end{solution}
+\item $T(x_1, x_2) = (x_1^2, x_2)$;
+  \begin{solution}
+    $T$ is not a linear transformation. For example,
+    \begin{equation*}
+      T(1, 0) + T(2, 0) = (1, 0) + (4, 0) = (5, 0)
+    \end{equation*}
+    but
+    \begin{equation*}
+      T((1, 0) + (2, 0)) = T(3, 0) = (9, 0). \qedhere
+    \end{equation*}
+  \end{solution}
+\item $T(x_1, x_2) = (\sin x_1, x_2)$;
+  \begin{solution}
+    $T$ is not a linear transformation since
+    \begin{equation*}
+      T\left(\frac\pi2, 0\right) + T\left(\frac\pi2, 0\right)
+      = (1, 0) + (1, 0) = (2, 0)
+    \end{equation*}
+    while
+    \begin{equation*}
+      T\left(\left(\frac\pi2, 0\right) + \left(\frac\pi2, 0\right)\right)
+      = T(\pi, 0) = (0, 0). \qedhere
+    \end{equation*}
+  \end{solution}
+\item $T(x_1, x_2) = (x_1 - x_2, 0)$.
+  \begin{solution}
+    Let $\alpha = (x_1, x_2)$ and $\beta = (y_1, y_2)$. Since
+    \begin{align*}
+      cT(\alpha) + T(\beta)
+      &= c(x_1 - x_2, 0) + (y_1 - y_2, 0) \\
+      &= (cx_1 - cx_2 + y_1 - y_2, 0) \\
+      &= ((cx_1 + y_1) - (cx_2 + y_2), 0) \\
+      &= T(cx_1 + y_1, cx_2 + y_2) \\
+      &= T(c\alpha + \beta),
+    \end{align*}
+    we see that $T$ is a linear transformation.
+  \end{solution}
+\end{enumerate}
