@@ -416,3 +416,32 @@ $T$ is the zero transformation if and only if $A$ is the zero matrix.
   Conversely, let $A$ be the zero matrix. Then $AX = 0$ for all $X$ so
   $T$ is clearly the zero transformation.
 \end{proof}
+
+\Exercise{12} Let $V$ be an $n$-dimensional vector space over the
+field $F$ and let $T$ be a linear transformation from $V$ into $V$
+such that the range and null space of $T$ are identical. Prove that
+$n$ is even. (Can you give an example of such a linear transformation
+$T$?)
+\begin{solution}
+  This result follows directly from Theorem~2: if the rank of $T$ is
+  $k$, then the nullity is also $k$ and we have
+  \begin{equation*}
+    k + k = n,
+  \end{equation*}
+  or $n = 2k$. Hence $n$ is even.
+
+  As an example, let $V = R^2$ and consider the linear transformation
+  $T$ given by
+  \begin{equation*}
+    T(x, y) = (y, 0).
+  \end{equation*}
+  Since
+  \begin{align*}
+    cT(x_1, y_1) + T(x_2,y_2)
+    &= c(y_1, 0) + (y_2, 0) \\
+    &= (cy_1 + y_2, 0) \\
+    &= T(c(x_1,y_1) + (x_2,y_2)),
+  \end{align*}
+  $T$ is a linear transformation. And both the range and the null
+  space of $T$ is the $x$-axis.
+\end{solution}
