@@ -229,3 +229,109 @@ $F^2$ into $F^2$ such that
     &= (x_1a + x_2c, x_1b + x_2d). \qedhere
   \end{align*}
 \end{solution}
+
+\Exercise7 Let $F$ be a subfield of the complex numbers and let $T$ be
+the function from $F^3$ into $F^3$ defined by
+\begin{equation*}
+  T(x_1, x_2, x_3) = (x_1 - x_2 + 2x_3, 2x_1 + x_2, -x_1 - 2x_2 + 2x_3).
+\end{equation*}
+\begin{enumerate}
+\item Verify that $T$ is a linear transformation.
+  \begin{solution}
+    Let $\alpha = (x_1,x_2,x_3)$ and $\beta = (y_1,y_2,y_3)$. Also for
+    $x$ in $F^3$, let $\pi_1(x)$ denote the first coordinate of $x$,
+    $\pi_2(x)$ the second coordinate, and $\pi_3(x)$ the third
+    coordinate. Then
+    \begin{align*}
+      \pi_1(cT(\alpha) + T(\beta))
+      &= c(x_1 - x_2 + 2x_3) + (y_1 - y_2 + 2y_3) \\
+      &= (cx_1 + y_1) - (cx_2 + y_2) + 2(cx_3 + y_3) \\
+      &= \pi_1(T(c\alpha + \beta)), \\
+      \pi_2(cT(\alpha) + T(\beta))
+      &= c(2x_1 + x_2) + (2y_1 + y_2) \\
+      &= 2(cx_1 + y_1) + (cx_2 + y_2) \\
+      &= \pi_2(T(c\alpha + \beta)), \\
+      \intertext{and}
+      \pi_3(cT(\alpha) + T(\beta))
+      &= c(-x_1 - 2x_2 + 2x_3) + (-y_1 - 2y_2 + 2y_3) \\
+      &= -(cx_1 + y_1) - 2(cx_2 + y_2) + 2(cx_3 + y_3) \\
+      &= \pi_3(T(c\alpha + \beta)).
+    \end{align*}
+    This shows that $T$ is a linear transformation.
+  \end{solution}
+\item If $(a, b, c)$ is a vector in $F^3$, what are the conditions on
+  $a$, $b$, and $c$ that the vector be in the range of $T$? What is
+  the rank of $T$?
+  \begin{solution}
+    If $(a, b, c)$ is in the range of $T$, then
+    \begin{alignat*}{4}
+      x_1 &{}-{}& x_2 &{}+{}& 2x_3 &{}={}& a \\
+      2x_1 &{}+{}& x_2 && &{}={}& b \\
+      -x_1 &{}-{}& 2x_2 &{}+{}& 2x_3 &{}={}& c\rlap.
+    \end{alignat*}
+    In performing row-reduction on the augmented matrix for the above
+    system, we get
+    \begin{equation*}
+      \begin{bmatrix}
+        1 & -1 & 2 & a \\
+        2 & 1 & 0 & b\\
+        -1 & -2 & 2 & c
+      \end{bmatrix}
+      \rightarrow
+      \begin{bmatrix}
+        1 & 0 & \frac23 & \frac13a + \frac13b \\[3pt]
+        0 & 1 & -\frac43 & -\frac23a + \frac13b \\[3pt]
+        0 & 0 & 0 & -a + b + c
+      \end{bmatrix}.
+    \end{equation*}
+    From this latter matrix, we see that this system of equations has
+    a solution if and only if
+    \begin{equation*}
+      -a + b + c = 0.
+    \end{equation*}
+
+    We also see that the coefficient matrix
+    \begin{equation*}
+      A =
+      \begin{bmatrix}
+        1 & -1 & 2 \\
+        2 & 1 & 0 \\
+        -1 & -2 & 2
+      \end{bmatrix}
+    \end{equation*}
+    has a row rank (and thus column rank) of $2$. But the column space
+    of $A$ is precisely the range of $T$, so we may conclude that $T$
+    has rank $2$.
+  \end{solution}
+\item What are the conditions on $a$, $b$, and $c$ that $(a,b,c)$ be
+  in the null space of $T$? What is the nullity of $T$?
+  \begin{solution}
+    $(a, b, c)$ is in the null space of $T$ if and only if
+    \begin{alignat*}{4}
+      a &{}-{}& b &{}+{}& 2c &{}={}& 0 \\
+      2a &{}+{}& b && &{}={}& 0 \\
+      -a &{}-{}& 2b &{}+{}& 2c &{}={}& 0\rlap.
+    \end{alignat*}
+    We have already seen above that the coefficient matrix reduces to
+    \begin{equation*}
+      \begin{bmatrix}
+        1 & -1 & 2 \\
+        2 & 1 & 0\\
+        -1 & -2 & 2
+      \end{bmatrix}
+      \rightarrow
+      \begin{bmatrix}
+        1 & 0 & \frac23 \\[3pt]
+        0 & 1 & -\frac43 \\[3pt]
+        0 & 0 & 0
+      \end{bmatrix}.
+    \end{equation*}
+    So $(a, b, c)$ is in the null space if and only if $a + 2c/3 = 0$
+    and $b - 4c/3 = 0$.
+
+    Letting $c = -3$, for example, we find one possible basis for the
+    null space of $T$ to be $\{(2, -4, -3)\}$. We see that the nullity
+    of $T$ is therefore $1$, which is as we should expect since $F^3$
+    has dimension $3$ and the rank of $T$ is $2$.
+  \end{solution}
+\end{enumerate}
