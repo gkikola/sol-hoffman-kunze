@@ -399,3 +399,20 @@ i.e., which is not complex linear.
   \end{equation*}
   so $T$ is {\em not} linear on $C^1$.
 \end{solution}
+
+\Exercise{11} Let $V$ be the space of $n\times1$ matrices over $F$ and
+let $W$ be the space of $m\times1$ matrices over $F$. Let $A$ be a
+fixed $m\times n$ matrix over $F$ and let $T$ be the linear
+transformation from $V$ into $W$ defined by $T(X) = AX$. Prove that
+$T$ is the zero transformation if and only if $A$ is the zero matrix.
+\begin{proof}
+  First suppose that $T$ is the zero transformation. Then $AX = 0$ for
+  all $X$ in $V$. In particular, let $X = \epsilon_j$, where
+  $\epsilon_j$ is the column vector whose $j$th entry is $1$ and all
+  other entries zero. Then $AX = 0$ implies that the $j$th column of
+  $A$ has only zero entries. Since this is true for all $j$ with
+  $1\leq j\leq n$, we see that $A$ is the $m\times n$ zero matrix.
+
+  Conversely, let $A$ be the zero matrix. Then $AX = 0$ for all $X$ so
+  $T$ is clearly the zero transformation.
+\end{proof}
