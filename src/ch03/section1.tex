@@ -445,3 +445,30 @@ $T$?)
   $T$ is a linear transformation. And both the range and the null
   space of $T$ is the $x$-axis.
 \end{solution}
+
+\Exercise{13} Let $V$ be a vector space and $T$ a linear
+transformation from $V$ into $V$. Prove that the following two
+statements about $T$ are equivalent.
+\begin{enumerate}
+\item
+  \label{itm:lin-tran:intersect-range-null-is-zero}
+  The intersection of the range of $T$ and the null space of $T$ is
+  the zero subspace of $V$.
+\item
+  \label{itm:lin-tran:T-T-alpha-0}
+  If $T(T\alpha) = 0$, then $T\alpha = 0$.
+\end{enumerate}
+\begin{proof}
+  Assume that \ref{itm:lin-tran:intersect-range-null-is-zero} is
+  true. If $T(T\alpha) = 0$, then $T\alpha$ belongs to the null space
+  of $T$. But $T\alpha$ is also in the range of $T$, so $T\alpha = 0$
+  by assumption.
+
+  Conversely, assume that \ref{itm:lin-tran:T-T-alpha-0} holds. Let
+  $\beta$ belong to the intersection of the range of $T$ with the null
+  space of $T$. Then $T(\beta) = 0$ and there is some $\alpha$ in $V$
+  such that $T(\alpha) = \beta$. Then $T(T\alpha) = T(\beta) = 0$, so
+  that $T\alpha = 0$ by assumption. But $T\alpha = \beta$, so
+  $\beta = 0$. Therefore the specified intersection is the zero
+  subspace and \ref{itm:lin-tran:intersect-range-null-is-zero} holds.
+\end{proof}
