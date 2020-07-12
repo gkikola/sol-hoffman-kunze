@@ -335,3 +335,30 @@ the function from $F^3$ into $F^3$ defined by
     has dimension $3$ and the rank of $T$ is $2$.
   \end{solution}
 \end{enumerate}
+
+\Exercise8 Describe explicitly a linear transformation from $R^3$ into
+$R^3$ which has as its range the subspace spanned by $(1, 0, -1)$ and
+$(1, 2, 2)$.
+\begin{solution}
+  Let $\{\epsilon_1, \epsilon_2, \epsilon_3\}$ denote the standard
+  ordered basis for $R^3$. Theorem~1 allows us to find infinitely many
+  linear transformations satisfying the given criterion. For example,
+  we may take some linear combination of the two given vectors, say
+  $(2, 2, 1)$, and then look for a linear transformation $T$ such
+  that
+  \begin{equation*}
+    T\epsilon_1 = (1, 0, -1),
+    \quad
+    T\epsilon_2 = (1, 2, 2),
+    \quad\text{and}\quad
+    T\epsilon_3 = (2, 2, 1).
+  \end{equation*}
+  Evidently, the transformation
+  \begin{equation*}
+    T(x_1, x_2, x_3) =
+    (x_1 + x_2 + 2x_3, 2x_2 + 2x_3, -x_1 + 2x_2 + x_3)
+  \end{equation*}
+  does the job. The range of $T$ is precisely the subspace of $R^3$
+  spanned by $(1, 0, -1)$ and $(1, 2, 2)$. Of course, as noted, there
+  are infinitely many other transformations that would work.
+\end{solution}
