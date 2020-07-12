@@ -362,3 +362,40 @@ $(1, 2, 2)$.
   spanned by $(1, 0, -1)$ and $(1, 2, 2)$. Of course, as noted, there
   are infinitely many other transformations that would work.
 \end{solution}
+
+\Exercise9 Let $V$ be the vector space of all $n\times n$ matrices
+over the field $F$, and let $B$ be a fixed $n\times n$ matrix. If
+\begin{equation*}
+  T(A) = AB - BA
+\end{equation*}
+verify that $T$ is a linear transformation from $V$ into $V$.
+\begin{proof}
+  Let $A_1$ and $A_2$ be members of $V$ and let $c$ be a scalar in
+  $F$. Using the ordinary properties of matrix addition and
+  multiplication, we have
+  \begin{align*}
+    cT(A_1) + T(A_2)
+    &= c(A_1B - BA_1) + (A_2B - BA_2) \\
+    &= (cA_1 + A_2)B - B(cA_1 + A_2) \\
+    &= T(cA_1 + A_2).
+  \end{align*}
+  Therefore $T$ is a linear transformation from $V$ into $V$.
+\end{proof}
+
+\Exercise{10} Let $V$ be the set of all complex numbers regarded as a
+vector space over the field of real numbers (usual operations). Find a
+function from $V$ into $V$ which is a linear transformation on the
+above vector space, but which is not a linear transformation on $C^1$,
+i.e., which is not complex linear.
+\begin{solution}
+  Define $T(a + bi) = a$. Then for any real number $c$ and any
+  complex numbers $z = a_1 + b_1i$ and $w = a_2 + b_2i$, we have
+  \begin{equation*}
+    cT(z) + T(w) = ca_1 + a_2 = T(cz + w),
+  \end{equation*}
+  so $T$ is a linear transformation from $V$ into $V$. However,
+  \begin{equation*}
+    iT(1) = i \neq 1 = T(i),
+  \end{equation*}
+  so $T$ is {\em not} linear on $C^1$.
+\end{solution}
