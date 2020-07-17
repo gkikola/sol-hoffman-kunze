@@ -54,3 +54,38 @@ Is $T$ invertible?
   Therefore the null space of $T$ is not $\{0\}$, so $T$ is singular
   and {\em not} invertible.
 \end{solution}
+
+\Exercise3 Let $T$ be the linear operator on $R^3$ defined by
+\begin{equation*}
+  T(x_1,x_2,x_3) = (3x_1, x_1 - x_2, 2x_1 + x_2 + x_3).
+\end{equation*}
+Is $T$ invertible? If so, find a rule for $T^{-1}$ like the one which
+defines $T$.
+\begin{solution}
+  It is not difficult to see that $T$ is non-singular since
+  \begin{equation*}
+    T(x_1,x_2,x_3) = (0,0,0)
+    \quad\text{if and only if}\quad
+    x_1 = x_2 = x_3 = 0.
+  \end{equation*}
+  By Theorem~9, $T$ is invertible.
+
+  Let $\alpha = (y_1,y_2,y_3)$ in $R^3$ be such that
+  $T\alpha = (x_1,x_2,x_3)$. Then
+  \begin{alignat*}{4}
+    3y_1 && && &{}={}& x_1 \\
+    y_1 &{}-{}& y_2 && &{}={}& x_2 \\
+    2y_1 &{}+{}& y_2 &{}+{}& y_3 &{}={}& x_3\rlap.
+  \end{alignat*}
+  We see that this system of equations has the unique solution
+  \begin{equation*}
+    (y_1,y_2,y_3)
+    = \left(\frac13x_1, \frac13x_1 - x_2, x_3 - x_1 + x_2\right).
+  \end{equation*}
+  So we have
+  \begin{equation*}
+    T^{-1}(x_1,x_2,x_3)
+    = \left(\frac13x_1, \frac13x_1 - x_2, x_3 - x_1 + x_2\right).
+    \qedhere
+  \end{equation*}
+\end{solution}
