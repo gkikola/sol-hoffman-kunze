@@ -55,7 +55,9 @@ Is $T$ invertible?
   and {\em not} invertible.
 \end{solution}
 
-\Exercise3 Let $T$ be the linear operator on $R^3$ defined by
+\Exercise3
+\label{exercise:lin-tran:inv-lin-op-R3-ex}
+Let $T$ be the linear operator on $R^3$ defined by
 \begin{equation*}
   T(x_1,x_2,x_3) = (3x_1, x_1 - x_2, 2x_1 + x_2 + x_3).
 \end{equation*}
@@ -89,3 +91,34 @@ defines $T$.
     \qedhere
   \end{equation*}
 \end{solution}
+
+\Exercise4 For the linear operator $T$ of
+Exercise~\ref{exercise:lin-tran:inv-lin-op-R3-ex}, prove that
+\begin{equation*}
+  (T^2 - I)(T - 3I) = 0.
+\end{equation*}
+\begin{proof}
+  We have
+  \begin{align*}
+    T^2(x_1,x_2,x_3)
+    &= T(3x_1, x_1 - x_2, 2x_1 + x_2 + x_3) \\
+    &= (9x_1, 2x_1 + x_2, 9x_1 + x_3),
+  \end{align*}
+  so
+  \begin{equation*}
+    (T^2 - I)(x_1,x_2,x_3)
+    = (8x_1, x_1, 8x_1).
+  \end{equation*}
+  Also,
+  \begin{equation*}
+    (T - 3I)(x_1, x_2, x_3)
+    = (0, x_1 - 4x_2, 2x_1 + x_2 - 2x_3).
+  \end{equation*}
+  Consequently,
+  \begin{align*}
+    (T^2 - I)(T - 3I)(x_1,x_2,x_3)
+    &= (T^2 - I)(0, x_1 - 4x_2, 2x_1 + x_2 - 2x_3) \\
+    &= (0, 0, 0).
+  \end{align*}
+  Therefore $(T^2 - I)(T - 3I) = 0$.
+\end{proof}
