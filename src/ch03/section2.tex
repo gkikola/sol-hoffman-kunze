@@ -1,0 +1,28 @@
+\section{The Algebra of Linear Transformations}
+
+\Exercise1 Let $T$ and $U$ be the linear operators on $R^2$ defined by
+\begin{equation*}
+  T(x_1,x_2) = (x_2,x_1) \quad\text{and}\quad
+  U(x_1,x_2) = (x_1,0).
+\end{equation*}
+\begin{enumerate}
+\item How would you describe $T$ and $U$ geometrically?
+  \begin{solution}
+    $T$ mirrors points across the line $y = x$. $U$ projects points
+    onto the $x$-axis.
+  \end{solution}
+
+\item Give rules like the ones defining $T$ and $U$ for each of the
+  transformations $(U + T)$, $UT$, $TU$, $T^2$, $U^2$.
+  \begin{solution}
+    We have
+    \begin{align*}
+      (U + T)(x_1,x_2) &= (x_1 + x_2, x_1), \\
+      UT(x_1,x_2) &= (x_2, 0), \\
+      TU(x_1,x_2) &= (0, x_1), \\
+      T^2(x_1,x_2) &= (x_1,x_2), \\
+      \intertext{and}
+      U^2(x_1,x_2) &= (x_1,0). \qedhere
+    \end{align*}
+  \end{solution}
+\end{enumerate}
