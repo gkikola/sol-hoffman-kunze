@@ -26,3 +26,31 @@
     \end{align*}
   \end{solution}
 \end{enumerate}
+
+\Exercise2 Let $T$ be the (unique) linear operator on $C^3$ for which
+\begin{equation*}
+  T\epsilon_1 = (1, 0, i), \quad
+  T\epsilon_2 = (0, 1, 1), \quad
+  T\epsilon_3 = (i, 1, 0).
+\end{equation*}
+Is $T$ invertible?
+\begin{solution}
+  Let $\alpha = (z_1,z_2,z_3)$ be a vector in $C^3$ such that
+  $T\alpha = 0$. Then
+  \begin{equation*}
+    z_1(1, 0, i) + z_2(0, 1, 1) + z_3(i, 1, 0) = (0, 0, 0),
+  \end{equation*}
+  or
+  \begin{alignat*}{4}
+    z_1 && &{}+{}& z_3i &{}={}& 0 \\
+    && z_2 &{}+{}& z_3 &{}={}& 0 \\
+    z_1i &{}+{}& z_2 && &{}={}& 0\rlap.
+  \end{alignat*}
+  This system of equations has infinitely many solutions, each of the
+  form
+  \begin{equation*}
+    (z_1,z_2,z_3) = (-ti, -t, t).
+  \end{equation*}
+  Therefore the null space of $T$ is not $\{0\}$, so $T$ is singular
+  and {\em not} invertible.
+\end{solution}
