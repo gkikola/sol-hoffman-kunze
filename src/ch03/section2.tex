@@ -314,3 +314,30 @@ that if $m > n$ we may have $T$ non-singular but not onto.
   the nullspace of $T$ is $\{0\}$. But the rank of $T$ is $n < m$, so
   $T$ is non-singular but not onto.
 \end{solution}
+
+\Exercise{11} Let $V$ be a finite-dimensional vector space and let $T$
+be a linear operator on $V$. Suppose that $\rank(T^2) =
+\rank(T)$. Prove that the range and null space of $T$ are disjoint,
+i.e., have only the zero vector in common.
+\begin{proof}
+  Note that the null space of $T$ is contained in the null space of
+  $T^2$, since if $T\alpha = 0$ then $T^2(\alpha) = T(0) = 0$. But $T$
+  and $T^2$ have the same rank, so by Theorem~2 they must have the
+  same nullity. So any basis for the null space of $T$ must also be a
+  basis for the null space of $T^2$. It follows that the two null
+  spaces are exactly equal.
+
+  Now let $\beta$ be in the intersection of the range and null space
+  of $T$. Then there is an $\alpha$ in $V$ with $T\alpha =
+  \beta$. This implies that
+  \begin{equation*}
+    T^2(\alpha) = T\beta = 0,
+  \end{equation*}
+  so $\alpha$ is in the null space of $T^2$. But $T$ and $T^2$ have
+  the same null space, so $\alpha$ is in the null space of $T$. Hence
+  \begin{equation*}
+    \beta = T\alpha = 0.
+  \end{equation*}
+  This shows that the intersection of the range of $T$ and the null
+  space of $T$ is precisely the set $\{0\}$.
+\end{proof}
