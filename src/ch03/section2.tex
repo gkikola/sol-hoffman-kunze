@@ -278,3 +278,39 @@ finite-dimensional.
   invertible since the differentiation operator is singular (its null
   space consists of all constant functions).
 \end{solution}
+
+\Exercise{10} Let $A$ be an $m\times n$ matrix with entries in $F$ and
+let $T$ be the linear transformation from $F^{n\times1}$ into
+$F^{m\times1}$ defined by $T(X) = AX$. Show that if $m < n$ it may
+happen that $T$ is onto without being non-singular. Similarly, show
+that if $m > n$ we may have $T$ non-singular but not onto.
+\begin{solution}
+  Let $\mathcal{B} = \{\epsilon_1,\dots,\epsilon_n\}$ be the standard
+  ordered basis for $F^{n\times1}$ and let
+  $\mathcal{B}' = \{\epsilon_1',\dots,\epsilon_m'\}$ be the standard
+  ordered basis for $F^{m\times1}$.
+
+  Now suppose $m < n$. Let $A$ be the $m\times n$ matrix whose $j$th
+  column, for $1\leq j\leq m$, is $\epsilon_j'$, and whose remaining
+  columns are zero. Then the linear transformation $T(X) = AX$ is such
+  that
+  \begin{equation*}
+    T(\epsilon_j) = \epsilon_j', \quad
+    \text{for each $j$ with $1\leq j\leq m$,}
+  \end{equation*}
+  and
+  \begin{equation*}
+    T(\epsilon_j) = 0 \quad
+    \text{for $m<j\leq n$.}
+  \end{equation*}
+  Since every vector in $\mathcal{B}'$ is in the range of $T$, we see
+  that $T$ is onto. However it is not possible for $T$ to be
+  non-singular, since by Theorem~2 the nullity of $T$ must be
+  $n - m > 0$.
+
+  On the other hand, assume $m > n$. Take $A$ to be the $m\times n$
+  matrix whose $i$th row is $\epsilon_i$ for $1\leq i\leq n$, with
+  remaining rows zero. Then $AX = 0$ if and only if $X = 0$, so that
+  the nullspace of $T$ is $\{0\}$. But the rank of $T$ is $n < m$, so
+  $T$ is non-singular but not onto.
+\end{solution}
