@@ -122,3 +122,65 @@ Exercise~\ref{exercise:lin-tran:inv-lin-op-R3-ex}, prove that
   \end{align*}
   Therefore $(T^2 - I)(T - 3I) = 0$.
 \end{proof}
+
+\Exercise5 Let $C^{2\times2}$ be the complex vector space of
+$2\times2$ matrices with complex entries. Let
+\begin{equation*}
+  B =
+  \begin{bmatrix}
+    1 & -1 \\
+    -4 & 4
+  \end{bmatrix}
+\end{equation*}
+and let $T$ be the linear operator on $C^{2\times2}$ defined by
+$T(A) = BA$. What is the rank of $T$? Can you describe $T^2$?
+\begin{solution}
+  Let
+  \begin{equation*}
+    A =
+    \begin{bmatrix}
+      a & b \\
+      c & d
+    \end{bmatrix}
+  \end{equation*}
+  be a matrix in $C^{2\times2}$. Then
+  \begin{equation*}
+    T(A) = BA =
+    \begin{bmatrix}
+      a - c & b - d \\
+      -4a + 4c & -4b + 4d
+    \end{bmatrix}.
+  \end{equation*}
+  We see that $T(A) = 0$ if and only if both $a = c$ and $b =
+  d$. Consequently, a basis for the null space of $T$ is
+  \begin{equation*}
+    \left\{
+      \begin{bmatrix}
+        1 & 0 \\
+        1 & 0
+      \end{bmatrix},
+      \begin{bmatrix}
+        0 & 1 \\
+        0 & 1
+      \end{bmatrix}
+    \right\}.
+  \end{equation*}
+  Therefore the nullity of $T$ is $2$. By Theorem~2, the rank of $T$
+  is $4 - 2 = 2$.
+
+  Since
+  \begin{equation*}
+    B^2 =
+    \begin{bmatrix}
+      5 & -5 \\
+      -20 & 20
+    \end{bmatrix}
+    = 5
+    \begin{bmatrix}
+      1 & -1 \\
+      -4 & 4
+    \end{bmatrix}
+    = 5B,
+  \end{equation*}
+  we see that $T^2(A) = 5BA = 5T(A)$.
+\end{solution}
