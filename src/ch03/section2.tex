@@ -184,3 +184,25 @@ $T(A) = BA$. What is the rank of $T$? Can you describe $T^2$?
   \end{equation*}
   we see that $T^2(A) = 5BA = 5T(A)$.
 \end{solution}
+
+\Exercise6 Let $T$ be a linear transformation from $R^3$ into $R^2$,
+and let $U$ be a linear transformation from $R^2$ into $R^3$. Prove
+that the transformation $UT$ is not invertible. Generalize the
+theorem.
+\begin{solution}
+  We will state and prove the more general result directly. Let $V$
+  and $W$ be finite-dimensional vector spaces over the same field $F$,
+  and suppose that $\dim V > \dim W$. Let $T$ be a linear
+  transformation from $V$ into $W$ and let $U$ be a linear
+  transformation from $W$ into $V$. Then the transformation $UT$ is
+  not invertible, as we will now show.
+
+  First, since the rank of $T$ is at most $\dim W < \dim V$, it
+  follows that the nullity of $T$ is greater than $0$. Thus $T$ is not
+  one to one, and there are distinct vectors $\alpha$ and $\beta$ in
+  $V$ such that $T\alpha = T\beta$. Then we have
+  \begin{equation*}
+    UT(\alpha - \beta) = U(T(\alpha) - T(\beta)) = U(0) = 0,
+  \end{equation*}
+  so $UT$ is not one to one. This shows that $UT$ is not invertible.
+\end{solution}
