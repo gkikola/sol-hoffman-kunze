@@ -341,3 +341,41 @@ i.e., have only the zero vector in common.
   This shows that the intersection of the range of $T$ and the null
   space of $T$ is precisely the set $\{0\}$.
 \end{proof}
+
+\Exercise{12} Let $p$, $m$, and $n$ be positive integers and $F$ a
+field. Let $V$ be the space of $m\times n$ matrices over $F$ and $W$
+the space of $p\times n$ matrices over $F$. Let $B$ be a fixed
+$p\times m$ matrix and let $T$ be the linear transformation from $V$
+into $W$ defined by $T(A) = BA$. Prove that $T$ is invertible if and
+only if $p = m$ and $B$ is an invertible $m\times m$ matrix.
+\begin{proof}
+  First assume that $p = m$ (so that $V = W$) and that $B$ is
+  invertible. Define the linear transformation $U$ from $V$ into $V$
+  by $U(A) = B^{-1}A$. Then for any $A$ in $V$, we have
+  \begin{equation*}
+    TU(A) = T(B^{-1}A) = B(B^{-1}A) = (BB^{-1})A = A
+  \end{equation*}
+  and
+  \begin{equation*}
+    UT(A) = U(BA) = B^{-1}(BA) = (B^{-1}B)A = A.
+  \end{equation*}
+  This shows that $TU = UT = I$, so by definition $T$ is invertible
+  and $T^{-1} = U$. The first half of the proof is complete.
+
+  Next, for the converse, assume that $T$ is invertible. Then $T$ is
+  non-singular, so the nullity of $T$ is $0$. By Theorem~2, we have
+  \begin{equation*}
+    \rank(T) = \dim V = mn.
+  \end{equation*}
+  On the other hand, $T$ is onto, so
+  \begin{equation*}
+    \rank(T) = \dim W = pn.
+  \end{equation*}
+  Therefore $mn = pn$ and we see that $p = m$ and $V = W$. Now $B$ is
+  an $m\times m$ matrix. If we define $C = T^{-1}(I)$, then
+  \begin{equation*}
+    T(CA) = B(CA) = (BC)A = T(C)\cdot A = IA = A,
+  \end{equation*}
+  so $T^{-1}(A) = CA$. Since $TT^{-1} = T^{-1}T = I$, it follows that
+  $BC = CB = I$ so that $B$ is invertible. This completes the proof.
+\end{proof}
