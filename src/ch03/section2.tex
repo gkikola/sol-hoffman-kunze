@@ -221,3 +221,27 @@ $TU = 0$ but $UT \neq 0$.
     UT(1,1) = U(1,0) = (0,1) \neq (0,0). \qedhere
   \end{equation*}
 \end{solution}
+
+\Exercise8 Let $V$ be a vector space over the field $F$ and $T$ a
+linear operator on $V$. If $T^2 = 0$, what can you say about the
+relation of the range of $T$ to the null space of $T$? Give an example
+of a linear operator $T$ on $R^2$ such that $T^2 = 0$ but $T\neq0$.
+\begin{solution}
+  Let $\beta$ be in the range of $T$. Then there is an $\alpha$ in $V$
+  such that $T\alpha = \beta$. But then
+  \begin{equation*}
+    T\beta = T(T\alpha) = T^2(\alpha) = 0,
+  \end{equation*}
+  so $\beta$ is in the null space of $T$. This shows that the range of
+  $T$ is contained in the null space of $T$.
+
+  On $R^2$, define $T$ by
+  \begin{equation*}
+    T(x_1,x_2) = (x_2,0).
+  \end{equation*}
+  Then
+  \begin{equation*}
+    T^2(x_1,x_2) = T(x_2,0) = (0, 0),
+  \end{equation*}
+  so $T^2 = 0$ but $T\neq0$.
+\end{solution}
