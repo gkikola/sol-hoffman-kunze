@@ -206,3 +206,18 @@ theorem.
   \end{equation*}
   so $UT$ is not one to one. This shows that $UT$ is not invertible.
 \end{solution}
+
+\Exercise7 Find two linear operators $T$ and $U$ on $R^2$ such that
+$TU = 0$ but $UT \neq 0$.
+\begin{solution}
+  Let $T$ and $U$ be given by
+  \begin{equation*}
+    T(x_1,x_2) = (x_1,0) \quad\text{and}\quad
+    U(x_1,x_2) = (0,x_1).
+  \end{equation*}
+  Then $TU(x_1,x_2) = T(0,x_1) = (0, 0)$ as required. We also have
+  $UT\neq0$ since
+  \begin{equation*}
+    UT(1,1) = U(1,0) = (0,1) \neq (0,0). \qedhere
+  \end{equation*}
+\end{solution}
