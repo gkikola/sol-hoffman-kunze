@@ -245,3 +245,36 @@ of a linear operator $T$ on $R^2$ such that $T^2 = 0$ but $T\neq0$.
   \end{equation*}
   so $T^2 = 0$ but $T\neq0$.
 \end{solution}
+
+\Exercise9 Let $T$ be a linear operator on the finite-dimensional
+space $V$. Suppose there is a linear operator $U$ on $V$ such that
+$TU = I$. Prove that $T$ is invertible and $U = T^{-1}$. Give an
+example which shows that this is false when $V$ is not
+finite-dimensional.
+\begin{solution}
+  Let $\alpha$ be in the null space of $U$, i.e., let $U\alpha =
+  0$. Then
+  \begin{equation*}
+    TU(\alpha) = T(U\alpha) = T(0) = 0.
+  \end{equation*}
+  Thus $\alpha$ is in the null space of $TU$. But $TU = I$, so this
+  implies that $\alpha = 0$. This shows that $U$ is non-singular. By
+  Theorem~9, $U$ is invertible.
+
+  Since $TU = I$, we have by the associativity of function composition
+  that
+  \begin{equation*}
+    U^{-1} = (TU)U^{-1} = T(UU^{-1}) = T.
+  \end{equation*}
+  But if $T = U^{-1}$, then by definition $T$ is invertible and
+  $U = T^{-1}$.
+
+  To show that the original statement is not true when we remove the
+  requirement that $V$ be finite-dimensional, let $V$ be the space of
+  polynomial functions over $F$, where $F$ has characteristic
+  zero. Let $T = D$, the differentiation operator, and let $U = E$,
+  the integration operator, as defined in Example~11. Then $T$ and $U$
+  are linear operators on $V$ such that $TU = I$, but $T$ is not
+  invertible since the differentiation operator is singular (its null
+  space consists of all constant functions).
+\end{solution}
