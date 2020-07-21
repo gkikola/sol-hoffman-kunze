@@ -1,0 +1,28 @@
+\section{Isomorphism}
+
+\Exercise1 Let $V$ be the set of complex numbers and let $F$ be the
+field of real numbers. With the usual operations, $V$ is a vector
+space over $F$. Describe explicitly an isomorphism of this space onto
+$R^2$.
+\begin{solution}
+  Define the map $T$ from $V$ into $R^2$ by
+  \begin{equation*}
+    T(a + bi) = (a, b), \quad \text{where $a$ and $b$ belong to $R$.}
+  \end{equation*}
+  Then for any $c$ in $R$,
+  \begin{align*}
+    T(c(a_1 + b_1i) + (a_2 + b_2i))
+    &= T((ca_1 + a_2) + (cb_1 + b_2)i) \\
+    &= (ca_1 + a_2, cb_1 + b_2) \\
+    &= c(a_1, b_1) + (a_2, b_2) \\
+    &= cT(a_1 + b_1i) + T(a_2 + b_2i),
+  \end{align*}
+  so $T$ is a linear transformation. It is one to one, since
+  \begin{equation*}
+    (a,b) = (c,d) \quad\text{implies}\quad
+    a + bi = c + di,
+  \end{equation*}
+  and it is onto since $(a, b)$ is evidently in the range of $T$ for
+  all $a,b$ in $R$. Therefore $T$ is an isomorphism and $V$ and $R^2$
+  are isomorphic.
+\end{solution}
