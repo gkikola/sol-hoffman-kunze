@@ -140,3 +140,73 @@ in $V$ such that
     basis for the subspace of $V$ spanned by $\alpha_j$.
   \end{solution}
 \end{enumerate}
+
+\Exercise3 Let $W$ be the set of all $2\times2$ complex Hermitian
+matrices, that is, the set of $2\times2$ complex matrices $A$ such
+that $A_{ij} = \overline{A_{ji}}$ (the bar denoting complex
+conjugation). As we pointed out in Example~6 of Chapter~2, $W$ is a
+vector space over the field of {\em real} numbers, under the usual
+operations. Verify that
+\begin{equation*}
+  (x,y,z,t)\rightarrow
+  \begin{bmatrix}
+    t + x & y + iz \\
+    y - iz & t - x
+  \end{bmatrix}
+\end{equation*}
+is an isomorphism of $R^4$ onto $W$.
+\begin{proof}
+  Denote this mapping by $T$. Then for any
+  \begin{equation*}
+    \alpha = (x_1,y_1,z_1,t_1) \quad\text{and}\quad
+    \beta = (x_2,y_2,z_2,t_2)
+  \end{equation*}
+  in $R^4$ and any $c$ in $R$, we have
+  \begin{align*}
+    T(c\alpha + \beta)
+    &= T(cx_1 + x_2, cy_1 + y_2, cz_1 + z_2, ct_1 + t_2) \\
+    &=
+    \begin{bmatrix}
+      (ct_1 + t_2) + (cx_1 + x_2) & (cy_1 + y_2) + i(cz_1 + z_2) \\
+      (cy_1 + y_2) - i(cz_1 + z_2) & (ct_1 + t_2) - (cx_1 + x_2)
+    \end{bmatrix} \\
+    &= c
+    \begin{bmatrix}
+      t_1 + x_1 & y_1 + iz_1 \\
+      y_1 - iz_1 & t_1 - x_1
+    \end{bmatrix}
+    +
+    \begin{bmatrix}
+      t_2 + x_2 & y_2 + iz_2 \\
+      y_2 - iz_2 & t_2 - x_2
+    \end{bmatrix} \\
+    &= cT\alpha + T\beta.
+  \end{align*}
+  This shows that $T$ is a linear transformation.
+
+  Next, if $T\alpha = T\beta$ then $t_1 + x_1 = t_2 + x_2$ and
+  $t_1 - x_1 = t_2 - x_2$, which together imply that $t_1 = t_2$ and
+  $x_1 = x_2$. Similarly, $y_1 + iz_1 = y_2 + iz_2$ implies that
+  $y_1 = y_2$ and $z_1 = z_2$. Therefore $T$ is one to one.
+
+  Finally, let
+  \begin{equation*}
+    A =
+    \begin{bmatrix}
+      a & b + ci \\
+      b - ci & d
+    \end{bmatrix}
+  \end{equation*}
+  be any $2\times2$ Hermitian matrix. Then we see that
+  \begin{equation*}
+    T\left(\frac12a + \frac12d, b, c, \frac12a - \frac12d\right)
+    =
+    \begin{bmatrix}
+      a & b + ci \\
+      b - ci & d
+    \end{bmatrix}
+    = A,
+  \end{equation*}
+  so $T$ is onto. This shows that $T$ is an isomorphism and $R^4$ is
+  isomorphic to $W$.
+\end{proof}
