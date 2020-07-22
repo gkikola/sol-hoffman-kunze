@@ -26,3 +26,117 @@ $R^2$.
   all $a,b$ in $R$. Therefore $T$ is an isomorphism and $V$ and $R^2$
   are isomorphic.
 \end{solution}
+
+\Exercise2 Let $V$ be a vector space over the field of complex
+numbers, and suppose there is an isomorphism $T$ of $V$ onto
+$C^3$. Let $\alpha_1$, $\alpha_2$, $\alpha_3$, $\alpha_4$ be vectors
+in $V$ such that
+\begin{align*}
+  T\alpha_1 = (1, 0, i) \quad T\alpha_2 = (-2, 1 + i, 0), \\
+  T\alpha_3 = (-1, 1, 1), \quad T\alpha_4 = (\sqrt2, i, 3).
+\end{align*}
+\begin{enumerate}
+\item Is $\alpha_1$ in the subspace spanned by $\alpha_2$ and
+  $\alpha_3$?
+  \begin{solution}
+    If $T\alpha_1$ is in the subspace of $C^3$ spanned by $T\alpha_2$
+    and $T\alpha_3$, then there is $x_1,x_2$ in $C$ with
+    \begin{alignat*}{3}
+      -2x_1 &{}-{}& x_2 &{}={}& 1 \\
+      (1 + i)x_1 &{}+{}& x_2 &{}={}& 0 \\
+      && x_2 &{}={}& i.
+    \end{alignat*}
+    We reduce the augmented matrix for this system of equations to get
+    \begin{equation*}
+      \begin{bmatrix}
+        -2 & -1 & 1 \\
+        1 + i & 1 & 0 \\
+        0 & 1 & i
+      \end{bmatrix}
+      \rightarrow
+      \begin{bmatrix}
+        1 & 0 & -\frac12 - \frac12i \\[3pt]
+        0 & 1 & i \\[3pt]
+        0 & 0 & 0
+      \end{bmatrix},
+    \end{equation*}
+    so
+    \begin{equation*}
+      T\alpha_1 = \left(-\frac12 - \frac12i\right)T\alpha_2 + iT\alpha_3.
+    \end{equation*}
+    Since $T$ is an isomorphism, it follows that
+    \begin{equation*}
+      T\alpha_1
+      = T\left(\left(-\frac12 - \frac12i\right)\alpha_2 + i\alpha_3\right)
+    \end{equation*}
+    or
+    \begin{equation*}
+      \alpha_1 = \left(-\frac12 - \frac12i\right)\alpha_2 + i\alpha_3.
+    \end{equation*}
+    Therefore $\alpha_1$ is in the subspace spanned by $\alpha_2$ and
+    $\alpha_3$.
+  \end{solution}
+
+\item Let $W_1$ be the subspace spanned by $\alpha_1$ and $\alpha_2$,
+  and let $W_2$ be the subspace spanned by $\alpha_3$ and
+  $\alpha_4$. What is the intersection of $W_1$ and $W_2$?
+  \begin{solution}
+    Let $\alpha$ be in $W_1\cap W_2$. Then $\alpha$ is a linear
+    combination of $\alpha_1$ and $\alpha_2$, and also a linear
+    combination of $\alpha_3$ and $\alpha_4$. We can therefore find
+    $c_1$, $c_2$, $c_3$, and $c_4$ in $C$ with
+    \begin{equation*}
+      \alpha = c_1\alpha_1 + c_2\alpha_2 = c_3\alpha_3 + c_4\alpha_4.
+    \end{equation*}
+    So
+    \begin{equation*}
+      T(c_1\alpha_1 + c_2\alpha_2 - c_3\alpha_3 - c_4\alpha_4) = 0
+    \end{equation*}
+    which implies that
+    \begin{equation*}
+      c_1T\alpha_1 + c_2T\alpha_2 - c_3T\alpha_3 - c_4T\alpha_4 = 0.
+    \end{equation*}
+    This then leads to the system of equations
+    \begin{alignat*}{5}
+      c_1 &{}-{}& 2c_2 &{}+{}& c_3 &{}-{}& \sqrt2c_4 &{}={}& 0 & \\
+      && (1 + i)c_2 &{}-{}& c_3 &{}-{}& ic_4 &{}={}& 0 & \\
+      ic_1 && &{}-{}& c_3 &{}-{}& 3c_4 &{}={}& 0 &.
+    \end{alignat*}
+    The coefficient matrix for this system reduces to
+    \begin{equation*}
+      \begin{bmatrix}
+        1 & -2 & 1 & -\sqrt2 \\
+        0 & 1 + i & -1 & -i \\
+        i & 0 & -1 & -3
+      \end{bmatrix}
+      \rightarrow
+      \begin{bmatrix}
+        1 & 0 & i & 0 \\[3pt]
+        0 & 1 & -\frac12 + \frac12i & 0 \\[3pt]
+        0 & 0 & 0 & 1
+      \end{bmatrix}.
+    \end{equation*}
+    So, letting $t = -2c_3$, we get
+    \begin{equation*}
+      2it\alpha_1 + (i - 1)t\alpha_2 + 2t\alpha_3 = 0.
+    \end{equation*}
+    In particular, $c_4 = 0$ and we see that $\alpha = -2t\alpha_3$
+    where $t$ is arbitrary. The space $W_1\cap W_2$ therefore has
+    $\{\alpha_3\}$ as a basis. Consequently, this space is the
+    one-dimensional subspace consisting of scalar multiples of
+    $\alpha_3$.
+  \end{solution}
+
+\item Find a basis for the subspace of $V$ spanned by the four vectors
+  $\alpha_j$.
+  \begin{solution}
+    We have already seen previously that $\alpha_3$ can be written as
+    a linear combination of $\alpha_1$ and $\alpha_2$:
+    \begin{equation*}
+      \alpha_3 = -i\alpha_1 + \frac{1 - i}2\alpha_2.
+    \end{equation*}
+    A check will show that the remaining vectors are linearly
+    independent. Therefore $\{\alpha_1,\alpha_2,\alpha_4\}$ form a
+    basis for the subspace of $V$ spanned by $\alpha_j$.
+  \end{solution}
+\end{enumerate}
