@@ -210,3 +210,25 @@ is an isomorphism of $R^4$ onto $W$.
   so $T$ is onto. This shows that $T$ is an isomorphism and $R^4$ is
   isomorphic to $W$.
 \end{proof}
+
+\Exercise4 Show that $F^{m\times n}$ is isomorphic to $F^{mn}$.
+\begin{proof}
+  An obvious isomorphism is the map $T$ from $F^{m\times n}$ onto
+  $F^{mn}$ given by
+  \begin{multline*}
+    T
+    \begin{bmatrix}
+      A_{11} & A_{12} & \cdots & A_{1n} \\
+      A_{21} & A_{22} & \cdots & A_{2n} \\
+      \vdots & \vdots & \ddots & \vdots \\
+      A_{m1} & A_{m2} & \cdots & A_{mn}
+    \end{bmatrix} \\
+    =
+    (A_{11},A_{12},\dots,A_{1n},A_{21},A_{22},\dots,A_{2n},\dots,
+    A_{m1},A_{m2},\dots,A_{mn}).
+  \end{multline*}
+  That is, the $j$th coordinate of $T(A)$ is the $j$th entry of $A$
+  when the entries are ordered from left-to-right and then
+  top-to-bottom. It should be evident that $T$ is a linear
+  transformation that is both one to one and onto.
+\end{proof}
