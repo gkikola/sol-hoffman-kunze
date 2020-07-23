@@ -340,3 +340,53 @@ $z = x + iy$ with $x$ and $y$ real numbers, then
     is a basis for the range of $T$.
   \end{solution}
 \end{enumerate}
+
+\Exercise6 Let $V$ and $W$ be finite-dimensional vector spaces over
+the field $F$. Prove that $V$ and $W$ are isomorphic if and only if
+$\dim V = \dim W$.
+\begin{proof}
+  First suppose that $V$ and $W$ are isomorphic via the isomorphism
+  $T$. Suppose $V$ has dimension $n$ and let
+  $\{\alpha_1,\dots,\alpha_n\}$ be a basis for $V$. Then by Theorem~8,
+  the set $\{T\alpha_1,\dots,T\alpha_n\}$ is linearly independent and
+  thus forms a basis for the range of $T$. But $T$ is onto, so the
+  range of $T$ is $W$. Therefore $\dim W = n$ as required.
+
+  Conversely, suppose $\dim V = \dim W = n$. By Theorem~10, $V$ and
+  $W$ are both isomorphic to $F^n$. Thus $V$ is isomorphic to $W$ and
+  the proof is complete.
+\end{proof}
+
+\Exercise7 Let $V$ and $W$ be vector spaces over the field $F$ and let
+$U$ be an isomorphism of $V$ onto $W$. Prove that $T\to UTU^{-1}$ is
+an isomorphism of $L(V, V)$ onto $L(W, W)$.
+\begin{proof}
+  Let $S$ denote the stated map from $L(V,V)$ to $L(W,W)$. If $c$ is
+  in $F$, then
+  \begin{align*}
+    S(cT_1 + T_2)
+    &= U(cT_1 + T_2)U^{-1} \\
+    &= (cUT_1 + UT_2)U^{-1} \\
+    &= cUT_1U^{-1} + UT_2U^{-1} \\
+    &= cS(T_1) + S(T_2),
+  \end{align*}
+  so $S$ is a linear transformation.
+
+  Next, suppose $S(T_1) = S(T_2)$. That is, $UT_1U^{-1} =
+  UT_2U^{-1}$. Then
+  \begin{align*}
+    T_1 &= (U^{-1}U)T_1(U^{-1}U) \\
+        &= U^{-1}(UT_1U^{-1})U \\
+        &= U^{-1}(UT_2U^{-1})U \\
+        &= (U^{-1}U)T_2(U^{-1}U) \\
+        &= T_2,
+  \end{align*}
+  showing that $S$ is one to one.
+
+  Finally, let $T$ be any linear operator in $L(W,W)$. Then
+  \begin{equation*}
+    S(U^{-1}TU) = U(U^{-1}TU)U^{-1} = (UU^{-1})T(UU^{-1}) = T,
+  \end{equation*}
+  so $S$ is onto. This shows that $S$ is an isomorphism, so that
+  $L(V,V)$ is isomorphic to $L(W,W)$.
+\end{proof}
