@@ -232,3 +232,111 @@ is an isomorphism of $R^4$ onto $W$.
   top-to-bottom. It should be evident that $T$ is a linear
   transformation that is both one to one and onto.
 \end{proof}
+
+\Exercise5 Let $V$ be the set of complex numbers regarded as a vector
+space over the field of real numbers. We define a function $T$ from
+$V$ into the space of $2\times2$ real matrices, as follows. If
+$z = x + iy$ with $x$ and $y$ real numbers, then
+\begin{equation*}
+  T(z) =
+  \begin{bmatrix}
+    x + 7y & 5y \\
+    -10y & x - 7y
+  \end{bmatrix}.
+\end{equation*}
+\begin{enumerate}
+\item Verify that $T$ is a one-one (real) linear transformation of $V$
+  into the space of $2\times2$ real matrices.
+  \begin{proof}
+    Let $z_1 = x_1 + iy_1$ and $z_2 = x_2 + iy_2$ where
+    $x_1,x_2,y_1,y_2$ are real numbers. Let $c$ be any real
+    number. Then
+    \begin{align*}
+      T(cz_1 + z_2)
+      &= T(cx_1 + x_2 + i(cy_1 + y_2)) \\
+      &=
+      \begin{bmatrix}
+        (cx_1 + x_2) + 7(cy_1 + y_2) & 5(cy_1 + y_2) \\
+        -10(cy_1 + y_2) & (cx_1 + x_2) - 7(cy_1 + y_2)
+      \end{bmatrix} \\
+      &= c
+      \begin{bmatrix}
+        x_1 + 7y_1 & 5y_1 \\
+        -10y_1 & x_1 - 7y_1
+      \end{bmatrix}
+      +
+      \begin{bmatrix}
+        x_2 + 7y_2 & 5y_2 \\
+        -10y_2 & x_2 - 7y_2
+      \end{bmatrix} \\
+      &= cT(z_1) + T(z_2)
+    \end{align*}
+    and we see that $T$ is a linear transformation.
+
+    Moreover, if $T(z_1) = T(z_2)$ then $5y_1 = 5y_2$ so that
+    $y_1 = y_2$ and $x_1 = x_2$, or $z_1 = z_2$. Thus $T$ is one to
+    one.
+  \end{proof}
+
+\item Verify that $T(z_1z_2) = T(z_1)T(z_2)$.
+  \begin{proof}
+    As above, we let $z_1 = x_1 + iy_1$ and $z_2 = x_2 + iy_2$. Then
+    \begin{equation*}
+      T(z_1)T(z_2)
+      =
+      \begin{bmatrix}
+        x_1 + 7y_1 & 5y_1 \\
+        -10y_1 & x_1 - 7y_1
+      \end{bmatrix}
+      \begin{bmatrix}
+        x_2 + 7y_2 & 5y_2 \\
+        -10y_2 & x_2 - 7y_2
+      \end{bmatrix}.
+    \end{equation*}
+    If we calculate the upper-left entry of this matrix product, we
+    find
+    \begin{align*}
+      [T(z_1)T(z_2)]_{11}
+      &= (x_1 + 7y_1)(x_2 + 7y_2) - 50y_1y_2 \\
+      &= x_1x_2 + 7x_1y_2 + 7x_2y_1 + 49y_1y_2 - 50y_1y_2 \\
+      &= (x_1x_2 - y_1y_2) + 7(x_1y_2 + x_2y_1) \\
+      &= [T(z_1z_2)]_{11}.
+    \end{align*}
+    The remaining entries are calculated in the same manner, and are
+    all straightforward. Therefore $T(z_1z_2) = T(z_1)T(z_2)$.
+  \end{proof}
+
+\item How would you describe the range of $T$?
+  \begin{solution}
+    We have shown above that the range of $T$ is isomorphic to $V$. A
+    basis for $V$ is $\{1, i\}$, so we may compute
+    \begin{equation*}
+      T(1) =
+      \begin{bmatrix}
+        1 & 0 \\
+        0 & 1
+      \end{bmatrix}
+      \quad\text{and}\quad
+      T(i) =
+      \begin{bmatrix}
+        7 & 5 \\
+        -10 & -7
+      \end{bmatrix}.
+    \end{equation*}
+    Since $T$ preserves linear independence (Theorem~8), we see that
+    the set
+    \begin{equation*}
+      \left\{
+        \begin{bmatrix}
+          1 & 0 \\
+          0 & 1
+        \end{bmatrix},
+        \begin{bmatrix}
+          7 & 5 \\
+          -10 & -7
+        \end{bmatrix}
+      \right\}
+    \end{equation*}
+    is a basis for the range of $T$.
+  \end{solution}
+\end{enumerate}
