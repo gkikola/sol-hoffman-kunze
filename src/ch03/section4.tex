@@ -1,0 +1,143 @@
+\section{Representation of Transformations by Matrices}
+
+\Exercise1 Let $T$ be the linear operator on $C^2$ defined by
+$T(x_1, x_2) = (x_1, 0)$. Let $\mathcal{B}$ be the standard ordered
+basis for $C^2$ and let $\mathcal{B}' = \{\alpha_1,\alpha_2\}$ be the
+ordered basis defined by $\alpha_1 = (1, i)$, $\alpha_2 = (-i, 2)$.
+\begin{enumerate}
+\item What is the matrix of $T$ relative to the pair $\mathcal{B}$,
+  $\mathcal{B}'$?
+  \begin{solution}
+    We have
+    \begin{equation*}
+      T(1, 0) = (1, 0)
+      \quad\text{and}\quad
+      T(0, 1) = (0, 0).
+    \end{equation*}
+    Now let
+    \begin{equation*}
+      P =
+      \begin{bmatrix}
+        1 & -i \\
+        i & 2
+      \end{bmatrix}.
+    \end{equation*}
+    Then
+    \begin{equation*}
+      P^{-1} =
+      \begin{bmatrix}
+        2 & i \\
+        -i & 1
+      \end{bmatrix}
+    \end{equation*}
+    and we get
+    \begin{equation*}
+      [(1, 0)]_{\mathcal{B}'}
+      = P^{-1}[(1,0)]_{\mathcal{B}}
+      =
+      \begin{bmatrix}
+        2 & i \\
+        -i & 1
+      \end{bmatrix}
+      \begin{bmatrix}
+        1 \\ 0
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        2 \\ -i
+      \end{bmatrix}.
+    \end{equation*}
+    Of course, the zero vector has the same coordinates in every
+    basis, so we see that the matrix of $T$ relative to
+    $\mathcal{B},\mathcal{B}'$ is
+    \begin{equation*}
+      [T]_{\mathcal{B}}^{\mathcal{B}'} =
+      \begin{bmatrix}
+        2 & 0 \\
+        -i & 0
+      \end{bmatrix}. \qedhere
+    \end{equation*}
+  \end{solution}
+
+\item What is the matrix of $T$ relative to the pair $\mathcal{B}'$,
+  $\mathcal{B}$?
+  \begin{solution}
+    We have
+    \begin{equation*}
+      T(1,i) = (1,0) \quad\text{and}\quad
+      T(-i, 2) = (-i,0).
+    \end{equation*}
+    So the matrix of $T$ relative to $\mathcal{B}',\mathcal{B}$ is
+    \begin{equation*}
+      [T]_{\mathcal{B}'}^{\mathcal{B}} =
+      \begin{bmatrix}
+        1 & -i \\
+        0 & 0
+      \end{bmatrix}. \qedhere
+    \end{equation*}
+  \end{solution}
+
+\item What is the matrix of $T$ in the ordered basis $\mathcal{B}'$?
+  \begin{solution}
+    We have
+    \begin{equation*}
+      [T]_{\mathcal{B}'} = P^{-1}[T]_{\mathcal{B}}P =
+      \begin{bmatrix}
+        2 & i \\
+        -i & 1
+      \end{bmatrix}
+      \begin{bmatrix}
+        1 & 0 \\
+        0 & 0
+      \end{bmatrix}
+      \begin{bmatrix}
+        1 & -i \\
+        i & 2
+      \end{bmatrix} =
+      \begin{bmatrix}
+        2 & -2i \\
+        -i & -1
+      \end{bmatrix}. \qedhere
+    \end{equation*}
+  \end{solution}
+
+\item What is the matrix of $T$ in the ordered basis
+  $\{\alpha_2, \alpha_1\}$?
+  \begin{solution}
+    The change-of-basis matrix $P$ such that
+    \begin{equation*}
+      P[\alpha]_{\{\alpha_2,\alpha_1\}} = [\alpha]_{\mathcal{B}'}
+    \end{equation*}
+    is given by
+    \begin{equation*}
+      P =
+      \begin{bmatrix}
+        0 & 1 \\
+        1 & 0
+      \end{bmatrix},
+    \end{equation*}
+    so
+    \begin{equation*}
+      [T]_{\{\alpha_2,\alpha_1\}}
+      = P^{-1}[T]_{\mathcal{B}'}P
+      =
+      \begin{bmatrix}
+        0 & 1 \\
+        1 & 0
+      \end{bmatrix}
+      \begin{bmatrix}
+        2 & -2i \\
+        -i & -1
+      \end{bmatrix}
+      \begin{bmatrix}
+        0 & 1 \\
+        1 & 0
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        -1 & -i \\
+        -2i & 2
+      \end{bmatrix}. \qedhere
+    \end{equation*}
+  \end{solution}
+\end{enumerate}
