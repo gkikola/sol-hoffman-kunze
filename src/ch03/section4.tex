@@ -198,3 +198,24 @@ defined by
     \end{equation*}
   \end{solution}
 \end{enumerate}
+
+\Exercise3 Let $T$ be a linear operator on $F^n$, let $A$ be the
+matrix of $T$ in the standard ordered basis for $F^n$, and let $W$ be
+the subspace of $F^n$ spanned by the column vectors of $A$. What does
+$W$ have to do with $T$?
+\begin{solution}
+  $W$ is simply the range of $T$, as we will now show.
+
+  Let $\{\epsilon_1,\dots,\epsilon_n\}$ denote the standard ordered
+  basis for $F^n$. Note that the $j$th column of $A$ is simply
+  $T\epsilon_j$. Take any vector $\alpha$ in $F^n$. Then $\alpha$
+  belongs to $W$ if and only if
+  \begin{align*}
+    \alpha
+    &= x_1T\epsilon_1 + x_2T\epsilon_2 + \cdots + x_nT\epsilon_n \\
+    &= T(x_1\epsilon_1 + x_2\epsilon_2 + \cdots + x_n\epsilon_n) \\
+    &= T(x_1,x_2,\cdots,x_n),
+  \end{align*}
+  for some vector $(x_1,x_2,\dots,x_n)$ in $F^n$. That is, $\alpha$ is
+  in $W$ if and only if $\alpha$ is in the range of $T$.
+\end{solution}
