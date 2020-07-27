@@ -487,3 +487,113 @@ $T$.
     each nonzero, and their product must be nonzero also.
   \end{proof}
 \end{enumerate}
+
+\Exercise7 Let $T$ be the linear operator on $R^3$ defined by
+\begin{equation*}
+  T(x_1,x_2,x_3)
+  = (3x_1 + x_3, -2x_1 + x_2, -x_1 + 2x_2 + 4x_3).
+\end{equation*}
+\begin{enumerate}
+\item What is the matrix of $T$ in the standard ordered basis for
+  $R^3$?
+  \begin{solution}
+    Since
+    \begin{align*}
+      T(1,0,0) &= (3, -2, -1), \\
+      T(0,1,0) &= (0, 1, 2), \\
+      T(0,0,1) &= (1, 0, 4),
+    \end{align*}
+    the matrix of $T$ in the standard ordered basis is
+    \begin{equation*}
+      [T]_{\{\epsilon_1,\epsilon_2,\epsilon_3\}} =
+      \begin{bmatrix}
+        3 & 0 & 1 \\
+        -2 & 1 & 0 \\
+        -1 & 2 & 4
+      \end{bmatrix}. \qedhere
+    \end{equation*}
+  \end{solution}
+
+\item What is the matrix of $T$ in the ordered basis
+  \begin{equation*}
+    \{\alpha_1,\alpha_2,\alpha_3\}
+  \end{equation*}
+  where $\alpha_1 = (1,0,1)$, $\alpha_2 = (-1,2,1)$, and
+  $\alpha_3 = (2,1,1)$?
+  \begin{solution}
+    The matrix of $T$ in this basis is
+    \begin{equation*}
+      [T]_{\{\alpha_1,\alpha_2,\alpha_3\}}
+      = P^{-1}[T]_{\{\epsilon_1,\epsilon_2,\epsilon_3\}}P,
+    \end{equation*}
+    where
+    \begin{equation*}
+      P =
+      \begin{bmatrix}
+        1 & -1 & 2 \\
+        0 & 2 & 1 \\
+        1 & 1 & 1
+      \end{bmatrix}.
+    \end{equation*}
+    So
+    \begin{align*}
+      [T]_{\{\alpha_1,\alpha_2,\alpha_3\}}
+      &=
+      \begin{bmatrix}
+        -\frac14 & -\frac34 & \frac54 \\[3pt]
+        -\frac14 & \frac14 & \frac14 \\[3pt]
+        \frac12 & \frac12 & -\frac12
+      \end{bmatrix}
+      \begin{bmatrix}
+        3 & 0 & 1 \\
+        -2 & 1 & 0 \\
+        -1 & 2 & 4
+      \end{bmatrix}
+      \begin{bmatrix}
+        1 & -1 & 2 \\
+        0 & 2 & 1 \\
+        1 & 1 & 1
+      \end{bmatrix} \\[3pt]
+      &=
+      \begin{bmatrix}
+        \frac{17}4 & \frac{35}4 & \frac{11}2 \\[3pt]
+        -\frac34 & \frac{15}4 & -\frac32 \\[3pt]
+        -\frac12 & -\frac72 & 0
+      \end{bmatrix}. \qedhere
+    \end{align*}
+  \end{solution}
+
+\item Prove that $T$ is invertible and give a rule for $T^{-1}$ like
+  the one which defines $T$.
+  \begin{proof}
+    We already saw that the matrix $A$ of $T$ relative to the standard
+    ordered basis of $R^3$ is
+    \begin{equation*}
+      A =
+      \begin{bmatrix}
+        3 & 0 & 1 \\
+        -2 & 1 & 0 \\
+        -1 & 2 & 4
+      \end{bmatrix}.
+    \end{equation*}
+    Using the same methods as we used in Chapter~1, we can see that
+    $A$ is invertible and
+    \begin{equation*}
+      A^{-1} =
+      \begin{bmatrix}
+        \frac49 & \frac29 & -\frac19 \\[3pt]
+        \frac89 & \frac{13}9 & -\frac29 \\[3pt]
+        -\frac13 & -\frac23 & \frac13
+      \end{bmatrix}.
+    \end{equation*}
+    This implies that $T$ is invertible and
+    \begin{multline*}
+      T^{-1}(x_1,x_2,x_3) \\
+      = \left(
+        \frac49x_1 + \frac29x_2 - \frac19x_3,
+        \frac89x_1 + \frac{13}9x_2 - \frac29x_3,
+        -\frac13x_1 - \frac23x_2 + \frac13x_3
+      \right).
+    \end{multline*}
+  \end{proof}
+\end{enumerate}
