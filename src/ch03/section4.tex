@@ -199,10 +199,12 @@ defined by
   \end{solution}
 \end{enumerate}
 
-\Exercise3 Let $T$ be a linear operator on $F^n$, let $A$ be the
-matrix of $T$ in the standard ordered basis for $F^n$, and let $W$ be
-the subspace of $F^n$ spanned by the column vectors of $A$. What does
-$W$ have to do with $T$?
+\Exercise3
+\label{exercise:lin-tran:col-space-is-range}
+Let $T$ be a linear operator on $F^n$, let $A$ be the matrix of $T$ in
+the standard ordered basis for $F^n$, and let $W$ be the subspace of
+$F^n$ spanned by the column vectors of $A$. What does $W$ have to do
+with $T$?
 \begin{solution}
   $W$ is simply the range of $T$, as we will now show.
 
@@ -265,3 +267,64 @@ prove that $T^2 - (a + d)T + (ad - bc)I = 0$.
   \end{multline*}
   From this we see that $T^2 - (a + d)T + (ad - bc)I = 0$.
 \end{proof}
+
+\Exercise5 Let $T$ be the linear operator on $R^3$, the matrix of
+which in the standard ordered basis is
+\begin{equation*}
+  A =
+  \begin{bmatrix}
+    1 & 2 & 1 \\
+    0 & 1 & 1 \\
+    -1 & 3 & 4
+  \end{bmatrix}.
+\end{equation*}
+Find a basis for the range of $T$ and a basis for the null space of
+$T$.
+\begin{solution}
+  By Exercise~\ref{exercise:lin-tran:col-space-is-range}, we know that
+  the column space of $A$ is the range of $T$. We can find a basis for
+  the column space of $A$ by row-reducing its transpose $A^T$ and
+  taking the nonzero rows. We get
+  \begin{equation*}
+    A^T =
+    \begin{bmatrix}
+      1 & 0 & -1 \\
+      2 & 1 & 3 \\
+      1 & 1 & 4
+    \end{bmatrix}
+    \rightarrow
+    \begin{bmatrix}
+      1 & 0 & -1 \\
+      0 & 1 & 5 \\
+      0 & 0 & 0
+    \end{bmatrix},
+  \end{equation*}
+  so a basis for the range of $T$ is given by
+  \begin{equation*}
+    \{(1, 0, -1), (0, 1, 5)\}.
+  \end{equation*}
+
+  For the nullspace, we seek column vectors $X$ for which $AX =
+  0$. Row-reducing $A$ gives
+  \begin{equation*}
+    A =
+    \begin{bmatrix}
+      1 & 2 & 1 \\
+      0 & 1 & 1 \\
+      -1 & 3 & 4
+    \end{bmatrix}
+    \rightarrow
+    \begin{bmatrix}
+      1 & 0 & -1 \\
+      0 & 1 & 1 \\
+      0 & 0 & 0
+    \end{bmatrix},
+  \end{equation*}
+  so $(x_1,x_2,x_3)$ is in the null space of $T$ if and only if
+  $x_1 = x_3$ and $x_2 = -x_3$. That is, if and only if
+  $(x_1,x_2,x_3)$ has the form $(t,-t,t)$ for some scalar $t$. A basis
+  for the null space of $T$ is therefore given by
+  \begin{equation*}
+    \{ (1,-1,1) \}. \qedhere
+  \end{equation*}
+\end{solution}
