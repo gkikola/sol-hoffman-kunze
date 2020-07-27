@@ -328,3 +328,162 @@ $T$.
     \{ (1,-1,1) \}. \qedhere
   \end{equation*}
 \end{solution}
+
+\Exercise6 Let $T$ be the linear operator on $R^2$ defined by
+\begin{equation*}
+  T(x_1,x_2) = (-x_2, x_1).
+\end{equation*}
+\begin{enumerate}
+\item What is the matrix of $T$ in the standard ordered basis for
+  $R^2$?
+  \begin{solution}
+    Since
+    \begin{equation*}
+      T(1, 0) = (0, 1) \quad\text{and}\quad T(0, 1) = (-1, 0),
+    \end{equation*}
+    the matrix of $T$ relative to the standard ordered basis is
+    \begin{equation*}
+      [T]_{\{\epsilon_1,\epsilon_2\}} =
+      \begin{bmatrix}
+        0 & -1 \\
+        1 & 0
+      \end{bmatrix}. \qedhere
+    \end{equation*}
+  \end{solution}
+
+\item What is the matrix of $T$ in the ordered basis
+  $\mathcal{B} = \{\alpha_1,\alpha_2\}$, where
+  \begin{equation*}
+    \alpha_1 = (1,2) \quad\text{and}\quad
+    \alpha_2 = (1,-1)?
+  \end{equation*}
+  \begin{solution}
+    The transition matrix $P$ from $\mathcal{B}$ to the standard basis
+    is
+    \begin{equation*}
+      P =
+      \begin{bmatrix}
+        1 & 1 \\
+        2 & -1
+      \end{bmatrix},
+      \quad\text{with inverse}\quad
+      P^{-1} =
+      \begin{bmatrix}
+        \frac13 & \frac13 \\[3pt]
+        \frac23 & -\frac13
+      \end{bmatrix}.
+    \end{equation*}
+    So,
+    \begin{equation*}
+      [T]_{\mathcal{B}} = P^{-1}[T]_{\{\epsilon_1,\epsilon_2\}}P
+      =
+      \begin{bmatrix}
+        \frac13 & \frac13 \\[3pt]
+        \frac23 & -\frac13
+      \end{bmatrix}
+      \begin{bmatrix}
+        0 & -1 \\
+        1 & 0
+      \end{bmatrix}
+      \begin{bmatrix}
+        1 & 1 \\
+        2 & -1
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        -\frac13 & \frac23 \\[3pt]
+        -\frac53 & \frac13
+      \end{bmatrix}. \qedhere
+    \end{equation*}
+  \end{solution}
+
+\item Prove that for every real number $c$ the operator $(T - cI)$ is
+  invertible.
+  \begin{proof}
+    Fix $c$ in $R$ and let $U = T - cI$. If $\mathcal{B}$ is the
+    standard ordered basis for $R^2$, then
+    \begin{equation*}
+      [U]_{\mathcal{B}} = [T]_{\mathcal{B}} - cI
+      =
+      \begin{bmatrix}
+        0 & -1 \\
+        1 & 0
+      \end{bmatrix}
+      - c
+      \begin{bmatrix}
+        1 & 0 \\
+        0 & 1
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        -c & -1 \\
+        1 & -c
+      \end{bmatrix}.
+    \end{equation*}
+    Since $c^2 + 1$ must be nonzero, it is easily verified that
+    \begin{equation*}
+      \begin{bmatrix}
+        -\frac{c}{c^2 + 1} & \frac1{c^2 + 1} \\[3pt]
+        -\frac1{c^2 + 1} & -\frac{c}{c^2 + 1}
+      \end{bmatrix}
+      = -\frac1{c^2 + 1}
+      \begin{bmatrix}
+        c & -1 \\
+        1 & c
+      \end{bmatrix}
+    \end{equation*}
+    is an inverse for $[U]_{\mathcal{B}}$. It follows that $U$ is
+    invertible, as required.
+  \end{proof}
+
+\item Prove that if $\mathcal{B}$ is any ordered basis for $R^2$ and
+  $[T]_{\mathcal{B}} = A$, then $A_{12}A_{21}\neq0$.
+  \begin{proof}
+    Let $\mathcal{B} = \{\alpha_1,\alpha_2\}$ where
+    \begin{equation*}
+      \alpha_1 = (a,c) \quad\text{and}\quad
+      \alpha_2 = (b,d)
+    \end{equation*}
+    so that
+    \begin{equation*}
+      [T]_{\mathcal{B}}
+      = P^{-1}[T]_{\{\epsilon_1,\epsilon_2\}}P,
+    \end{equation*}
+    where
+    \begin{equation*}
+      P =
+      \begin{bmatrix}
+        a & b \\
+        c & d
+      \end{bmatrix}.
+    \end{equation*}
+    Since $P$ is invertible, we know from
+    Exercise~\ref{exercise:lin-eq:2-by-2-inv-crit} that
+    $ad - bc\neq0$, and through direct computation we can find that
+    \begin{equation*}
+      A = [T]_{\mathcal{B}} =
+      \begin{bmatrix}
+        \frac{d}{ad - bc} & -\frac{b}{ad - bc} \\[3pt]
+        -\frac{c}{ad - bc} & \frac{a}{ad - bc}
+      \end{bmatrix}
+      \begin{bmatrix}
+        0 & -1 \\
+        1 & 0
+      \end{bmatrix}
+      \begin{bmatrix}
+        a & b \\
+        c & d
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        \frac{-cd - ab}{ad - bc} & \frac{-d^2 - b^2}{ad - bc} \\[3pt]
+        \frac{c^2 + a^2}{ad - bc} & \frac{cd + ab}{ad - bc}
+      \end{bmatrix}.
+    \end{equation*}
+    Now, if $A_{12} = 0$, then $b^2 + d^2 = 0$ so that we must have
+    $b = d = 0$. But this is impossible since $ad -
+    bc\neq0$. Similarly if $A_{21} = 0$ then $a = c = 0$ which is
+    again a contradiction. So we find that $A_{12}$ and $A_{21}$ are
+    each nonzero, and their product must be nonzero also.
+  \end{proof}
+\end{enumerate}
