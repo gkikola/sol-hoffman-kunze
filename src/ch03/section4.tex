@@ -219,3 +219,49 @@ $W$ have to do with $T$?
   for some vector $(x_1,x_2,\dots,x_n)$ in $F^n$. That is, $\alpha$ is
   in $W$ if and only if $\alpha$ is in the range of $T$.
 \end{solution}
+
+\Exercise4 Let $V$ be a two-dimensional vector space over the field
+$F$, and let $\mathcal{B}$ be an ordered basis for $V$. If $T$ is a
+linear operator on $V$ and
+\begin{equation*}
+  [T]_{\mathcal{B}} =
+  \begin{bmatrix}
+    a & b \\
+    c & d
+  \end{bmatrix}
+\end{equation*}
+prove that $T^2 - (a + d)T + (ad - bc)I = 0$.
+\begin{proof}
+  By Theorem~12, the function which assigns a linear operator on $V$
+  to its matrix relative to $\mathcal{B}$ is an isomorphism between
+  $L(V, V)$ and $F^{2\times 2}$. Theorem~13 shows that this function
+  preserves products also. Thus we can operate on $T$ by simply
+  performing the corresponding operations on its matrix and vice
+  versa. So consider the following computation.
+  \begin{multline*}
+    [T]_{\mathcal{B}}^2 - (a + d)[T]_{\mathcal{B}} + (ad - bc)I \\
+    \begin{aligned}
+      &=
+      \begin{bmatrix}
+        a^2 + bc & ab + bd \\
+        ac + cd & bc + d^2
+      \end{bmatrix}
+      -
+      \begin{bmatrix}
+        a^2 + ad & ab + bd \\
+        ac + cd & ad + d^2
+      \end{bmatrix}
+      +
+      \begin{bmatrix}
+        ad - bc & 0 \\
+        0 & ad - bc
+      \end{bmatrix} \\
+      &=
+      \begin{bmatrix}
+        0 & 0 \\
+        0 & 0
+      \end{bmatrix}.
+    \end{aligned}
+  \end{multline*}
+  From this we see that $T^2 - (a + d)T + (ad - bc)I = 0$.
+\end{proof}
