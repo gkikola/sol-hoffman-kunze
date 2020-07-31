@@ -631,3 +631,37 @@ matrices are similar over the field of complex numbers:
   Thus the second matrix represents $T$ in the ordered basis
   $\mathcal{B}$. By Theorem~14, the two matrices are similar.
 \end{proof}
+
+\Exercise9 Let $V$ be a finite-dimensional vector space over the field
+$F$ and let $S$ and $T$ be linear operators on $V$. We ask: When do
+there exist ordered bases $\mathcal{B}$ and $\mathcal{B}'$ for $V$
+such that $[S]_{\mathcal{B}} = [T]_{\mathcal{B}'}$? Prove that such
+bases exist if and only if there is an invertible linear operator $U$
+on $V$ such that $T = USU^{-1}$.
+\begin{proof}
+  Assume such bases exist, so that
+  $[S]_{\mathcal{B}} = [T]_{\mathcal{B}'}$. Let $U$ be the operator
+  which carries $\mathcal{B}$ onto $\mathcal{B}'$. Then by Theorem~14,
+  we have
+  \begin{equation*}
+    [S]_{\mathcal{B}} = [T]_{\mathcal{B}'}
+    = [U]_{\mathcal{B}}^{-1}[T]_{\mathcal{B}}[U]_{\mathcal{B}}
+    = [U^{-1}TU]_{\mathcal{B}}.
+  \end{equation*}
+  Since $S$ and $U^{-1}TU$ have the same matrix relative to
+  $\mathcal{B}$, it follows by Theorem~12 that $S = U^{-1}TU$. Thus we
+  have shown that there is an invertible operator $U$ with
+  $T = USU^{-1}$.
+
+  Conversely, assume that $T = USU^{-1}$ for some invertible $U$ and
+  let $\mathcal{B}$ be any ordered basis for $V$. Let $\mathcal{B}'$
+  be the image of $\mathcal{B}$ under $U$. Then, again by Theorem~14,
+  we have
+  \begin{equation*}
+    [T]_{\mathcal{B}'}
+    = [U]_{\mathcal{B}}^{-1}[T]_{\mathcal{B}}[U]_{\mathcal{B}}
+    = [U^{-1}TU]_{\mathcal{B}}
+    = [S]_{\mathcal{B}}.
+  \end{equation*}
+  Thus the proof is complete.
+\end{proof}
