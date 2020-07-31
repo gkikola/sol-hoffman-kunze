@@ -597,3 +597,37 @@ $T$.
     \end{multline*}
   \end{proof}
 \end{enumerate}
+
+\Exercise8 Let $\theta$ be a real number. Prove that the following two
+matrices are similar over the field of complex numbers:
+\begin{equation*}
+  \begin{bmatrix}
+    \cos\theta & -\sin\theta \\
+    \sin\theta & \cos\theta
+  \end{bmatrix},
+  \quad
+  \begin{bmatrix}
+    e^{i\theta} & 0 \\
+    0 & e^{-i\theta}
+  \end{bmatrix}
+\end{equation*}
+\begin{proof}
+  Let $T$ be the linear operator on $C^2$ which is represented by the
+  first matrix in the standard ordered basis. Let
+  \begin{equation*}
+    \alpha_1 = (1, -i) \quad\text{and}\quad \alpha_2 = (-i, 1),
+  \end{equation*}
+  so that $\mathcal{B} = \{\alpha_1,\alpha_2\}$ is an ordered basis
+  for $C^2$. Then
+  \begin{align*}
+    T\alpha_1
+    &= (\cos\theta + i\sin\theta, \sin\theta - i\cos\theta)
+      = (e^{i\theta}, -ie^{i\theta}) = e^{i\theta}\alpha_1
+    \\\intertext{and}
+    T\alpha_2
+    &= (-i\cos\theta - \sin\theta, -i\sin\theta + \cos\theta)
+      = (-ie^{-i\theta}, e^{-i\theta}) = e^{-i\theta}\alpha_2.
+  \end{align*}
+  Thus the second matrix represents $T$ in the ordered basis
+  $\mathcal{B}$. By Theorem~14, the two matrices are similar.
+\end{proof}
