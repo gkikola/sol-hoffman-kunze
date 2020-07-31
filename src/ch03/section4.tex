@@ -665,3 +665,67 @@ on $V$ such that $T = USU^{-1}$.
   \end{equation*}
   Thus the proof is complete.
 \end{proof}
+
+\Exercise{10} We have seen that the linear operator $T$ on $R^2$
+defined by $T(x_1,x_2) = (x_1,0)$ is represented in the standard
+ordered basis by the matrix
+\begin{equation*}
+  A =
+  \begin{bmatrix}
+    1 & 0 \\
+    0 & 0
+  \end{bmatrix}.
+\end{equation*}
+This operator satisfies $T^2 = T$. Prove that if $S$ is a linear
+operator on $R^2$ such that $S^2 = S$, then $S = 0$, or $S = I$, or
+there is an ordered basis $\mathcal{B}$ for $R^2$ such that
+$[S]_{\mathcal{B}} = A$ (above).
+\begin{proof}
+  Assume that $S$ is such that $S^2 = S$. Certainly $0^2 = 0$ and
+  $I^2 = I$, so if $S = 0$ or $S = I$ there is nothing left to
+  prove. We will therefore assume that $S\neq0$ and $S\neq I$. Since
+  $S\neq0$, there is nonzero $\alpha_1$ in the range of $S$. So
+  $S\beta_1 = \alpha_1$ for some $\beta_1$ in $R^2$ and we have
+  \begin{equation}
+    \label{eq:lin-tran:S2-equals-S-fixed-point}
+    S\alpha_1 = S(S\beta_1) = S\beta_1 = \alpha_1.
+  \end{equation}
+  On the other hand, since $S\neq I$, there exist distinct $\beta_2$
+  and $\beta_3$ such that
+  \begin{equation*}
+    S\beta_2 = \beta_3.
+  \end{equation*}
+  Applying $S$ to both sides, we get $S^2\beta_2 = S\beta_3$ or
+  $S\beta_2 = S\beta_3$. Now letting $\alpha_2 = \beta_3 - \beta_2$,
+  we get
+  \begin{equation}
+    \label{eq:lin-tran:S2-equals-S-null-space}
+    S\alpha_2 = S\beta_3 - S\beta_2 = 0.
+  \end{equation}
+
+  Next, if $c_1\alpha_1 + c_2\alpha_2 = 0$ for scalars $c_1$ and
+  $c_2$, then
+  \begin{equation*}
+    c_1S\alpha_1 + c_2S\alpha_2 = 0.
+  \end{equation*}
+  Substituting equations \eqref{eq:lin-tran:S2-equals-S-fixed-point}
+  and \eqref{eq:lin-tran:S2-equals-S-null-space}, we see
+  $c_1\alpha_1 = 0$, which implies that $c_1 = 0$ since $\alpha_1$ is
+  nonzero. So $c_2\alpha_2 = 0$ and we must have $c_2 = 0$ since
+  $\alpha_2$ is also nonzero. Thus the set
+  $\mathcal{B} = \{\alpha_1,\alpha_2\}$ is a set of two linearly
+  independent vectors in $R^2$. Therefore $\mathcal{B}$ spans $R^2$
+  and is a basis.
+
+  Finally, we see that \eqref{eq:lin-tran:S2-equals-S-fixed-point} and
+  \eqref{eq:lin-tran:S2-equals-S-null-space} together imply that
+  \begin{equation*}
+    [S]_{\mathcal{B}} =
+    \begin{bmatrix}
+      1 & 0 \\
+      0 & 0
+    \end{bmatrix}
+    = A,
+  \end{equation*}
+  so the proof is complete.
+\end{proof}
