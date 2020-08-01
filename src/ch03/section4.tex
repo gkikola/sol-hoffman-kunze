@@ -729,3 +729,93 @@ $[S]_{\mathcal{B}} = A$ (above).
   \end{equation*}
   so the proof is complete.
 \end{proof}
+
+\Exercise{11} Let $W$ be the space of all $n\times1$ column matrices
+over a field $F$. If $A$ is an $n\times n$ matrix over $F$, then $A$
+defines a linear operator $L_A$ on $W$ through left multiplication:
+$L_A(X) = AX$. Prove that every linear operator on $W$ is left
+multiplication by some $n\times n$ matrix, i.e., is $L_A$ for some
+$A$.
+
+Now suppose $V$ is an $n$-dimensional vector space over the field $F$,
+and let $\mathcal{B}$ be an ordered basis for $V$. For each $\alpha$
+in $V$, define $U\alpha = [\alpha]_{\mathcal{B}}$. Prove that $U$ is
+an isomorphism of $V$ onto $W$. If $T$ is a linear operator on $V$,
+then $UTU^{-1}$ is a linear operator on $W$. Accordingly, $UTU^{-1}$
+is left multiplication by some $n\times n$ matrix $A$. What is $A$?
+\begin{solution}
+  Let $\mathcal{C}$ be the standard ordered basis for
+  $W = F^{n\times1}$, i.e. the $j$th vector in the basis has a $1$ in
+  its $j$th row and all other entries zero. Then if $S$ is any linear
+  operator on $W$, we may take the $n\times n$ matrix $A$ to be
+  \begin{equation*}
+    A = [S]_{\mathcal{C}}.
+  \end{equation*}
+  Then $L_A$ and $S$ have the same matrix relative to the ordered
+  basis $\mathcal{C}$, and therefore $L_A = S$. Therefore every linear
+  operator on $W$ is left multiplication by some $n\times n$ matrix.
+
+  Now let $V$ be an $n$-dimensional vector space over $F$ and
+  $\mathcal{B} = \{\alpha_1,\dots,\alpha_n\}$ an ordered basis for
+  $V$. Define $U\alpha = [\alpha]_{\mathcal{B}}$, so that $U$ is a map
+  of $V$ into $W$. We will show that $U$ is an isomorphism.
+
+  First, for any $\beta_1,\beta_2$ in $V$ and scalar $c$ in $F$, we
+  have
+  \begin{align*}
+    U(c\beta_1 + \beta_2)
+    &= [c\beta_1 + \beta_2]_{\mathcal{B}} \\
+    &= c[\beta_1]_{\mathcal{B}} + [\beta_2]_{\mathcal{B}} \\
+    &= cU\beta_1 + U\beta_2,
+  \end{align*}
+  and $U$ is a linear transformation.
+
+  Now choose $Y$ in $W$, where
+  \begin{equation*}
+    Y =
+    \begin{bmatrix}
+      y_1 \\
+      y_2 \\
+      \vdots \\
+      y_n
+    \end{bmatrix}.
+  \end{equation*}
+  Define
+  \begin{equation*}
+    \beta = y_1\alpha_1 + y_2\alpha_2 + \cdots + y_n\alpha_n.
+  \end{equation*}
+  Then
+  \begin{equation*}
+    U\beta = [\beta]_{\mathcal{B}} = Y.
+  \end{equation*}
+  So $Y$ is in the range of $U$, and $U$ is therefore onto. By
+  Theorem~9, $U$ is invertible and therefore an isomorphism of $V$
+  onto $W$.
+
+  Finally, if $T$ is a linear operator on $V$, then $UTU^{-1}$ is a
+  linear operator on $W$ and hence $UTU^{-1} = L_A$ for some
+  $n\times n$ matrix $A$. Choose any $X$ in $W$, with
+  \begin{equation*}
+    X =
+    \begin{bmatrix}
+      x_1 \\ x_2 \\ \vdots \\ x_n
+    \end{bmatrix}.
+  \end{equation*}
+  Then
+  \begin{align*}
+    UTU^{-1}(X)
+    &= UT(x_1\alpha_1 + x_2\alpha_2 + \cdots + x_n\alpha_n) \\
+    &= U(x_1T\alpha_1 + x_2T\alpha_2 + \cdots + x_nT\alpha_n) \\
+    &= x_1[T\alpha_1]_{\mathcal{B}} + x_2[T\alpha_2]_{\mathcal{B}}
+      + \cdots + x_n[T\alpha_n]_{\mathcal{B}} \\
+    &= x_1[T]_{\mathcal{B}}[\alpha_1]_{\mathcal{B}}
+      + x_2[T]_{\mathcal{B}}[\alpha_2]_{\mathcal{B}}
+      + \cdots
+      + x_n[T]_{\mathcal{B}}[\alpha_n]_{\mathcal{B}} \\
+    &= [T]_{\mathcal{B}}(x_1U\alpha_1 + x_2U\alpha_2
+      + \cdots + x_nU\alpha_n) \\
+    &= [T]_{\mathcal{B}}X.
+  \end{align*}
+  We see that $A = [T]_{\mathcal{B}}$, so
+  $UTU^{-1} = L_{[T]_{\mathcal{B}}}$.
+\end{solution}
