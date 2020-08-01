@@ -936,3 +936,35 @@ be an ordered basis for $V$.
     and we see that $M$ and $N$ are similar matrices.
   \end{proof}
 \end{enumerate}
+
+\Exercise{13} Let $V$ and $W$ be finite-dimensional vector spaces over
+the field $F$ and let $T$ be a linear transformation from $V$ into
+$W$. If
+\begin{equation*}
+  \mathcal{B} = \{\alpha_1,\dots,\alpha_n\}
+  \quad\text{and}\quad
+  \mathcal{B}' = \{\beta_1,\dots,\beta_m\}
+\end{equation*}
+are ordered bases for $V$ and $W$, respectively, define the linear
+transformations $E^{p,q}$ as in the proof of Theorem~5:
+$E^{p,q}(\alpha_i) = \delta_{iq}\beta_p$. Then the $E^{p,q}$,
+$1\leq p\leq m$, $1\leq q\leq n$, form a basis for $L(V,W)$, and so
+\begin{equation*}
+  T = \sum_{p=1}^m\sum_{q=1}^nA_{pq}E^{p,q}
+\end{equation*}
+for certain scalars $A_{pq}$ (the coordinates of $T$ in this basis for
+$L(V,W)$). Show that the matrix $A$ with entries $A(p,q) = A_{pq}$ is
+precisely the matrix of $T$ relative to the pair
+$\mathcal{B},\mathcal{B}'$.
+\begin{solution}
+  Note that for each $j = 1,\dots,n$,
+  \begin{align*}
+    T\alpha_j
+    &= \sum_{p=1}^m\sum_{q=1}^nA_{pq}E^{p,q}(\alpha_j) \\
+    &= \sum_{p=1}^m\sum_{q=1}^nA_{pq}\delta_{jq}\beta_p \\
+    &= \sum_{p=1}^mA_{pj}\beta_p.
+  \end{align*}
+  Thus the $i$th coordinate of $T\alpha_j$ is $A_{ij}$ and we see that
+  the matrix of $T$ relative to $\mathcal{B},\mathcal{B}'$ is
+  precisely the matrix $A$.
+\end{solution}
