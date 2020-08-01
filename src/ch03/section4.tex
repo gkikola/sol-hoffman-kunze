@@ -632,12 +632,14 @@ matrices are similar over the field of complex numbers:
   $\mathcal{B}$. By Theorem~14, the two matrices are similar.
 \end{proof}
 
-\Exercise9 Let $V$ be a finite-dimensional vector space over the field
-$F$ and let $S$ and $T$ be linear operators on $V$. We ask: When do
-there exist ordered bases $\mathcal{B}$ and $\mathcal{B}'$ for $V$
-such that $[S]_{\mathcal{B}} = [T]_{\mathcal{B}'}$? Prove that such
-bases exist if and only if there is an invertible linear operator $U$
-on $V$ such that $T = USU^{-1}$.
+\Exercise9
+\label{exercise:lin-tran:S-T-same-mat-diff-basis}
+Let $V$ be a finite-dimensional vector space over the field $F$ and
+let $S$ and $T$ be linear operators on $V$. We ask: When do there
+exist ordered bases $\mathcal{B}$ and $\mathcal{B}'$ for $V$ such that
+$[S]_{\mathcal{B}} = [T]_{\mathcal{B}'}$? Prove that such bases exist
+if and only if there is an invertible linear operator $U$ on $V$ such
+that $T = USU^{-1}$.
 \begin{proof}
   Assume such bases exist, so that
   $[S]_{\mathcal{B}} = [T]_{\mathcal{B}'}$. Let $U$ be the operator
@@ -819,3 +821,118 @@ is left multiplication by some $n\times n$ matrix $A$. What is $A$?
   We see that $A = [T]_{\mathcal{B}}$, so
   $UTU^{-1} = L_{[T]_{\mathcal{B}}}$.
 \end{solution}
+
+\Exercise{12} Let $V$ be an $n$-dimensional vector space over the
+field $F$, and let
+\begin{equation*}
+  \mathcal{B} = \{\alpha_1,\dots,\alpha_n\}
+\end{equation*}
+be an ordered basis for $V$.
+\begin{enumerate}
+\item \label{itm:lin-tran:T-alphaj-eq-alpha-jp1} According to
+  Theorem~1, there is a unique linear operator $T$ on $V$ such that
+  \begin{equation*}
+    T\alpha_j = \alpha_{j+1}, \quad
+    j = 1, \dots, n-1, \quad
+    T\alpha_n = 0.
+  \end{equation*}
+  What is the matrix $A$ of $T$ in the ordered basis $\mathcal{B}$?
+  \begin{solution}
+    For each $j = 1, \dots, n-1$, we have $A_{j+1,j} = 1$ and all
+    other entries $0$. That is,
+    \begin{equation*}
+      A = [T]_{\mathcal{B}} =
+      \begin{bmatrix}
+        0 & 0 & 0 & \cdots & 0 & 0 \\
+        1 & 0 & 0 & \cdots & 0 & 0 \\
+        0 & 1 & 0 & \cdots & 0 & 0 \\
+        0 & 0 & 1 & \cdots & 0 & 0 \\
+        \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+        0 & 0 & 0 & \cdots & 1 & 0
+      \end{bmatrix}. \qedhere
+    \end{equation*}
+  \end{solution}
+
+\item Prove that $T^n = 0$ but $T^{n-1}\neq0$.
+  \begin{proof}
+    Since $T^{n-1}\alpha_1 = \alpha_n \neq 0$, we see that
+    $T^{n-1}\neq0$. On the other hand,
+    \begin{equation*}
+      T^n\alpha_1 = T(T^{n-1}\alpha_1) = T\alpha_n = 0,
+    \end{equation*}
+    and we can similarly see that $T^n\alpha_j = 0$ for all $j$ with
+    $1\leq j\leq n$. Since any vector $\alpha$ can be written as a
+    linear combination of the basis vectors $\alpha_1,\dots,\alpha_n$,
+    it follows by the linearity of $T$ that $T^n\alpha = 0$. Therefore
+    $T^n = 0$.
+  \end{proof}
+
+\item Let $S$ be any linear operator on $V$ such that $S^n = 0$ but
+  $S^{n-1}\neq0$. Prove that there is an ordered basis $\mathcal{B}'$
+  for $V$ such that the matrix of $S$ in the ordered basis
+  $\mathcal{B}'$ is the matrix $A$ of part
+  \ref{itm:lin-tran:T-alphaj-eq-alpha-jp1}.
+  \begin{proof}
+    Since $S^{n-1}\neq0$, there is a nonzero $\beta_1$ in $V$ such
+    that $S^{n-1}\beta_1$ is nonzero. Now, for each $j$ with
+    $2\leq j\leq n$, define
+    \begin{equation*}
+      \beta_j = S^{j-1}\beta_1.
+    \end{equation*}
+    Let $\mathcal{B}' = \{\beta_1,\dots,\beta_n\}$.
+
+    Now suppose $c_1,c_2,\dots,c_n$ are scalars in $F$ such that
+    \begin{equation*}
+      c_1\beta_1 + c_2\beta_2 + \cdots + c_n\beta_n = 0.
+    \end{equation*}
+    Taking $S^{n-1}$ of both sides gives $c_1\beta_n = 0$, which
+    implies that $c_1 = 0$. So
+    \begin{equation*}
+      c_2\beta_2 + c_3\beta_3 + \cdots + c_n\beta_n = 0,
+    \end{equation*}
+    and we can take $S^{n-2}$ of both sides to get $c_2\beta_n = 0$,
+    implying that $c_2$ is zero. More generally, assuming that
+    $c_1,\dots,c_k$ are all zero for some $k$ with $1\leq k\leq n-1$,
+    we have
+    \begin{equation*}
+      c_{k+1}\beta_{k+1} + \cdots + c_n\beta_n = 0.
+    \end{equation*}
+    Taking $S^{n-k-1}$ of both sides (in the case where $k = n-1$, we
+    take $S^0 = I$) then gives $c_{k+1}\beta_n = 0$, so that
+    $c_{k+1} = 0$. Therefore $c_1 = c_2 = \cdots = c_n = 0$ and
+    $\mathcal{B}'$ is linearly independent. Since $\dim V = n$ and
+    $\mathcal{B}'$ is a linearly independent set of $n$ vectors in
+    $V$, it follows that $\mathcal{B}'$ is a basis for $V$.
+
+    Finally, we have defined $\beta_1,\dots,\beta_n$ so that
+    \begin{equation*}
+      S\beta_j = \beta_{j+1}, \quad
+      j = 1, \dots, n - 1, \quad
+      S\beta_n = 0.
+    \end{equation*}
+    Therefore we have $[S]_{\mathcal{B}'} = A$.
+  \end{proof}
+
+\item Prove that if $M$ and $N$ are $n\times n$ matrices over $F$ such
+  that $M^n = N^n = 0$ but $M^{n-1}\neq 0\neq N^{n-1}$, then $M$ and
+  $N$ are similar.
+  \begin{proof}
+    Let $P$ and $Q$ be the linear operators on $V$ whose matrices
+    relative to $\mathcal{B}$ are, respectively, $M$ and $N$. Then
+    $P^n = Q^n = 0$ but $P^{n-1}\neq0\neq Q^{n-1}$. We have shown
+    above that there are bases $\mathcal{C}$ and $\mathcal{C}'$ for
+    $V$ such that
+    \begin{equation*}
+      [P]_{\mathcal{C}} = A = [Q]_{\mathcal{C}'}.
+    \end{equation*}
+    By Exercise~\ref{exercise:lin-tran:S-T-same-mat-diff-basis}, there
+    is an invertible linear transformation $U$ such that
+    $Q = UPU^{-1}$. Therefore
+    \begin{equation*}
+      N = [Q]_{\mathcal{B}}
+      = [U]_{\mathcal{B}}[P]_{\mathcal{B}}[U]_{\mathcal{B}}^{-1}
+      = [U]_{\mathcal{B}}M[U]_{\mathcal{B}}^{-1}
+    \end{equation*}
+    and we see that $M$ and $N$ are similar matrices.
+  \end{proof}
+\end{enumerate}
