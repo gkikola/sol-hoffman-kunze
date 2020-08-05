@@ -88,3 +88,89 @@ $\alpha_2 = (0, 1, -2)$, $\alpha_3 = (-1, -1, 0)$.
     \end{align*}
   \end{solution}
 \end{enumerate}
+
+\Exercise2 Let $\mathcal{B} = \{\alpha_1,\alpha_2,\alpha_3\}$ be the
+basis for $C^3$ defined by
+\begin{equation*}
+  \alpha_1 = (1,0,-1), \quad
+  \alpha_2 = (1,1,1), \quad
+  \alpha_3 = (2,2,0).
+\end{equation*}
+Find the dual basis of $\mathcal{B}$.
+\begin{solution}
+  Let $\{f_1,f_2,f_3\}$ be the dual basis of $\mathcal{B}$, and let
+  \begin{equation*}
+    P =
+    \begin{bmatrix}
+      1 & 1 & 2 \\
+      0 & 1 & 2 \\
+      -1 & 1 & 0
+    \end{bmatrix},
+  \end{equation*}
+  so that $P$ is the transition matrix from $\mathcal{B}$ to the
+  standard ordered basis of $C^3$. We find
+  \begin{equation*}
+    P^{-1} =
+    \begin{bmatrix}
+      1 & -1 & 0 \\[3pt]
+      1 & -1 & 1 \\[3pt]
+      -\frac12 & 1 & -\frac12
+    \end{bmatrix}.
+  \end{equation*}
+  So, given a vector $\alpha = (x_1,x_2,x_3)$ in $C_3$, we can write
+  \begin{equation*}
+    [\alpha]_{\mathcal{B}} = P^{-1}
+    \begin{bmatrix}
+      x_1 \\ x_2 \\ x_3
+    \end{bmatrix}.
+  \end{equation*}
+  Therefore
+  \begin{equation*}
+    f_1(x_1,x_2,x_3) =
+    \begin{bmatrix}
+      1 & 0 & 0
+    \end{bmatrix}
+    \begin{bmatrix}
+      1 & -1 & 0 \\[3pt]
+      1 & -1 & 1 \\[3pt]
+      -\frac12 & 1 & -\frac12
+    \end{bmatrix}
+    \begin{bmatrix}
+      x_1 \\ x_2 \\ x_3
+    \end{bmatrix}
+    = x_1 - x_2.
+  \end{equation*}
+  Similarly, we get
+  \begin{equation*}
+    f_2(x_1,x_2,x_3) =
+    \begin{bmatrix}
+      0 & 1 & 0
+    \end{bmatrix}
+    \begin{bmatrix}
+      1 & -1 & 0 \\[3pt]
+      1 & -1 & 1 \\[3pt]
+      -\frac12 & 1 & -\frac12
+    \end{bmatrix}
+    \begin{bmatrix}
+      x_1 \\ x_2 \\ x_3
+    \end{bmatrix}
+    = x_1 - x_2 + x_3,
+  \end{equation*}
+  and
+  \begin{equation*}
+    f_3(x_1,x_2,x_3) =
+    \begin{bmatrix}
+      0 & 0 & 1
+    \end{bmatrix}
+    \begin{bmatrix}
+      1 & -1 & 0 \\[3pt]
+      1 & -1 & 1 \\[3pt]
+      -\frac12 & 1 & -\frac12
+    \end{bmatrix}
+    \begin{bmatrix}
+      x_1 \\ x_2 \\ x_3
+    \end{bmatrix}
+    = -\frac12x_1 + x_2 - \frac12x_3.
+    \qedhere
+  \end{equation*}
+\end{solution}
