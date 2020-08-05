@@ -1,0 +1,90 @@
+\section{Linear Functionals}
+
+\Exercise1 In $R^3$, let $\alpha_1 = (1, 0, 1)$,
+$\alpha_2 = (0, 1, -2)$, $\alpha_3 = (-1, -1, 0)$.
+\begin{enumerate}
+\item If $f$ is a linear functional on $R^3$ such that
+  \begin{equation*}
+    f(\alpha_1) = 1, \quad
+    f(\alpha_2) = -1, \quad
+    f(\alpha_3) = 3,
+  \end{equation*}
+  and if $\alpha = (a, b, c)$, find $f(\alpha)$.
+  \begin{solution}
+    Suppose $f(x_1,x_2,x_3) = c_1x_1 + c_2x_2 + c_3x_3$. Then
+    \begin{alignat*}{5}
+      f(\alpha_1)
+      &{}={}& c_1 && &{}+{}& c_3 &{}={}& 1 &, \\
+      f(\alpha_2)
+      &{}={}& && c_2 &{}-{}& 2c_3 &{}={}& -1 &, \\
+      f(\alpha_3)
+      &{}={}& -c_1 &{}-{}& c_2 && &{}={}& 3 &.
+    \end{alignat*}
+    Row-reducing the augmented matrix for this system gives
+    \begin{equation*}
+      \begin{bmatrix}
+        1 & 0 & 1 & 1 \\
+        0 & 1 & -2 & -1 \\
+        -1 & -1 & 0 & 3
+      \end{bmatrix}
+      \rightarrow
+      \begin{bmatrix}
+        1 & 0 & 0 & 4 \\
+        0 & 1 & 0 & -7 \\
+        0 & 0 & 1 & -3
+      \end{bmatrix},
+    \end{equation*}
+    so $c_1 = 4$, $c_2 = -7$, and $c_3 = -3$. Therefore
+    \begin{equation*}
+      f(\alpha) = 4a - 7b - 3c. \qedhere
+    \end{equation*}
+  \end{solution}
+
+\item Describe explicitly a linear functional $f$ on $R^3$ such that
+  \begin{equation*}
+    f(\alpha_1) = f(\alpha_2) = 0 \quad\text{but}\quad
+    f(\alpha_3) \neq 0.
+  \end{equation*}
+  \begin{solution}
+    For example, suppose $f(\alpha_1) = f(\alpha_2) = 0$ but
+    $f(\alpha_3) = 1$. As above, this leads to a system of linear
+    equations having augmented matrix
+    \begin{equation*}
+      \begin{bmatrix}
+        1 & 0 & 1 & 0 \\
+        0 & 1 & -2 & 0 \\
+        -1 & -1 & 0 & 1
+      \end{bmatrix}
+      \rightarrow
+      \begin{bmatrix}
+        1 & 0 & 0 & 1 \\
+        0 & 1 & 0 & -2 \\
+        0 & 0 & 1 & -1
+      \end{bmatrix}.
+    \end{equation*}
+    So we may write
+    \begin{equation*}
+      f(x_1,x_2,x_3) = x_1 - 2x_2 - x_3. \qedhere
+    \end{equation*}
+  \end{solution}
+
+\item Let $f$ be any linear functional such that
+  \begin{equation*}
+    f(\alpha_1) = f(\alpha_2) = 0 \quad\text{and}\quad
+    f(\alpha_3) \neq 0.
+  \end{equation*}
+  If $\alpha = (2, 3, -1)$, show that $f(\alpha)\neq0$.
+  \begin{solution}
+    By inspection, we see that
+    \begin{equation*}
+      \alpha = -\alpha_1 - 3\alpha_3.
+    \end{equation*}
+    Therefore
+    \begin{align*}
+      f(\alpha)
+      &= f(-\alpha_1 - 3\alpha_3) \\
+      &= -f(\alpha_1) - 3f(\alpha_3) \\
+      &= -3f(\alpha_3) \neq 0. \qedhere
+    \end{align*}
+  \end{solution}
+\end{enumerate}
