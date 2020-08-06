@@ -323,3 +323,43 @@ above form, for some $f_1,\dots,f_m$.
   itself is linear. Therefore every linear transformation from $F^n$
   into $F^m$ can be written this way.
 \end{proof}
+
+\Exercise7 Let $\alpha_1 = (1, 0, -1, 2)$ and
+$\alpha_2 = (2, 3, 1, 1)$, and let $W$ be the subspace of $R^4$
+spanned by $\alpha_1$ and $\alpha_2$. Which linear functionals $f$:
+\begin{equation*}
+  f(x_1,x_2,x_3,x_4) = c_1x_1 + c_2x_2 + c_3x_3 + c_4x_4
+\end{equation*}
+are in the annihilator of $W$?
+\begin{solution}
+  Let $f$ be in $W^0$. We want
+  \begin{equation*}
+    f(1, 0, -1, 2) = f(2, 3, 1, 1) = 0.
+  \end{equation*}
+  This leads to a system of equations in $c_1,c_2,c_3,c_4$ having
+  coefficient matrix
+  \begin{equation*}
+    \begin{bmatrix}
+      1 & 0 & -1 & 2 \\
+      2 & 3 & 1 & 1
+    \end{bmatrix}
+    \rightarrow
+    \begin{bmatrix}
+      1 & 0 & -1 & 2 \\
+      0 & 1 & 1 & -1
+    \end{bmatrix}.
+  \end{equation*}
+  From the reduced form we see that $c_3$ and $c_4$ can be arbitrary,
+  with
+  \begin{equation*}
+    c_1 = c_3 - 2c_4 \quad\text{and}\quad c_2 = c_4 - c_3.
+  \end{equation*}
+  Therefore $W^0$ consists of the linear functionals $f$ having the
+  form
+  \begin{equation*}
+    f(x_1,x_2,x_3,x_4) = (s - 2t)x_1 + (t - s)x_2 + sx_3 + tx_4,
+  \end{equation*}
+  where $s$ and $t$ are scalars in $F$. Note that we can also find a
+  basis for $W^0$ by first taking $s = 1, t = 0$ and then by taking
+  $s = 0, t = 1$.
+\end{solution}
