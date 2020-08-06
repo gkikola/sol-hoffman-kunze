@@ -183,25 +183,25 @@ same trace.
 \begin{proof}
   We may directly compute
   \begin{align*}
-    \trace(AB)
+    \tr(AB)
     &= \sum_{i=1}^n(AB)_{ii} \\
     &= \sum_{i=1}^n\sum_{j=1}^nA_{ij}B_{ji}
     = \sum_{j=1}^n\sum_{i=1}^nB_{ji}A_{ij} \\
     &= \sum_{j=1}^n(BA)_{jj} \\
-    &= \trace(BA).
+    &= \tr(BA).
   \end{align*}
-  So $\trace(AB) = \trace(BA)$.
+  So $\tr(AB) = \tr(BA)$.
 
   Next, suppose $A$ and $B$ are similar, and let $P$ be an invertible
   $n\times n$ matrix such that $B = P^{-1}AP$. Using the fact that was
   proven above, we get
   \begin{align*}
-    \trace(B)
-    &= \trace(P^{-1}AP) \\
-    &= \trace((P^{-1}A)P) \\
-    &= \trace(P(P^{-1}A)) \\
-    &= \trace((PP^{-1})A) \\
-    &= \trace(A).
+    \tr(B)
+    &= \tr(P^{-1}AP) \\
+    &= \tr((P^{-1}A)P) \\
+    &= \tr(P(P^{-1}A)) \\
+    &= \tr((PP^{-1})A) \\
+    &= \tr(A).
   \end{align*}
   This shows that similar matrices have the same trace.
 \end{proof}
