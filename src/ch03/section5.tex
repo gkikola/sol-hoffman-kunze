@@ -175,9 +175,11 @@ Find the dual basis of $\mathcal{B}$.
   \end{equation*}
 \end{solution}
 
-\Exercise3 If $A$ and $B$ are $n\times n$ matrices over the field $F$,
-show that $\trace(AB) = \trace(BA)$. Now show that similar matrices
-have the same trace.
+\Exercise3
+\label{exercise:lin-tran:trace-AB-eq-trace-BA}
+If $A$ and $B$ are $n\times n$ matrices over the field $F$, show that
+$\trace(AB) = \trace(BA)$. Now show that similar matrices have the
+same trace.
 \begin{proof}
   We may directly compute
   \begin{align*}
@@ -272,3 +274,17 @@ basis for $V$ of which it is the dual.
   \end{align*}
   and $\{f_1,f_2,f_3\}$ is the dual basis of $\{p_1,p_2,p_3\}$.
 \end{solution}
+
+\Exercise5 If $A$ and $B$ are $n\times n$ complex matrices, show that
+$AB - BA = I$ is impossible.
+\begin{proof}
+  In Example~19, the trace function was shown to be a linear
+  functional on the space of $n\times n$ matrices. And in
+  Exercise~\ref{exercise:lin-tran:trace-AB-eq-trace-BA}, we proved
+  that, given two matrices $A$ and $B$, $\tr(AB) = \tr(BA)$. It now
+  follows that
+  \begin{equation*}
+    \tr(AB - BA) = \tr(AB) - \tr(BA) = 0.
+  \end{equation*}
+  But $\tr(I) = n\neq0$, so it cannot be the case that $AB - BA = I$.
+\end{proof}
