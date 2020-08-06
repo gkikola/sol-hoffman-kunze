@@ -203,3 +203,72 @@ have the same trace.
   \end{align*}
   This shows that similar matrices have the same trace.
 \end{proof}
+
+\Exercise4 Let $V$ be the vector space of all polynomial functions $p$
+from $R$ into $R$ which have degree $2$ or less:
+\begin{equation*}
+  p(x) = c_0 + c_1x + c_2x^2.
+\end{equation*}
+Define three linear functionals on $V$ by
+\begin{equation*}
+  f_1(p) = \int_0^1p(x)\,dx, \quad
+  f_2(p) = \int_0^2p(x)\,dx, \quad
+  f_3(p) = \int_0^{-1}p(x)\,dx.
+\end{equation*}
+Show that $\{f_1,f_2,f_3\}$ is a basis for $V^*$ by exhibiting the
+basis for $V$ of which it is the dual.
+\begin{solution}
+  First we evaluate,
+  \begin{align*}
+    f_1(p) &= \left(c_0x + \frac12c_1x^2 + \frac13c_2x^3\right)\Bigg|_0^1
+    = c_0 + \frac12c_1 + \frac13c_2, \\
+    f_2(p) &= \left(c_0x + \frac12c_1x^2 + \frac13c_2x^3\right)\Bigg|_0^2
+    = 2c_0 + 2c_1 + \frac83c_2, \\
+    f_3(p) &= \left(c_0x + \frac12c_1x^2 + \frac13c_2x^3\right)\Bigg|_0^{-1}
+    = -c_0 + \frac12c_1 - \frac13c_2.
+  \end{align*}
+  Now, let $\{p_1,p_2,p_3\}$ be the basis for $V$ of which
+  $\{f_1,f_2,f_3\}$ is the dual. To determine $p_i$, we want to find
+  values for the coefficients $c_1$, $c_2$, and $c_3$ so that
+  $f_i(p_i) = 1$ and $f_j(p_i) = 0$ for $j\neq i$. This gives three
+  systems of linear equations, having augmented matrices
+  \begin{equation*}
+    \begin{bmatrix}
+      1 & \frac12 & \frac13 & 1 \\[3pt]
+      2 & 2 & \frac83 & 0 \\[3pt]
+      -1 & \frac12 & -\frac13 & 0
+    \end{bmatrix}, \quad
+    \begin{bmatrix}
+      1 & \frac12 & \frac13 & 0 \\[3pt]
+      2 & 2 & \frac83 & 1 \\[3pt]
+      -1 & \frac12 & -\frac13 & 0
+    \end{bmatrix}, \quad\text{and}\quad
+    \begin{bmatrix}
+      1 & \frac12 & \frac13 & 0 \\[3pt]
+      2 & 2 & \frac83 & 0 \\[3pt]
+      -1 & \frac12 & -\frac13 & 1
+    \end{bmatrix}.
+  \end{equation*}
+  We can combine these into a single augmented matrix and perform
+  row-reduction, which gives
+  \begin{equation*}
+    \begin{bmatrix}
+      1 & \frac12 & \frac13 & 1 & 0 & 0 \\[3pt]
+      2 & 2 & \frac83 & 0 & 1 & 0 \\[3pt]
+      -1 & \frac12 & -\frac13 & 0 & 0 & 1
+    \end{bmatrix}
+    \rightarrow
+    \begin{bmatrix}
+      1 & 0 & 0 & 1 & -\frac16 & -\frac13 \\[3pt]
+      0 & 1 & 0 & 1 & 0 & 1 \\[3pt]
+      0 & 0 & 1 & -\frac32 & \frac12 & -\frac12
+    \end{bmatrix}.
+  \end{equation*}
+  So we see that
+  \begin{align*}
+    p_1(x) &= 1 + x - \frac32x^2, \\
+    p_2(x) &= -\frac16 + \frac12x^2, \\
+    p_3(x) &= -\frac13 + x - \frac12x^2,
+  \end{align*}
+  and $\{f_1,f_2,f_3\}$ is the dual basis of $\{p_1,p_2,p_3\}$.
+\end{solution}
