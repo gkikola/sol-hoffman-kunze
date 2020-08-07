@@ -508,3 +508,46 @@ Find $f(B)$.
     f(B) = -3(2) + \frac32(-2) - 6(-1) + 3(1) = 0. \qedhere
   \end{equation*}
 \end{solution}
+
+\Exercise{10} Let $F$ be a subfield of the complex numbers. We define
+$n$ linear functionals on $F^n$ ($n\geq2$) by
+\begin{equation*}
+  f_k(x_1,\dots,x_n) = \sum_{j=1}^n(k-j)x_j, \quad 1\leq k\leq n.
+\end{equation*}
+What is the dimension of the subspace annihilated by $f_1,\dots,f_n$?
+\begin{solution}
+  Call the subspace $W$. We first want to find $\dim W^0$. Fix some
+  $n\geq2$ and consider the set $\mathcal{B} = \{f_1,f_2\}$. Since
+  $f_1(\alpha) = f_2(\alpha) = 0$ for any $\alpha$ in $W$, we have
+  \begin{align*}
+    -x_2 - 2x_3 - 3x_4 - \cdots - (n - 1)x_n &= 0, \\
+    x_1 - x_3 - 2x_4 - \cdots - (n - 2)x_n &= 0.
+  \end{align*}
+  The coefficient matrix for the above system of equations is given by
+  \begin{equation*}
+    A =
+    \begin{bmatrix}
+      0 & -1 & -2 & -3 & \cdots & 1 - n \\
+      1 & 0 & -1 & -2 & \cdots & 2 - n
+    \end{bmatrix}.
+  \end{equation*}
+  Observe that by multiplying the first row by $-1$ and interchanging
+  the two rows, we can put $A$ in row-reduced echelon form. Since $A$
+  is row-equivalent to a row-reduced matrix having two nonzero rows,
+  we see that the set $\mathcal{B}$ is linearly independent.
+
+  Next, consider $f_k$ for some $k$ with $3\leq k\leq n$. Then we can
+  write
+  \begin{align*}
+    f_k(x_1,\dots,x_n)
+    &= \sum_{j=1}^n(k-j)x_j \\
+    &= \sum_{j=1}^n(-k - 2j + 2 + jk)x_j
+      + \sum_{j=1}^n(2k + j - 2 - jk)x_j \\
+    &= (2 - k)\sum_{j=1}^n(1 - j)x_j + (k - 1)\sum_{j=1}^n(2 - j)x_j \\
+    &= (2 - k)f_1(x_1,\dots,x_n) + (k - 1)f_2(x_1,\dots,x_n).
+  \end{align*}
+  This shows that $\mathcal{B}$ spans the annihilator of
+  $W$. Therefore $\mathcal{B}$ is a basis for $W^0$ and
+  $\dim W^0 = 2$. It now follows from Theorem~16 that
+  $\dim W = n - 2$.
+\end{solution}
