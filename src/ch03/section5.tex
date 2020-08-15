@@ -684,3 +684,87 @@ $V$. Prove that either $f = 0$ or $g = 0$.
   0$. Since $\alpha$ was chosen arbitrarily, it follows that $g = 0$
   and the proof is complete.
 \end{proof}
+
+\Exercise{14} Let $F$ be a field of characteristic zero and let $V$ be
+a finite-dimensional vector space over $F$. If
+$\alpha_1,\dots,\alpha_m$ are finitely many vectors in $V$, each
+different from the zero vector, prove that there is a linear
+functional $f$ on $V$ such that
+\begin{equation*}
+  f(\alpha_i) \neq 0, \quad i = 1, \dots, m.
+\end{equation*}
+\begin{proof}
+  Let $\mathcal{B} = \{\beta_1,\dots,\beta_n\}$ be a basis for $V$. We
+  will use induction on $m$ to show that we can always find a linear
+  functional $f$ such that $f(\alpha_i)\neq0$ for all $i$.
+
+  First, when $m = 1$, we have a single nonzero vector
+  $\alpha_1$. Writing $\alpha_1$ as a linear combination of the
+  vectors in $\mathcal{B}$ gives
+  \begin{equation*}
+    \alpha_1 = c_1\beta_1 + c_2\beta_2 + \cdots + c_n\beta_n,
+  \end{equation*}
+  for some scalars $c_1,\dots,c_n$ in $F$. Since $\alpha_1\neq0$,
+  there is an index $k$ such that $c_k\neq0$. Now define $f$ to be the
+  linear functional on $V$ such that
+  \begin{equation*}
+    f(\beta_i) = \delta_{ik}c_k^{-1},
+  \end{equation*}
+  where $\delta_{ik}$ is the Kronecker delta. We now have
+  \begin{equation*}
+    f(\alpha_1) = c_kc_k^{-1} = 1 \neq 0.
+  \end{equation*}
+  This shows that the statement holds for the base case of $m = 1$.
+
+  Now assume that the statement is true when $m = k$ for some
+  $k\geq1$, and let $k + 1$ nonzero vectors
+  $\alpha_1,\dots,\alpha_{k+1}$ be given. We may apply the inductive
+  hypothesis to find a linear functional $f_0$ on $V$ such that
+  $f_0(\alpha_i) \neq 0$ for all $i$ with $1\leq i\leq k$.
+
+  If $f_0(\alpha_{k+1})$ happens to be nonzero, then we are done. So
+  we will assume that $f_0(\alpha_{k+1}) = 0$. Again the inductive
+  hypothesis, when applied to the single vector $\alpha_{k+1}$, allows
+  us to find a linear functional $f_1$ such that
+  $f_1(\alpha_{k+1})\neq0$.
+
+  For each $i$ with $1\leq i\leq k+1$, define the number $N_i$ as
+  follows. First, if there is no positive integer $n$ such that
+  \begin{equation}
+    \label{eq:lin-tran:f0a-plus-n-f1a-eq-0}
+    f_0(\alpha_i) + nf_1(\alpha_i) = 0,
+  \end{equation}
+  then set $N_i = 1$. Otherwise, define $N_i$ to be the unique
+  positive integer such that
+  \begin{equation*}
+    f_0(\alpha_i) + N_if_1(\alpha_i) = 0.
+  \end{equation*}
+  In this second case, we know that $N_i$ is unique for the following
+  reason. Suppose $n = M$ and $n = N_i$ both satisfy
+  \eqref{eq:lin-tran:f0a-plus-n-f1a-eq-0}. By construction, it is not
+  possible for $f_0(\alpha_i)$ and $f_1(\alpha_i)$ to both be
+  zero. But if one is zero, then
+  \eqref{eq:lin-tran:f0a-plus-n-f1a-eq-0} implies that the other is as
+  well (because $F$ has characteristic zero). So we see that neither
+  $f_0(\alpha_i)$ nor $f_1(\alpha_i)$ is zero, hence
+  \begin{equation*}
+    M = -\frac{f_0(\alpha_i)}{f_1(\alpha_i)} = N_i.
+  \end{equation*}
+  So $N_i$ is well defined for all $i = 1, \dots, k+1$.
+
+  Now, the set
+  \begin{equation*}
+    A = \{N_1, N_2, \dots, N_{k+1}\}
+  \end{equation*}
+  is a finite set of natural numbers, so we can find a largest element
+  in $A$. Take any natural number $P$ greater than this largest
+  element, and define the linear functional $f$ on $V$ by
+  \begin{equation*}
+    f = f_0 + Pf_1.
+  \end{equation*}
+  Then we see that $f(\alpha_i)\neq0$ for each $i = 1,\dots,k+1$,
+  completing the inductive step of the proof.
+
+  By induction, the original statement must be true for all positive
+  integers $m$.
+\end{proof}
