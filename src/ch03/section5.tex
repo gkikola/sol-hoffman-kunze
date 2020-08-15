@@ -251,7 +251,7 @@ basis for $V$ of which it is the dual.
       -1 & \frac12 & -\frac13 & 1
     \end{bmatrix}.
   \end{equation*}
-  We can combine these into a single augmented matrix and perform
+  We can combine these into one augmented matrix and perform
   row-reduction, which gives
   \begin{equation*}
     \begin{bmatrix}
@@ -750,7 +750,7 @@ functional $f$ on $V$ such that
   \begin{equation*}
     M = -\frac{f_0(\alpha_i)}{f_1(\alpha_i)} = N_i.
   \end{equation*}
-  So $N_i$ is well defined for all $i = 1, \dots, k+1$.
+  So $N_i$ is well-defined for all $i = 1, \dots, k+1$.
 
   Now, the set
   \begin{equation*}
@@ -767,4 +767,146 @@ functional $f$ on $V$ such that
 
   By induction, the original statement must be true for all positive
   integers $m$.
+\end{proof}
+
+\Exercise{15} According to
+Exercise~\ref{exercise:lin-tran:trace-AB-eq-trace-BA}, similar
+matrices have the same trace. Thus we can define the trace of a linear
+operator on a finite-dimensional space to be the trace of any matrix
+which represents the operator in an ordered basis. This is
+well-defined since all such representing matrices for one operator are
+similar.
+
+Now let $V$ be the space of all $2\times2$ matrices over the field $F$
+and let $P$ be a fixed $2\times2$ matrix. Let $T$ be the linear
+operator on $V$ defined by $T(A) = PA$. Prove that
+$\trace(T) = 2\trace(P)$.
+\begin{proof}
+  Let
+  \begin{equation*}
+    P =
+    \begin{bmatrix}
+      a & b \\
+      c & d
+    \end{bmatrix}
+  \end{equation*}
+  and let
+  \begin{equation*}
+    \mathcal{B} = \left\{
+      \begin{bmatrix}
+        1 & 0 \\
+        0 & 0
+      \end{bmatrix},
+      \begin{bmatrix}
+        0 & 1 \\
+        0 & 0
+      \end{bmatrix},
+      \begin{bmatrix}
+        0 & 0 \\
+        1 & 0
+      \end{bmatrix},
+      \begin{bmatrix}
+        0 & 0 \\
+        0 & 1
+      \end{bmatrix}
+    \right\}
+  \end{equation*}
+  be an ordered basis for $V$. We calculate
+  \begin{align*}
+    T
+    \begin{bmatrix}
+      1 & 0 \\
+      0 & 0
+    \end{bmatrix}
+    &=
+    \begin{bmatrix}
+      a & 0 \\
+      c & 0
+    \end{bmatrix}
+    = a
+    \begin{bmatrix}
+      1 & 0 \\
+      0 & 0
+    \end{bmatrix}
+    + c
+    \begin{bmatrix}
+      0 & 0 \\
+      1 & 0
+    \end{bmatrix}, \\
+    T
+    \begin{bmatrix}
+      0 & 1 \\
+      0 & 0
+    \end{bmatrix}
+    &=
+    \begin{bmatrix}
+      0 & a \\
+      0 & c
+    \end{bmatrix}
+    = a
+    \begin{bmatrix}
+      0 & 1 \\
+      0 & 0
+    \end{bmatrix}
+    + c
+    \begin{bmatrix}
+      0 & 0 \\
+      0 & 1
+    \end{bmatrix}, \\
+    T
+    \begin{bmatrix}
+      0 & 0 \\
+      1 & 0
+    \end{bmatrix}
+    &=
+    \begin{bmatrix}
+      b & 0 \\
+      d & 0
+    \end{bmatrix}
+    = b
+    \begin{bmatrix}
+      1 & 0 \\
+      0 & 0
+    \end{bmatrix}
+    + d
+    \begin{bmatrix}
+      0 & 0 \\
+      1 & 0
+    \end{bmatrix}, \\
+    T
+    \begin{bmatrix}
+      0 & 0 \\
+      0 & 1
+    \end{bmatrix}
+    &=
+    \begin{bmatrix}
+      0 & b \\
+      0 & d
+    \end{bmatrix}
+    = b
+    \begin{bmatrix}
+      0 & 1 \\
+      0 & 0
+    \end{bmatrix}
+    + d
+    \begin{bmatrix}
+      0 & 0 \\
+      0 & 1
+    \end{bmatrix}.
+  \end{align*}
+  From this, we see that the matrix for $T$ relative to $\mathcal{B}$
+  is the $4\times4$ matrix
+  \begin{equation*}
+    [T]_{\mathcal{B}} =
+    \begin{bmatrix}
+      a & 0 & b & 0 \\
+      0 & a & 0 & b \\
+      c & 0 & d & 0 \\
+      0 & c & 0 & d
+    \end{bmatrix}.
+  \end{equation*}
+  We can now readily see that
+  \begin{equation*}
+    \trace(T) = \tr([T]_{\mathcal{B}}) = 2a + 2d = 2\tr(P). \qedhere
+  \end{equation*}
 \end{proof}
