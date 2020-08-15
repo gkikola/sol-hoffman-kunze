@@ -640,3 +640,47 @@ $W$.
   We know $g$ exists by Theorem~1. So $g$ is a linear functional on
   $V$ that agrees with $f$ on $W$, as we wanted to show.
 \end{proof}
+
+\Exercise{13} Let $F$ be a subfield of the field of complex numbers
+and let $V$ be any vector space over $F$. Suppose that $f$ and $g$ are
+linear functionals on $V$ such that the function $h$ defined by
+$h(\alpha) = f(\alpha)g(\alpha)$ is also a linear functional on
+$V$. Prove that either $f = 0$ or $g = 0$.
+\begin{proof}
+  Let $f$, $g$, and $h$ be the linear functionals on $V$ with the
+  properties described above.
+
+  Choose any $\alpha$, $\beta$ in $V$. Then
+  \begin{align*}
+    h(\alpha + \beta)
+    &= f(\alpha + \beta)g(\alpha + \beta) \\
+    &= (f(\alpha) + f(\beta))(g(\alpha) + g(\beta)) \\
+    &= f(\alpha)g(\alpha) + f(\alpha)g(\beta) + f(\beta)g(\alpha)
+      + f(\beta)g(\beta) \\
+    &= h(\alpha) + h(\beta) + f(\alpha)g(\beta) + f(\beta)g(\alpha) \\
+    &= h(\alpha + \beta) + f(\alpha)g(\beta) + f(\beta)g(\alpha).
+  \end{align*}
+  This shows that for any pair of vectors $\alpha$, $\beta$ in $V$,
+  \begin{equation}
+    \label{eq:lin-tran:fa-gb-plus-fb-ga-eq-0}
+    f(\alpha)g(\beta) + f(\beta)g(\alpha) = 0.
+  \end{equation}
+  Taking $\beta = \alpha$, we also see that $h = 0$.
+
+  Now, either $f = 0$ or $f\neq0$. If $f = 0$ then there is nothing
+  left to prove, so we will assume that $f\neq0$. Again, let $\alpha$
+  in $V$ be arbitrary, and let $\beta$ in $V$ be such that $f(\beta)$
+  is nonzero. We know that
+  \begin{equation*}
+    f(\beta)g(\beta) = 0,
+  \end{equation*}
+  and it follows that $g(\beta) = 0$ (since
+  $f(\beta)\neq0$). Substituting zero for $g(\beta)$ in equation
+  \eqref{eq:lin-tran:fa-gb-plus-fb-ga-eq-0} then gives
+  \begin{equation*}
+    f(\beta)g(\alpha) = 0.
+  \end{equation*}
+  But, again, $f(\beta)$ is nonzero, so we must have $g(\alpha) =
+  0$. Since $\alpha$ was chosen arbitrarily, it follows that $g = 0$
+  and the proof is complete.
+\end{proof}
