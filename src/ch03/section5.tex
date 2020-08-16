@@ -910,3 +910,61 @@ $\trace(T) = 2\trace(P)$.
     \trace(T) = \tr([T]_{\mathcal{B}}) = 2a + 2d = 2\tr(P). \qedhere
   \end{equation*}
 \end{proof}
+
+\Exercise{16} Show that the trace functional on $n\times n$ matrices
+is unique in the following sense. If $W$ is the space of $n\times n$
+matrices over the field $F$ and if $f$ is a linear functional on $W$
+such that $f(AB) = f(BA)$ for each $A$ and $B$ in $W$, then $f$ is a
+scalar multiple of the trace function. If, in addition, $f(I) = n$,
+then $f$ is the trace function.
+\begin{proof}
+  Let
+  \begin{equation*}
+    \mathcal{B} = \{\epsilon_{11}, \epsilon_{12}, \dots, \epsilon_{1n},
+    \dots, \epsilon_{n1}, \epsilon_{n2}, \dots, \epsilon_{nn}\}
+  \end{equation*}
+  be the basis for $W$ where $\epsilon_{ij}$ is the $n\times n$ matrix
+  having a $1$ in the $i,j$th entry and all other entries $0$. Since
+  $f$ is linear, we may write it as
+  \begin{equation}
+    \label{eq:lin-tran:f-mult-of-trace-general}
+    f(A) = \sum_{i=1}^n\sum_{j=1}^nC_{ij}A_{ij},
+  \end{equation}
+  where each $C_{ij}$ is a fixed constant and $A_{ij}$ is the $i,j$th
+  entry of $A$.
+
+  Note that the $p,q$th entry of $\epsilon_{ij}$ is
+  $\delta_{ip}\delta_{qj}$, where $\delta_{ij}$ is the Kronecker
+  delta. So, if we fix some indices $i,j,a,b$, each in the range from
+  $1$ to $n$, then we have
+  \begin{equation}
+    \label{eq:lin-tran:f-on-prod-basis-vecs}
+    f(\epsilon_{ij}\epsilon_{ab})
+    = \sum_{p=1}^n\sum_{q=1}^nC_{pq}\sum_{k=1}^n(\delta_{ip}\delta_{kj})
+      (\delta_{ak}\delta_{qb})
+    = C_{ib}\delta_{aj}.
+  \end{equation}
+  From this, we see that
+  \begin{equation*}
+    f(\epsilon_{ij}\epsilon_{ji}) = C_{ii} \quad\text{and}\quad
+    f(\epsilon_{ji}\epsilon_{ij}) = C_{jj}.
+  \end{equation*}
+  Since these must be equal, we see that
+  $C_{11} = C_{22} = \cdots = C_{nn}$. On the other hand,
+  \eqref{eq:lin-tran:f-on-prod-basis-vecs} also gives
+  \begin{equation*}
+    f(\epsilon_{i1}\epsilon_{1j}) = C_{ij} \quad\text{and}\quad
+    f(\epsilon_{1j}\epsilon_{i1}) = C_{11}\delta_{ij}.
+  \end{equation*}
+  These must be equal, so by looking at values of $i$ and $j$ where
+  $i\neq j$, we see that $C_{ij} = 0$ whenever $i\neq j$. Therefore,
+  equation~\eqref{eq:lin-tran:f-mult-of-trace-general} can be
+  simplified to
+  \begin{equation*}
+    f(A) = \sum_{k=1}^nCA_{kk}
+    = C(A_{11} + A_{22} + \cdots + A_{nn}) = C\tr(A),
+  \end{equation*}
+  where $C = C_{11}$ is a constant. We conclude that $f$ is a scalar
+  multiple of the trace functional. If we require $f(I) = n$, then we
+  must have $C = 1$ and $f = \tr$.
+\end{proof}
