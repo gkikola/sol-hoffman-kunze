@@ -968,3 +968,44 @@ then $f$ is the trace function.
   multiple of the trace functional. If we require $f(I) = n$, then we
   must have $C = 1$ and $f = \tr$.
 \end{proof}
+
+\Exercise{17} Let $W$ be the space of $n\times n$ matrices over the
+field $F$, and let $W_0$ be the subspace spanned by the matrices $C$
+of the form $C = AB - BA$. Prove that $W_0$ is exactly the subspace of
+matrices which have trace zero.
+\begin{proof}
+  Let $W_1$ be the subspace of matrices having trace zero. From
+  Exercise~\ref{exercise:lin-tran:trace-AB-eq-trace-BA}, we know that
+  \begin{equation*}
+    \tr(AB - BA) = \tr(AB) - \tr(BA) = 0,
+  \end{equation*}
+  so every matrix of the form $AB - BA$ must be in $W_1$. If we can
+  show that $\dim W_0 = \dim W_1$, then the proof will be complete.
+
+  Since $W_1$ is the null space of a nonzero linear functional, it
+  must have dimension equal to $\dim(W) - 1 = n^2 - 1$. Since $W_0$ is
+  a proper subset of $W$, it must have dimension at most $n^2 - 1$. So
+  we need only find a set of $n^2 - 1$ linearly independent matrices
+  in $W_0$.
+
+  Let $\epsilon_{ij}$ denote the matrix whose $i,j$th entry is $1$ and
+  all other entries $0$. For each $i$ with $2\leq i\leq n$, let
+  \begin{equation*}
+    S_i = \epsilon_{ii} - \epsilon_{11} = \epsilon_{i1}\epsilon_{1i}
+    - \epsilon_{1i}\epsilon_{i1}.
+  \end{equation*}
+  Then the set $S = \{S_2,\dots,S_n\}$ is a subset of $W_0$. Let $T$
+  be the set of matrices $\epsilon_{ij}$ with $i\neq j$. Then $T$ is
+  also a subset of $W_0$, since we can write
+  \begin{equation*}
+    \epsilon_{ij} = \epsilon_{ij}\epsilon_{jj}
+    - \epsilon_{jj}\epsilon_{ij}, \quad i\neq j
+  \end{equation*}
+  (note that $\epsilon_{jj}\epsilon_{ij} = 0$). Now the set $S\cup T$
+  consists of
+  \begin{equation*}
+    (n - 1) + (n^2 - n) = n^2 - 1
+  \end{equation*}
+  linearly independent vectors belonging to $W_0$, as needed to
+  complete the proof.
+\end{proof}
