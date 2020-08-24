@@ -1,0 +1,103 @@
+\section{The Double Dual}
+
+\Exercise1 Let $n$ be a positive integer and $F$ a field. Let $W$ be
+the set of all vectors $(x_1,\dots,x_n)$ in $F^n$ such that
+$x_1+\cdots+x_n=0$.
+\begin{enumerate}
+\item
+  \label{itm:lin-tran:W0-f-eql-coef}
+  Prove that $W^0$ consists of all linear functionals $f$ of the
+  form
+  \begin{equation*}
+    f(x_1,\dots,x_n) = c\sum_{j=1}^nx_j.
+  \end{equation*}
+  \begin{proof}
+    If $n = 1$, then $W$ is the zero subspace and the result is
+    trivial, so we will suppose $n > 1$.
+
+    Let $f$ be in $W^0$. We can find scalars $c_1,\dots,c_n$ in $F$
+    such that
+    \begin{equation*}
+      f(x_1,\dots,x_n) = c_1x_1 + \cdots + c_nx_n.
+    \end{equation*}
+    We want to show that $c_1 = c_2 = \cdots = c_n$.
+
+    Since $f$ annihilates $W$, in particular we know that
+    \begin{equation*}
+      f(1, -1, 0, 0, \dots, 0) = c_1 - c_2 = 0.
+    \end{equation*}
+    Therefore $c_1 = c_2$. Likewise, we know that
+    \begin{equation*}
+      f(0, 1, -1, 0, 0, \dots, 0) = c_2 - c_3 = 0,
+    \end{equation*}
+    so $c_2 = c_3$. Continuing in this way, we see that the $c_i$ must
+    all be identical. Thus $f$ has the form that was specified.
+  \end{proof}
+
+\item Show that the dual space $W^*$ of $W$ can be `naturally'
+  identified with the linear functionals
+  \begin{equation*}
+    f(x_1,\dots,x_n) = c_1x_1 + \cdots + c_nx_n
+  \end{equation*}
+  on $F^n$ which satisfy $c_1 + \cdots + c_n = 0$.
+  \begin{proof}
+    Let $U$ be the space of linear functionals
+    \begin{equation*}
+      f(x_1,\dots,x_n) = c_1x_1 + \cdots + c_nx_n
+    \end{equation*}
+    on $F^n$ which satisfy $c_1 + \cdots + c_n = 0$. We will show that
+    $U$ is isomorphic to $W^*$.
+
+    Let $T$ be the function from $U$ into $W^*$ such that $T(f)$ is
+    the restriction of $f$ to $W$. Then $T$ is a linear
+    transformation. We will show that it is non-singular. Suppose
+    $T(f) = 0$. Then $f(\alpha) = 0$ for all $\alpha$ in $W$, hence
+    $f$ belongs to $W^0$. By the result from part
+    \ref{itm:lin-tran:W0-f-eql-coef}, we know that $f$ has the form
+    \begin{equation*}
+      f(x_1,\dots,x_n) = c\sum_{j=1}^nx_j.
+    \end{equation*}
+    But $f$ belongs to $U$, so $c$ must be $0$ and $f$ is the zero
+    functional. That is, we have shown that $T(f) = 0$ implies
+    $f = 0$, so $T$ is non-singular and hence one-to-one.
+
+    Now, it can be shown that $U$ and $W$ both have dimension
+    $n-1$. For example, if $\{\epsilon_1,\dots,\epsilon_n\}$ is the
+    standard ordered basis for $F^n$, then
+    \begin{equation*}
+      \{\epsilon_1 - \epsilon_i \mid 2\leq i\leq n\}
+    \end{equation*}
+    is a set of $n - 1$ linearly independent vectors which span
+    $W$. We can find a similar basis for $U$. Since $T$ is a
+    one-to-one linear transformation between vector spaces of equal
+    dimension, $T$ must be invertible and thus is an isomorphism.
+  \end{proof}
+\end{enumerate}
+
+% \Exercise2 Use Theorem~20 to prove the following. If $W$ is a subspace
+% of a finite-dimensional vector space $V$ and if $\{g_1,\dots,g_r\}$ is
+% any basis for $W^0$, then
+% \begin{equation*}
+%   W = \bigcap_{i=1}^rN_{g_i}.
+% \end{equation*}
+% \begin{proof}
+%   Let
+%   \begin{equation*}
+%     N = \bigcap_{i=1}^rN_{g_i}.
+%   \end{equation*}
+%   We want to show that $W = N$.
+
+%   First, let $\alpha$ be in $W$. Then $g_i(\alpha) = 0$ for each $i$,
+%   so $\alpha$ belongs to $N_{g_i}$ for each $i$. That is, $\alpha$ is
+%   in $N$, which shows that $W$ is a subset of $N$.
+% \end{proof}
+
+% \Exercise3 Let $S$ be a set, $F$ a field, and $V(S; F)$ the space of
+% all functions from $S$ into $F$:
+% \begin{align*}
+%   (f+g)(x) &= f(x) + g(x) \\
+%   (cf)(x) &= cf(x).
+% \end{align*}
+% Let $W$ be any $n$-dimensional subspace of $V(S; F)$. Show that there
+% exist points $x_1,\dots,x_n$ in $S$ and functions $f_1,\dots,f_n$ in
+% $W$ such that $f_i(x_j) = \delta_{ij}$.
