@@ -1,0 +1,42 @@
+\section{The Transpose of a Linear Transformation}
+
+\Exercise1 Let $F$ be a field and let $f$ be the linear functional on
+$F^2$ defined by
+\begin{equation*}
+  f(x_1,x_2) = ax_1 + bx_2.
+\end{equation*}
+For each of the following linear operators $T$, let $g = T^tf$, and
+find $g(x_1,x_2)$.
+\begin{enumerate}
+\item $T(x_1,x_2) = (x_1,0)$
+  \begin{solution}
+    We have
+    \begin{align*}
+      g(x_1,x_2)
+      &= (T^tf)(x_1,x_2) \\
+      &= f(T(x_1,x_2)) \\
+      &= f(x_1,0) \\
+      &= ax_1. \qedhere
+    \end{align*}
+  \end{solution}
+
+\item $T(x_1,x_2) = (-x_2,x_1)$
+  \begin{solution}
+    In this case, we get
+    \begin{align*}
+      g(x_1,x_2)
+      &= f(T(x_1,x_2)) \\
+      &= f(-x_2,x_1) \\
+      &= -ax_2 + bx_1. \qedhere
+    \end{align*}
+  \end{solution}
+
+\item $T(x_1,x_2) = (x_1 - x_2, x_1 + x_2)$
+  \begin{solution}
+    \begin{align*}
+      g(x_1,x_2)
+      &= f(x_1 - x_2, x_1 + x_2) \\
+      &= (b + a)x_1 + (b - a)x_2. \qedhere
+    \end{align*}
+  \end{solution}
+\end{enumerate}
