@@ -60,3 +60,20 @@ If $D$ is the differentiation operator on $V$, what is $D^tf$?
     (D^tf)(p) = p(b) - p(a). \qedhere
   \end{equation*}
 \end{solution}
+
+\Exercise3 Let $V$ be the space of all $n\times n$ matrices over a
+field $F$ and let $B$ be a fixed $n\times n$ matrix. If $T$ is the
+linear operator on $V$ defined by $T(A) = AB - BA$, and if $f$ is the
+trace function, what is $T^tf$?
+\begin{solution}
+  From Exercise~\ref{exercise:lin-tran:trace-AB-eq-trace-BA}, we know
+  that $f(AB) = f(BA)$. So,
+  \begin{align*}
+    (T^tf)(A)
+    &= f(TA) \\
+    &= f(AB - BA) \\
+    &= f(AB) - f(BA) \\
+    &= 0,
+  \end{align*}
+  and we see that $T^tf = 0$.
+\end{solution}
