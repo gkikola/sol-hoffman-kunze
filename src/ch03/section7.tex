@@ -40,3 +40,23 @@ find $g(x_1,x_2)$.
     \end{align*}
   \end{solution}
 \end{enumerate}
+
+\Exercise2 Let $V$ be the vector space of all polynomial functions
+over the field of real numbers. Let $a$ and $b$ be fixed real numbers
+and let $f$ be the linear functional on $V$ defined by
+\begin{equation*}
+  f(p) = \int_a^bp(x)\,dx.
+\end{equation*}
+If $D$ is the differentiation operator on $V$, what is $D^tf$?
+\begin{solution}
+  From the definition, we have
+  \begin{equation*}
+    (D^tf)(p)
+    = f(Dp) \\
+    = \int_a^b(Dp)(x)\,dx.
+  \end{equation*}
+  So, the fundamental theorem of calculus gives
+  \begin{equation*}
+    (D^tf)(p) = p(b) - p(a). \qedhere
+  \end{equation*}
+\end{solution}
