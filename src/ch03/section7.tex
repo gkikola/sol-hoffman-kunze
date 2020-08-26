@@ -77,3 +77,35 @@ trace function, what is $T^tf$?
   \end{align*}
   and we see that $T^tf = 0$.
 \end{solution}
+
+\Exercise4 Let $V$ be a finite-dimensional vector space over the field
+$F$ and let $T$ be a linear operator on $V$. Let $c$ be a scalar and
+suppose there is a non-zero vector $\alpha$ in $V$ such that
+$T\alpha = c\alpha$. Prove that there is a non-zero linear functional
+$f$ on $V$ such that $T^tf = cf$.
+\begin{proof}
+  Let $n = \dim V$ and let $\alpha$ be a nonzero vector in $V$ with
+  $T\alpha = c\alpha$. Define the linear operator $U$ on $V$ by
+  \begin{equation*}
+    U = T - cI.
+  \end{equation*}
+  Then $U\alpha = T\alpha - c\alpha = 0$. Therefore $\alpha$ belongs
+  to the null space of $U$, which implies (by Theorem~2) that
+  $\rank(U) < n$. Now consider the linear operator $U^t$ on $V^*$. By
+  Theorem~22, we have
+  \begin{equation*}
+    \rank(U^t) = \rank(U) < n,
+  \end{equation*}
+  so the nullspace of $U^t$ has dimension greater than zero. Therefore
+  we can find a nonzero linear functional $f$ in $V^*$ such that
+  $U^tf = 0$. Then for any $\beta$ in $V$,
+  \begin{align*}
+    0
+    &= (U^tf)(\beta) \\
+    &= f(U\beta) \\
+    &= f(T\beta - c\beta) \\
+    &= f(T\beta) - cf(\beta) \\
+    &= (T^tf)(\beta) - cf(\beta).
+  \end{align*}
+  So, we have $T^tf = cf$ as required.
+\end{proof}
