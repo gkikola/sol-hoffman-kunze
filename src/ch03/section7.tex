@@ -127,3 +127,27 @@ entries. Prove that $A = 0$ if and only if $\trace(A^tA) = 0$.
   $A_{ij} = 0$ for each $i,j$, since every such entry appears in the
   sum.
 \end{proof}
+
+\Exercise6 Let $n$ be a positive integer and let $V$ be the space of
+all polynomial functions over the field of real numbers which have
+degree at most $n$, i.e., functions of the form
+\begin{equation*}
+  f(x) = c_0 + c_1x + \cdots + c_nx^n.
+\end{equation*}
+Let $D$ be the differentiation operator on $V$. Find a basis for the
+null space of the transpose operator $D^t$.
+\begin{solution}
+  Let $W$ denote the range of $D$. By Theorem~22, the null space of
+  $D^t$ is the annihilator of $W$. We know that $W$ is the space of
+  polynomials having degree at most $n - 1$, so $\dim W = n - 1$. By
+  Theorem~16, the annihilator $W^0$ must have dimension
+  $n - (n - 1) = 1$, so we may take any nonzero linear functional in
+  $W^0$ as a basis vector. Let $g$ be the unique linear functional
+  such that
+  \begin{equation*}
+    g(x^k) = \delta_{nk}, \quad 1\leq k\leq n.
+  \end{equation*}
+  That is, $g$ sends every polynomial to the coefficient for its $x^n$
+  term. In particular, $g$ annihilates $W$, so $\{g\}$ is a basis for
+  $W^0$ and therefore also a basis for the null space of $D^t$.
+\end{solution}
