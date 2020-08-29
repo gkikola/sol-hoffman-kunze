@@ -151,3 +151,27 @@ null space of the transpose operator $D^t$.
   term. In particular, $g$ annihilates $W$, so $\{g\}$ is a basis for
   $W^0$ and therefore also a basis for the null space of $D^t$.
 \end{solution}
+
+\Exercise7 Let $V$ be a finite-dimensional vector space over the field
+$F$. Show that $T\to T^t$ is an isomorphism of $L(V,V)$ onto
+$L(V^*,V^*)$.
+\begin{proof}
+  Suppose $V$ has dimension $n$ and let $U$ be the function from
+  $L(V,V)$ into $L(V^*,V^*)$ given by $U(T) = T^t$. We could show that
+  $U$ is an isomorphism by appealing to the definition of the
+  transpose. Instead, we will write $U$ as a composition of three
+  linear transformations $U_1$, $U_2$, and $U_3$, mapping
+  \begin{equation*}
+    L(V, V) \xrightarrow{U_1} F^{n\times n} \xrightarrow{U_2} F^{n\times n}
+    \xrightarrow{U_3} L(V^*, V^*),
+  \end{equation*}
+  as follows. $U_1$ sends an operator $T$ to its matrix
+  $[T]_{\mathcal{B}}$ in some fixed basis $\mathcal{B}$, $U_2$ sends
+  an $n\times n$ matrix $A$ to its transpose $A^t$, and $U_3$ sends an
+  $n\times n$ matrix $[T']_{\mathcal{B}^*}$ to its corresponding
+  linear operator $T'$ on $V^*$. Then $U = U_3U_2U_1$ and it follows
+  that $U$ is a linear transformation. Moreover, Theorem~12 shows that
+  $U_1$ and $U_3$ are isomorphisms, and $U_2$ is an isomorphism since
+  it is obviously invertible (it is its own inverse). Therefore $U$ is
+  an isomorphism from $L(V,V)$ onto $L(V^*,V^*)$.
+\end{proof}
