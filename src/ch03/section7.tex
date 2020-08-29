@@ -175,3 +175,62 @@ $L(V^*,V^*)$.
   it is obviously invertible (it is its own inverse). Therefore $U$ is
   an isomorphism from $L(V,V)$ onto $L(V^*,V^*)$.
 \end{proof}
+
+\Exercise8 Let $V$ be the vector space of $n\times n$ matrices over
+the field $F$.
+\begin{enumerate}
+\item If $B$ is a fixed $n\times n$ matrix, define a function $f_B$ on
+  $V$ by $f_B(A) = \trace(B^tA)$. Show that $f_B$ is a linear
+  functional on $V$.
+  \begin{proof}
+    Since the trace function is linear, we have
+    \begin{align*}
+      f_B(A_1 + cA_2)
+      &= \trace(B^t(A_1 + cA_2)) \\
+      &= \trace(B^tA_1 + cB^tA_2) \\
+      &= \trace(B^tA_1) + c\trace(B^tA_2) \\
+      &= f_B(A_1) + cf_B(A_2).
+    \end{align*}
+    Therefore $f_B$ is linear.
+  \end{proof}
+
+\item Show that every linear functional on $V$ is of the above form,
+  i.e., is $f_B$ for some $B$.
+  \begin{proof}
+    Let $g$ be a linear functional on $V$. Then $g$ can be written in
+    the form
+    \begin{equation*}
+      g(A) = \sum_{i=1}^n\sum_{j=1}^nc_{ij}A_{ij},
+    \end{equation*}
+    where each $c_{ij}$ is a fixed scalar in $F$. Now let $B$ be the
+    matrix whose $i,j$ entry is $c_{ij}$. Then for each matrix $A$ in
+    $V$,
+    \begin{multline*}
+      f_B(A)
+      = \trace(B^tA)
+      = \sum_{j=1}^n(B^tA)_{jj} \\
+      = \sum_{j=1}^n\sum_{i=1}^n(B^t)_{ji}A_{ij}
+      = \sum_{j=1}^n\sum_{i=1}^nc_{ij}A_{ij}
+      = g(A).
+    \end{multline*}
+    Therefore $g = f_B$.
+  \end{proof}
+
+\item Show that $B\to f_B$ is an isomorphism of $V$ onto $V^*$.
+  \begin{proof}
+    Let $T$ denote the function $B\to f_B$. Then
+    \begin{align*}
+      T(A_1 + cA_2)(A)
+      &= \trace((A_1 + cA_2)^tA) \\
+      &= \trace(A_1^tA + cA_2^tA) \\
+      &= \trace(A_1^tA) + c\trace(A_2^tA) \\
+      &= f_{A_1}(A) + cf_{A_2}(A) \\
+      &= T(A_1)(A) + cT(A_2)(A),
+    \end{align*}
+    so $T$ is a linear transformation. Since we have already proven
+    that every linear functional on $V$ can be written as $f_B$ for
+    some matrix $B$, it follows that $T$ is onto. And since
+    $\dim V = \dim V^* = n^2$, this is enough to show that $T$ is an
+    isomorphism (by Theorem~9).
+  \end{proof}
+\end{enumerate}
