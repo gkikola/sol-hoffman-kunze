@@ -74,23 +74,36 @@ $x_1+\cdots+x_n=0$.
   \end{proof}
 \end{enumerate}
 
-% \Exercise2 Use Theorem~20 to prove the following. If $W$ is a subspace
-% of a finite-dimensional vector space $V$ and if $\{g_1,\dots,g_r\}$ is
-% any basis for $W^0$, then
-% \begin{equation*}
-%   W = \bigcap_{i=1}^rN_{g_i}.
-% \end{equation*}
-% \begin{proof}
-%   Let
-%   \begin{equation*}
-%     N = \bigcap_{i=1}^rN_{g_i}.
-%   \end{equation*}
-%   We want to show that $W = N$.
+\Exercise2 Use Theorem~20 to prove the following. If $W$ is a subspace
+of a finite-dimensional vector space $V$ and if $\{g_1,\dots,g_r\}$ is
+any basis for $W^0$, then
+\begin{equation*}
+  W = \bigcap_{i=1}^rN_{g_i}.
+\end{equation*}
+\begin{proof}
+  Let
+  \begin{equation*}
+    N = \bigcap_{i=1}^rN_{g_i}.
+  \end{equation*}
+  We want to show that $W = N$. Certainly $W$ is a subset of $N$,
+  since $W$ is in the null space of each $g_i$. If we can show that
+  $N$ is a subset of $W$, then $W = N$ and the proof would be
+  complete.
 
-%   First, let $\alpha$ be in $W$. Then $g_i(\alpha) = 0$ for each $i$,
-%   so $\alpha$ belongs to $N_{g_i}$ for each $i$. That is, $\alpha$ is
-%   in $N$, which shows that $W$ is a subset of $N$.
-% \end{proof}
+  Suppose to the contrary that $W \neq N$, and let $\beta$ be a vector
+  belonging to $N$ but which is not in $W$. Let
+  $\mathcal{C} = \{\alpha_1, \dots, \alpha_k\}$ be a basis for
+  $W$. Since $\beta$ is not in $W$, the set $\mathcal{C}\cup\{\beta\}$
+  is linearly independent, and we can extend this set to a basis
+  $\mathcal{B}$ for $V$.
+
+  Then Theorem~1 allows us to find a linear functional $f$ such that
+  $f(\alpha_i) = 0$ for each $i$ with $1\leq i\leq k$ and
+  $f(\beta)\neq0$. Then $f\in W^0$ and hence can be written as a
+  linear combination of $g_1, \dots, g_r$. By Theorem~20, this implies
+  that $N$ is a subset of the null space of $f$. In particular,
+  $f(\beta) = 0$, which is a contradiction. This shows that $W = N$.
+\end{proof}
 
 % \Exercise3 Let $S$ be a set, $F$ a field, and $V(S; F)$ the space of
 % all functions from $S$ into $F$:
