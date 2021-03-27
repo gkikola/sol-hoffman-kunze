@@ -31,7 +31,7 @@ can build manually with `pdflatex src/hksol.tex`.
 Copyright
 ---------
 
-Copyright &copy; 2020 Greg Kikola. License CC BY-SA 4.0:
+Copyright &copy; 2020-2021 Greg Kikola. License CC BY-SA 4.0:
 [Creative Commons Attribution-ShareAlike 4.0
 International](http://creativecommons.org/licenses/by-sa/4.0/).
 
