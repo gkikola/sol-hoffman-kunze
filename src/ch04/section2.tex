@@ -284,3 +284,60 @@ form a basis of $F[x]$.
   $S$. But these polynomials span $F[x]$, so $S$ must also span
   $F[x]$.
 \end{proof}
+
+\Exercise8 If $F$ is a field and $h$ is a polynomial over $F$ of
+degree $\geq1$, show that the mapping $f\to f(h)$ is a one-one linear
+transformation of $F[x]$ into $F[x]$. Show that this transformation is
+an isomorphism of $F[x]$ onto $F[x]$ if and only if $\deg h = 1$.
+\begin{proof}
+  Let this map be denoted by $T$, so that $T(f) = f(h)$. For any
+  scalar $c$ in $F$ and for any polynomials $f,g$ in $F[x]$, we have
+  by Theorem~2 that
+  \begin{align*}
+    T(cf + g)
+    &= (cf + g)(h) \\
+    &= (cf)(h) + g(h) \\
+    &= cf(h) + g(h) \\
+    &= cT(f) + T(g),
+  \end{align*}
+  so $T$ is a linear transformation.
+
+  Now we want to show that $T$ is one-to-one. Let $f$ and $g$ be
+  polynomials in $F[x]$ such that $T(f) = T(g)$. Write
+  \begin{equation*}
+    f = \sum_{i=0}^ma_ix^i \quad\text{and}\quad g = \sum_{i=0}^nb_ix^i.
+  \end{equation*}
+  Then
+  \begin{equation*}
+    T(f) = f(h) = \sum_{i=0}^ma_ih^i
+    \quad\text{and}\quad
+    T(g) = g(h) = \sum_{i=0}^nb_ih^i.
+  \end{equation*}
+  Since $T(f) = T(g)$ and since $h$ has degree $\geq1$, we may compare
+  the coefficients for each term in the two sums above to see that
+  $m = n$ and $a_i = b_i$ for each $i$ with $1\leq i\leq n$. That is,
+  $f = g$ and $T$ is one-to-one.
+
+  Lastly, suppose $\deg h = n$, where $n > 1$. We can write
+  \begin{equation*}
+    h = cx^n + k,
+  \end{equation*}
+  where $c$ is in $F$ and $k$ is a polynomial of degree less than
+  $h$. Then, if
+  \begin{equation*}
+    f = \sum_{i=0}^ma_ix^i
+  \end{equation*}
+  is any polynomial in $F[x]$ having degree $m$, we have
+  \begin{align*}
+    T(f) = f(h)
+    &= \sum_{i=0}^ma_ih^i \\
+    &= \sum_{i=0}^ma_i(cx^n + k)^i \\
+    &= a_mc^mx^{mn} + \ell,
+  \end{align*}
+  where $\ell$ is a polynomial having degree less than
+  $mn$. Consequently, we see that $T(f)$ has a degree that is a
+  multiple of $n$. In particular, there is no $f$ such that
+  $T(f) = x$, since $n$ does not divide $1$. Therefore $T$ cannot be
+  onto. On the other hand, if $\deg h = 1$, then we know that $T$ is
+  onto by the previous exercise.
+\end{proof}
