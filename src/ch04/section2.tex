@@ -261,3 +261,26 @@ an independent set in $F[x]$.
   \end{equation*}
   and the set $S$ must be independent.
 \end{proof}
+
+\Exercise7 If $a$ and $b$ are elements of a field $F$ and $a\neq0$,
+show that the polynomials $1$, $ax+b$, $(ax+b)^2$, $(ax+b)^3$, $\dots$
+form a basis of $F[x]$.
+\begin{proof}
+  Call this set of polynomials $S$. We know by the previous exercise
+  that $S$ is independent, so we need only show that it spans
+  $F[x]$.
+
+  Note that the polynomial $1$ is clearly in the span of $S$. And the
+  polynomial $x$ is in the span of $S$ since
+  \begin{equation*}
+    x = -\frac{b}a + \frac1a(ax+b).
+  \end{equation*}
+  Now suppose that $x^i$ is in the span of $S$. Since
+  \begin{equation*}
+    x^{i+1} = x\cdot x^i,
+  \end{equation*}
+  we see that $x^{i+1}$ is also in the span of $S$. By induction, each
+  of the polynomials $1$, $x$, $x^2$, $x^3$, $\dots$ is in the span of
+  $S$. But these polynomials span $F[x]$, so $S$ must also span
+  $F[x]$.
+\end{proof}
