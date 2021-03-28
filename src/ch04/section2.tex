@@ -120,3 +120,23 @@ For each of the following polynomials $f$ over $F$, compute $f(A)$.
     \end{align*}
   \end{solution}
 \end{enumerate}
+
+\Exercise2 Let $T$ be the linear operator on $R^3$ defined by
+\begin{equation*}
+  T(x_1, x_2, x_3) = (x_1, x_3, -2x_2 - x_3).
+\end{equation*}
+Let $f$ be the polynomial over $R$ defined by $f = -x^3 + 2$. Find
+$f(T)$.
+\begin{solution}
+  $f(T) = -T^3 + 2I$, where $I$ denotes the identity transformation on
+  $R^3$. We compute,
+  \begin{align*}
+    f(T)(x_1,x_2,x_3)
+    &= (-T^3)(x_1,x_2,x_3) + 2(x_1,x_2,x_3) \\
+    &= -T^2(x_1, x_3, -2x_2 - x_3) + 2(x_1,x_2,x_3) \\
+    &= -T(x_1, -2x_2 - x_3, 2x_2 - x_3) + (2x_1,2x_2,2x_3) \\
+    &= -(x_1, 2x_2 - x_3, 2x_2 + 3x_3) + (2x_1,2x_2,2x_3) \\
+    &= (x_1, x_3, -2x_2 - x_3),
+  \end{align*}
+  and we see that $f(T) = T$.
+\end{solution}
