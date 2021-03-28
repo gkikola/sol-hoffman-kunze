@@ -140,3 +140,40 @@ $f(T)$.
   \end{align*}
   and we see that $f(T) = T$.
 \end{solution}
+
+\Exercise3 Let $A$ be an $n\times n$ diagonal matrix over the field
+$F$, i.e., a matrix satisfying $A_{ij} = 0$ for $i\neq j$. Let $f$ be
+the polynomial over $F$ defined by
+\begin{equation*}
+  f = (x - A_{11})\cdots(x - A_{nn}).
+\end{equation*}
+What is the matrix $f(A)$?
+\begin{solution}
+  For each $i$ with $1\leq i\leq n$, define the polynomial
+  \begin{equation*}
+    f_i = x - A_{ii},
+  \end{equation*}
+  so that $f = f_1f_2\cdots f_n$. Observe that the matrix $f_i(A)$
+  is a diagonal matrix with
+  \begin{equation*}
+    (f_i(A))_{jj} = A_{jj} - A_{ii}.
+  \end{equation*}
+
+  Now consider the matrix
+  \begin{equation*}
+    B = f_1(A)f_2(A)\cdots f_n(A).
+  \end{equation*}
+  By Theorem~2, we must have $f(A) = B$. To describe $f(A)$, we need
+  only consider the entries of $B$. Observe that the product of two
+  (or more) diagonal matrices must also be diagonal. Moreover, the
+  entries along the diagonal of the product will simply be the product
+  of the corresponding entries in the original matrices. So for each
+  $i$ with $1\leq i\leq n$, we get
+  \begin{equation*}
+    B_{ii} = (A_{ii} - A_{11})(A_{ii} - A_{22})\cdots
+    (A_{ii} - A_{ii})\cdots(A_{ii} - A_{nn}) = 0.
+  \end{equation*}
+  Since $B$ is a diagonal matrix with zeroes on the diagonal, we
+  simply have $B = 0$. In other words, $f(A)$ is the $n\times n$ zero
+  matrix.
+\end{solution}
