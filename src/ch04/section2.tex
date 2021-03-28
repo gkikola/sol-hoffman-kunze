@@ -177,3 +177,45 @@ What is the matrix $f(A)$?
   simply have $B = 0$. In other words, $f(A)$ is the $n\times n$ zero
   matrix.
 \end{solution}
+
+\Exercise4 If $f$ and $g$ are independent polynomials over a field $F$
+and $h$ is a non-zero polynomial over $F$, show that $fh$ and $gh$ are
+independent.
+\begin{proof}
+  Let $a$ and $b$ be scalars in $F$ such that
+  \begin{equation*}
+    a(fh) + b(gh) = 0.
+  \end{equation*}
+  Then
+  \begin{equation*}
+    (af + bg)h = 0,
+  \end{equation*}
+  and since $h$ is nonzero, it follows from part (i) of Theorem~1 that
+  $af+bg = 0$. But $f$ and $g$ are independent, so we must have
+  $a = b = 0$. This shows that $fh$ and $gh$ are independent as well.
+\end{proof}
+
+\Exercise5 If $F$ is a field, show that the product of two non-zero
+elements of $F^\infty$ is non-zero.
+\begin{proof}
+  Suppose the contrary, and let $p$ and $q$ be nonzero elements of
+  $F^\infty$ such that $pq = 0$. Let $m$ be smallest nonnegative
+  integer with $p_m\neq0$, and let $n$ be the smallest nonnegative
+  integer with $q_n\neq0$. Then
+  \begin{equation}
+    \label{eq:polynomials:m-plus-n-term-of-product-in-F-inf}
+    (pq)_{m+n}
+    = \sum_{i=0}^{m+n}p_iq_{m+n-i}.
+  \end{equation}
+  In the sum on the right-hand side, notice that $p_i = 0$ when
+  $i < m$. Notice also that $q_{m+n-i} = 0$ when $m+n-i < n$, i.e.,
+  when $i > m$. Consequently,
+  equation~\eqref{eq:polynomials:m-plus-n-term-of-product-in-F-inf}
+  becomes
+  \begin{equation*}
+    (pq)_{m+n} = p_mq_n.
+  \end{equation*}
+  But then $(pq)_{m+n}\neq0$, contradicting the assumption that
+  $pq = 0$. Therefore the product of non-zero elements in $F^\infty$
+  cannot be zero.
+\end{proof}
