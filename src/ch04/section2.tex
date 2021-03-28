@@ -219,3 +219,45 @@ elements of $F^\infty$ is non-zero.
   $pq = 0$. Therefore the product of non-zero elements in $F^\infty$
   cannot be zero.
 \end{proof}
+
+\Exercise6 Let $S$ be a set of non-zero polynomials over a field
+$F$. If no two elements of $S$ have the same degree, show that $S$ is
+an independent set in $F[x]$.
+\begin{proof}
+  Let $S$ be as stated, let $p_1,\dots,p_n$ be polynomials in $S$, and
+  let $c_1,\dots,c_n$ be scalars in $F$ such that
+  \begin{equation}
+    \label{eq:polynomials:lin-comb-diff-degrees}
+    \sum_{i=1}^nc_ip_i = 0.
+  \end{equation}
+  We want to show that $c_i = 0$ for each $i$. Since
+  $\{p_1, \dots, p_n\}$ is a finite set of polynomials, no two of
+  which have the same degree, there must be a polynomial in the set
+  with a degree that is strictly larger than the degrees of all of the
+  other polynomials. Without loss of generality, we may suppose that
+  this polynomial of maximum degree is $p_n$. If $c_n\neq0$, then we
+  may write
+  \begin{equation*}
+    p_n = -\frac1{c_n}\sum_{i=1}^{n-1}c_ip_i.
+  \end{equation*}
+  By Theorem~1, we then know that the degree of $p_n$ is less than or
+  equal to the maximum degree of the remaining polynomials. But this
+  is impossible because $p_n$ has a larger degree than
+  the others. This contradiction shows that $c_n = 0$.
+
+  Since $c_n$ is zero, equation
+  \eqref{eq:polynomials:lin-comb-diff-degrees} now becomes
+  \begin{equation*}
+    \sum_{i=1}^{n-1}c_ip_i = 0.
+  \end{equation*}
+  By the same argument as before, there must be a polynomial among
+  $p_1,\dots,p_{n-1}$ with largest degree. Again, no generality is
+  lost in assuming it is $p_{n-1}$. Then we may again use the same
+  method as before to show that $c_{n-1} = 0$.
+
+  Continuing in this way, we see that the only possibility is that
+  \begin{equation*}
+    c_1 = c_2 = \cdots = c_n = 0
+  \end{equation*}
+  and the set $S$ must be independent.
+\end{proof}
